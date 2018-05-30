@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.744 94.4">
+    <defs>
+        <style>
+            .cls-1{fill:#26c6ec}.cls-2{fill:#ff859e}.cls-3{filter:url(#Ellipse_10)}.cls-4{filter:url(#Path_186)}.cls-5{filter:url(#Path_185)}.cls-6{filter:url(#Path_184)}.cls-7{filter:url(#Path_183)}.cls-8{filter:url(#Path_182)}
+        </style>
+        <filter id="Path_182" width="45.8" height="38.9" x="34" y="55.5" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_183" width="45.8" height="38.9" x="0" y="55.5" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-2" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur-2" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_184" width="45.8" height="59.1" x="34" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-3" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur-3" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_185" width="45.844" height="38.9" x="67.9" y="55.5" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-4" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur-4" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_186" width="88.9" height="29.6" x="12.4" y="42.3" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-5" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur-5" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Ellipse_10" width="26" height="26" x="56" y="23" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-6" stdDeviation="3"/>
+            <feFlood flood-color="#ff859e" flood-opacity=".922"/>
+            <feComposite in2="blur-6" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="ic_managedDBs" transform="translate(-498 -1282)">
+        <g id="Group_28" data-name="Group 28">
+            <g class="cls-8" transform="translate(498 1282)">
+                <path id="Path_182-2" d="M47.9 55.5C41 55.5 34 57.2 34 60.9V71c0 4.3 8.7 5.4 13.9 5.4s13.9-1.1 13.9-5.4V60.9a.6.6 0 0 0-.1-.4c-.4-3.4-7.1-5-13.8-5zm0 3c6.8 0 10.4 1.7 10.9 2.4-.5.7-4.1 2.4-10.9 2.4S37.5 61.6 37 60.9c.5-.7 4.2-2.4 10.9-2.4zm.1 14.9c-7 0-10.6-1.8-10.9-2.4v-6.6c2.7 1.3 6.8 1.8 10.9 1.8s8.2-.6 10.9-1.9v6.5c-.3.9-4 2.6-10.9 2.6z" class="cls-1" data-name="Path 182" transform="translate(9 6)"/>
+            </g>
+            <g class="cls-7" transform="translate(498 1282)">
+                <path id="Path_183-2" d="M13.9 55.5C7.2 55.5.4 57.1 0 60.6V71c0 4.3 8.7 5.4 13.9 5.4s13.9-1.1 13.9-5.4V60.6c-.4-3.5-7.2-5.1-13.9-5.1zm0 3c6.8 0 10.4 1.7 10.9 2.4-.5.7-4.1 2.4-10.9 2.4S3.5 61.7 3 60.9c.5-.7 4.2-2.4 10.9-2.4zm0 14.9c-7 0-10.6-1.8-10.9-2.4v-6.6c2.7 1.3 6.8 1.8 10.9 1.8s8.2-.6 10.9-1.9v6.5c-.3.9-3.9 2.6-10.9 2.6z" class="cls-1" data-name="Path 183" transform="translate(9 6)"/>
+            </g>
+            <g class="cls-6" transform="translate(498 1282)">
+                <path id="Path_184-2" d="M47.9 41.1c5.2 0 13.9-1.1 13.9-5.4V5.1C61.4 1.6 54.7 0 47.9 0 41.2 0 34.4 1.6 34 5.1v30.6c0 4.3 8.8 5.4 13.9 5.4zm0-3c-7 0-10.6-1.8-10.9-2.4V29c3 1.4 7.7 1.8 10.9 1.8s7.9-.5 10.9-1.8v6.6c-.2.7-3.9 2.5-10.9 2.5zm11-22.8c-.3.7-4 2.4-10.9 2.4-7 0-10.6-1.8-10.9-2.4V8.9c2.7 1.3 6.8 1.8 10.9 1.8a28.893 28.893 0 0 0 10.9-1.8zm-11 5.4c3.2 0 7.9-.4 10.9-1.8v6.5c-.3.7-4 2.5-10.9 2.5-7 0-10.6-1.8-10.9-2.4v-6.6c3.1 1.4 7.7 1.8 10.9 1.8zm0-17.7c6.8 0 10.4 1.7 10.9 2.4-.5.7-4.1 2.4-10.9 2.4S37.5 6.1 37.1 5.4c.4-.7 4.1-2.4 10.8-2.4z" class="cls-1" data-name="Path 184" transform="translate(9 6)"/>
+            </g>
+            <g class="cls-5" transform="translate(498 1282)">
+                <path id="Path_185-2" d="M95.7 60.6c-.4-3.5-7.2-5.1-13.9-5.1s-13.5 1.6-13.9 5.1V71c0 4.3 8.7 5.4 13.9 5.4s13.9-1.1 13.9-5.4V60.9c.1-.1 0-.2 0-.3zm-13.8-2.1c6.8 0 10.4 1.7 10.9 2.4-.5.7-4.1 2.4-10.9 2.4S71.5 61.7 71 60.9c.5-.7 4.1-2.4 10.9-2.4zm0 14.9c-7 0-10.6-1.8-10.9-2.4v-6.6c2.7 1.3 6.8 1.8 10.9 1.8s8.2-.6 10.9-1.9v6.5c-.3.9-4 2.6-10.9 2.6z" class="cls-1" data-name="Path 185" transform="translate(9 6)"/>
+            </g>
+            <g class="cls-4" transform="translate(498 1282)">
+                <path id="Path_186-2" d="M13.9 53.9a1.538 1.538 0 0 0 1.5-1.5v-2.7h31v2.7a1.5 1.5 0 0 0 3 0v-2.7h30.9v2.7a1.5 1.5 0 0 0 3 0v-4.2a1.538 1.538 0 0 0-1.5-1.5H49.4v-2.9a1.5 1.5 0 0 0-3 0v2.9H13.9a1.538 1.538 0 0 0-1.5 1.5v4.2a1.473 1.473 0 0 0 1.5 1.5z" class="cls-1" data-name="Path 186" transform="translate(9 6)"/>
+            </g>
+        </g>
+        <g class="cls-3" transform="translate(498 1282)">
+            <circle id="Ellipse_10-2" cx="4" cy="4" r="4" class="cls-2" data-name="Ellipse 10" transform="translate(65 29)"/>
+        </g>
+    </g>
+</svg>

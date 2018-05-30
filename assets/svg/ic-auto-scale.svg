@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115.1 114">
+    <defs>
+        <style>
+            .cls-1{fill:#26c6ec}.cls-2{fill:#ff859e}.cls-3{filter:url(#Ellipse_8)}.cls-4{filter:url(#Path_189)}.cls-5{filter:url(#Path_188)}
+        </style>
+        <filter id="Path_188" width="115.1" height="114" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_189" width="65.85" height="64.3" x="20.05" y="30.2" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-2" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur-2" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Ellipse_8" width="26" height="26" x="61" y="65" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-3" stdDeviation="3"/>
+            <feFlood flood-color="#ff859e" flood-opacity=".922"/>
+            <feComposite in2="blur-3" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="ic_autoScale" transform="translate(-1297 -1272)">
+        <g id="Group_29" data-name="Group 29">
+            <g class="cls-5" transform="translate(1297 1272)">
+                <path id="Path_188-2" d="M81.6 0H41.9a15.513 15.513 0 0 0-15.5 15.5v33.1H15.5A15.513 15.513 0 0 0 0 64.1v16.4A15.513 15.513 0 0 0 15.5 96h16.4a15.513 15.513 0 0 0 15.5-15.5v-9.7h34.2a15.513 15.513 0 0 0 15.5-15.5V15.5A15.513 15.513 0 0 0 81.6 0zm12.5 55.3a12.5 12.5 0 0 1-12.5 12.5H45.9a1.538 1.538 0 0 0-1.5 1.5v11.2A12.5 12.5 0 0 1 31.9 93H15.5A12.5 12.5 0 0 1 3 80.5V64.1a12.5 12.5 0 0 1 12.5-12.5h12.3a1.538 1.538 0 0 0 1.5-1.5V15.5A12.526 12.526 0 0 1 41.9 3h39.7a12.5 12.5 0 0 1 12.5 12.5v39.8z" class="cls-1" data-name="Path 188" transform="translate(9 6)"/>
+            </g>
+            <g class="cls-4" transform="translate(1297 1272)">
+                <path id="Path_189-2" d="M67.8 31.5a.756.756 0 0 0-.1-.4c-.1-.1-.1-.2-.2-.3l-.1-.1a2.092 2.092 0 0 0-.6-.4h-.1c-.1 0-.3-.1-.4-.1h-7.5a1.5 1.5 0 1 0 0 3h3.8L20.5 73.9a1.45 1.45 0 0 0 0 2.1 1.606 1.606 0 0 0 1.1.5 1.159 1.159 0 0 0 1-.4l42.3-40.8V39a1.5 1.5 0 0 0 3 0v-7.3c-.1 0-.1-.1-.1-.2z" class="cls-1" data-name="Path 189" transform="translate(9 6)"/>
+            </g>
+        </g>
+        <g class="cls-3" transform="translate(1297 1272)">
+            <circle id="Ellipse_8-2" cx="4" cy="4" r="4" class="cls-2" data-name="Ellipse 8" transform="translate(70 71)"/>
+        </g>
+    </g>
+</svg>

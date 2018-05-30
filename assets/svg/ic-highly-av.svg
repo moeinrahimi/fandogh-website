@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 97.5">
+    <defs>
+        <style>
+            .cls-1{fill:#26c6ec}.cls-2{fill:#ff859e}.cls-3{filter:url(#Ellipse_28)}.cls-4{filter:url(#Path_240)}.cls-5{filter:url(#Path_239)}.cls-6{filter:url(#Path_238)}.cls-7{filter:url(#Path_237)}.cls-8{filter:url(#Path_236)}.cls-9{filter:url(#Path_235)}
+        </style>
+        <filter id="Path_235" width="45.081" height="37.1" x="17.798" y="19" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_236" width="47.603" height="47.103" x="46.3" y="23.397" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-2" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur-2" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_237" width="109.8" height="97.5" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-3" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur-3" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_238" width="21" height="46.8" x="25.4" y="42.4" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-4" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur-4" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_239" width="21" height="59.7" x="84.5" y="29.5" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-5" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur-5" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Path_240" width="21" height="31.5" x="54" y="57.8" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-6" stdDeviation="3"/>
+            <feFlood flood-color="#21cbeb" flood-opacity=".922"/>
+            <feComposite in2="blur-6" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Ellipse_28" width="33" height="33" x="79" y="7" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur-7" stdDeviation="3"/>
+            <feFlood flood-color="#ff859e" flood-opacity=".922"/>
+            <feComposite in2="blur-7" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="ic_highlyAv">
+        <g class="cls-9">
+            <path id="Path_235-2" d="M26.9 37.2a8.953 8.953 0 0 0 7.3-3.7l8.5 4.4a1.854 1.854 0 0 0 .7.2 1.441 1.441 0 0 0 1.3-.8 1.489 1.489 0 0 0-.6-2l-8.5-4.4a8.627 8.627 0 0 0 .4-2.8 9.1 9.1 0 0 0-18.2 0 9.006 9.006 0 0 0 9.1 9.1zm0-15.2a6.1 6.1 0 1 1-6.1 6.1 6 6 0 0 1 6.1-6.1z" class="cls-1" data-name="Path 235" transform="translate(9 6)"/>
+        </g>
+        <g class="cls-8">
+            <path id="Path_236-2" d="M55.5 52.5a9.133 9.133 0 0 0 9.1-9.1 9.473 9.473 0 0 0-1.3-4.7l12.2-12.8a1.487 1.487 0 1 0-2.2-2l-12 12.6a9.225 9.225 0 0 0-5.9-2.1 9.051 9.051 0 1 0 .1 18.1zm0-15.3a6.124 6.124 0 0 1 6.1 6.1 6.19 6.19 0 0 1-6.1 6.1 6.1 6.1 0 1 1 0-12.2z" class="cls-1" data-name="Path 236" transform="translate(9 6)"/>
+        </g>
+        <g class="cls-7">
+            <path id="Path_237-2" d="M90.3 76.5H3V51.7l12.3-11.2a1.487 1.487 0 1 0-2-2.2L3 47.6V1.5A1.538 1.538 0 0 0 1.5 0 1.538 1.538 0 0 0 0 1.5V78a1.538 1.538 0 0 0 1.5 1.5h88.8a1.5 1.5 0 0 0 0-3z" class="cls-1" data-name="Path 237" transform="translate(9 6)"/>
+        </g>
+        <g class="cls-6">
+            <path id="Path_238-2" d="M25.4 43.9v25.8a1.5 1.5 0 0 0 3 0V43.9a1.5 1.5 0 0 0-3 0z" class="cls-1" data-name="Path 238" transform="translate(9 6)"/>
+        </g>
+        <g class="cls-5">
+            <path id="Path_239-2" d="M83.5 31v38.7a1.5 1.5 0 0 0 3 0V31a1.538 1.538 0 0 0-1.5-1.5 1.473 1.473 0 0 0-1.5 1.5z" class="cls-1" data-name="Path 239" transform="translate(10 6)"/>
+        </g>
+        <g class="cls-4">
+            <path id="Path_240-2" d="M54 59.3v10.5a1.5 1.5 0 0 0 3 0V59.3a1.538 1.538 0 0 0-1.5-1.5 1.473 1.473 0 0 0-1.5 1.5z" class="cls-1" data-name="Path 240" transform="translate(9 6)"/>
+        </g>
+        <g class="cls-3">
+            <circle id="Ellipse_28-2" cx="7.5" cy="7.5" r="7.5" class="cls-2" data-name="Ellipse 28" transform="translate(88 13)"/>
+        </g>
+    </g>
+</svg>
