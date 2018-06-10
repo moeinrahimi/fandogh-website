@@ -16,10 +16,11 @@
                 </div>
             </div>
             <div class="user">
-                <f-button styles="transparent" > ورود </f-button>
+                <f-button style="width: 100px" @onClick="$refs.login.display()"  styles="transparent" > ورود </f-button>
                 <f-button styles="transparent border" > ثبت نام </f-button>
             </div>
         </nav>
+        <login ref="login" />
     </header>
 </template>
 
@@ -27,11 +28,13 @@
 import icon from '../Icons.vue'
 import logo from './logo'
 import FButton from '~/components/elements/button'
+import Login from '~/components/Auth/Login'
 export default {
   components:{
     icon,
     logo,
-    FButton
+    FButton,
+    Login
   }
 }
 </script>
@@ -51,8 +54,9 @@ export default {
       
         .logo
             display inline-block
-        button 
-          margin-right 10px
+        .user
+          button 
+            margin-right 10px
 
    .navbar 
      margin-top -20px  
