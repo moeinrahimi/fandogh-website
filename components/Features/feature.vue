@@ -1,11 +1,14 @@
 <template>
   <div>
-    <div class="feature">
-      <div class="image-feature">
+    <div class="box">
+      <div >
         <img :src="image" />
       </div>
-      <p class="title"> {{title}} </p>
-      <p class="local_title"> {{local_title}} </p>
+      <div class="text-container">
+
+        <p class="title"> {{title}} </p>
+        <p class="local_title"> {{local_title}} </p>
+      </div>
     </div>
   </div>
 </template>
@@ -33,28 +36,49 @@ export default {
 </script>
 
 <style lang="stylus" >
-.feature
-  border-radius: 10px
-  background-color: rgba(0, 0, 0, 0.1)
-  text-align center
-  height 270px
-  margin-top 2rem
-  .image-feature
-    height 170px
-  img
-    width 35%
-    margin-top 40px
-  .title 
-    margin 0
-    font-size 16px
-  .local_title
-    font-family yekan-light
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 2.29;
-    margin: 0
-    
-   
+
+  .box
+    border-radius: 10px
+    background-color: rgba(0, 0, 0, 0.1)
+    text-align center
+    margin-top 2rem
+    min-height 270px
+
+  .box
+    div
+      display inline-block
+      vertical-align top
+      height 100px
+      width: 100px
+      padding 5px
+      img
+        width 100px
+        margin-left: auto
+        margin-right: auto
+        position: relative
+        top: 50%
+        transform: translateY(-50%)
+    div.text-container
+      width: auto
+  .title
+    font-weight bold
+
+  .box
+    margin-left 0
+    div
+      display: block
+      text-align center
+      width 100%
+      top: 0
+      transform none
+
+
+ // @media only screen and (max-width: 1200px)
+
+/*@media only screen and (max-width: 991px)*/
+  /**/
+    /**/
+   /**/
 
 
 

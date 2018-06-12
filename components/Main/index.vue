@@ -1,10 +1,10 @@
 <template>
     <div class="main container">
-        <div class="row middle-xs">
-            <div class="col-md-6 col-md-offset-1 col-sm-12">
+        <div class="middle-xs no-margin">
+            <div class="right" >
                 <right />
             </div>
-            <div class="col-md-5 col-sm-12 illustrate">
+            <div   class="illustrate left">
                <left />
             </div>
         </div>
@@ -29,11 +29,25 @@
 <style lang="stylus" scoped>
   .main
     margin-top: 90px
+    position relative
     clear both
   .illustrate
     text-align: left
+  .left
+    position absolute
+    left 0
+    top 140px
+    width calc(60% - 30px)
+
+  .right
+    width 50%
+
   @media only screen and (max-width: 991px)
-      .illustrate
+      .right
+        width 100%
+      .left
+        position initial
+        width 100%
         margin-top 60px
         text-align: center
 </style>

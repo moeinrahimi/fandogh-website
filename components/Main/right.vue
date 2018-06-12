@@ -47,4 +47,11 @@ export default{
         border-radius 10px
         border none
 
+    @media only screen and (max-width: 576px)
+        .registration
+
+            button
+                margin 0
+
+
 </style>

@@ -15,18 +15,27 @@ export default {
 </script>
 
 <style scoped lang="stylus" >
-  .illustrate 
+  .illustrate
     position relative
-    img 
+    width 100%
+    img
       position absolute
-      width 910px
-      top -100px
-      left -200px;
-  @media only screen and (max-width: 1400px) 
-   .illustrate 
-     img 
-       width 700px
-       left -100px
+      top -140px
+      left 0;
+      width 100%
+
+
+
+
+   @media only screen and (max-width: 992px)
+    .illustrate
+      text-align center
+      width 100%
+      img
+        position initial
+        width 100%
+
+
 
 </style>
 

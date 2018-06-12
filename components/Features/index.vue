@@ -1,6 +1,6 @@
 <template>
   <section id="features" >
-   <div>
+   <div class="inner-content">
       <h2 class="title">
       سرویس‌های ابری فندق
     </h2>
@@ -11,12 +11,12 @@
 
    <div class="container">
      <div class="row between-xs">
-       <feature title="Auto Scaling" local_title="مقیاس پذیری آسان" icon="auto-scale" class="col-lg-4 col-md-6" /> 
-       <feature title="Docker" local_title="به راحتی ساخت یک داکرفایل" icon="docker" class="col-lg-4 col-md-6" /> 
-       <feature title="Managed Databases" local_title="پایگاه‌داده مدیریت شده" icon="database" class="col-lg-4 col-md-6" /> 
-        <feature title="Cost Effective Platform" local_title="مقرون به صرفه" icon="cost-effective" class="col-lg-4 col-md-6" /> 
-       <feature title="Production Ready" local_title="آماده استفاده در محیط عملیاتی" icon="ready" class="col-lg-4 col-md-6" /> 
-       <feature title="Highly Available" local_title="دسترسی‌پذیری بالا" icon="highly" class="col-lg-4 col-md-6" /> 
+       <feature title="Auto Scaling" local_title="مقیاس پذیری آسان" icon="auto-scale" class="col-lg-4  col-sm-6 col-xs-12" />
+       <feature title="Docker" local_title="به راحتی ساخت یک داکرفایل" icon="docker" class="col-lg-4 col-sm-6 col-xs-12" />
+       <feature title="Managed Databases" local_title="پایگاه‌داده مدیریت شده" icon="database" class="col-lg-4 col-sm-6 col-xs-12" />
+        <feature title="Cost Effective Platform" local_title="مقرون به صرفه" icon="cost-effective" class="col-lg-4 col-sm-6 col-xs-12" />
+       <feature title="Production Ready" local_title="آماده استفاده در محیط عملیاتی" icon="ready" class="col-lg-4 col-sm-6 col-xs-12" />
+       <feature title="Highly Available" local_title="دسترسی‌پذیری بالا" icon="highly" class="col-lg-4 col-sm-6 col-xs-12" />
      </div>
    </div>
   
