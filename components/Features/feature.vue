@@ -1,14 +1,17 @@
 <template>
   <div>
-    <div class="box">
-      <div >
-        <img :src="image" />
-      </div>
-      <div class="text-container">
+    <div class="row box middle-xs ">
 
-        <p class="title"> {{title}} </p>
-        <p class="local_title"> {{local_title}} </p>
+      <div>
+        <div class="wrap" >
+          <img :src="image" />
+        </div>
+        <div class="text-container">
+          <p class="title"> {{title}} </p>
+          <p class="local_title"> {{local_title}} </p>
+        </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -41,11 +44,11 @@ export default {
     border-radius: 10px
     background-color: rgba(0, 0, 0, 0.1)
     text-align center
-    margin-top 2rem
+    margin 1rem 0
     min-height 270px
 
   .box
-    div
+    .wrap
       display inline-block
       vertical-align top
       height 100px

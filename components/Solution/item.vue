@@ -1,11 +1,11 @@
 <template>
   <div class="solutionItem row" :class="[direction === 'reverse' ? 'reverse reverseImg' : '']">
-    <div class="col-sm-6">
+    <div class="col-sm-6 custom-size">
       <div class="solution-image">
         <img :src="image" alt="docker solution">
       </div>
     </div>
-    <div class="col-sm-6 no-padding">
+    <div class="col-sm-6 no-padding custom-size">
       <div class="text row middle-xs">
         <div class="inner-text">
           <h2>
@@ -48,6 +48,16 @@ export default {
   .reverseImg
     .solution-image
       text-align left
+
+  @media only screen and (max-width: 768px)
+    .custom-size
+      .inner-text
+        margin 0 auto
+      width 100%
+      .solution-image
+        text-align center
+        img
+          width 50%
 
 </style>
 

@@ -12,7 +12,8 @@
      </div>
 
     <div class="img-solution">
-      <img title="docker solution illustrate" src="~/assets/svg/img-fandogh-sol.svg" />
+      <img v-if="width >= 1000"  title="docker solution illustrate" src="~/assets/svg/img-fandogh-sol.svg" />
+      <img v-else  title="docker solution illustrate" src="~/assets/svg/img-fandogh-sol-ver.svg" />
 
       <div class="solutions">
         <solution direction="reverse" title="راحتی استفاده" description="است. Docker اصلی‌ترین ابزاری که به آن نیاز خواهید داشت حتی اگر با Docker آشنایی ندارید متخصصین ما به شما کمک خواهند کرد که در کمتر از یک روز به راحتی با این ابزار کار کنید." :image="require('~/assets/svg/img-docker-ill.svg')" />
@@ -36,6 +37,19 @@
   export default {
     components:{
       Solution
+    },
+    data() {
+      return {
+        width: 992,
+      }
+    },
+    mounted(){
+      let self = this
+      this.width  = document.body.clientWidth
+      window.onresize = function(event) {
+        self.width = document.body.clientWidth
+      }
+
     }
   }
   </script>
@@ -48,6 +62,13 @@
     margin-top 1px
     .solutions
       margin-top 100px
+
+  @media only screen and (max-width: 991px)
+      .img-solution
+        text-align center
+        img
+            width 40%
+
   </style>
   
 

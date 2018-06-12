@@ -57,6 +57,8 @@ export default {
         padding 0 90px
         box-sizing border-box
     header
+        .menu
+           display none
         .header-container
           .right-menu
             float right 
@@ -84,7 +86,7 @@ export default {
           color white 
           padding 20px
 
-    @media only screen and (max-width: 991px)
+    @media only screen and (max-width: 1230px)
         .header-container
             height: 60px
             margin-top: 26px
@@ -98,6 +100,7 @@ export default {
             .user
                 display none
             .menu
+                display block
                 float left
                 img
                     width 24px

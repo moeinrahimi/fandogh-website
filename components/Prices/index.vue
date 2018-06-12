@@ -12,7 +12,7 @@
 
         </div>
       <div class="row options">
-        <div class="col-sm-6">
+        <div class="col-md-6 col-xs-12">
           <price-option styles="red" title="سرویس رایگان">
             <ul>
               <li>سرویس در حال اجر</li>
@@ -21,7 +21,7 @@
             </ul>
           </price-option>
         </div>
-        <div class="col-sm-6">
+        <div class="col-md-6 col-xs-12">
            <price-option styles="blue blur" title="سرویس ویژه">
             <ul>
               <li>فکر کردی زرنگی؟  :/</li>
@@ -52,4 +52,7 @@ export default{
   .text
     margin-top -100px
     margin-bottom 100px
+  .options
+    div
+     margin 10px 0
 </style>
