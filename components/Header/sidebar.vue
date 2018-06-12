@@ -1,27 +1,77 @@
 <template>
-    <div class="sidebar">
-        <div class="row">
+    <div class="sidebar" :class="{'show-sidebar': show}">
+        <div class="row sidebar-heading no-margin">
+            <div class="col-xs-6">
+                <a href="#" @click.prevent="toggleMenu" class="close">
+                    <img :src="require('../../assets/svg/ic_close.svg')" />
+                </a>
+            </div>
             <div class="col-xs-6">
                 <div class="logo">
                     <logo  />
                 </div>
             </div>
-            <div class="col-xs-6"></div>
+        </div>
+        <div class="navs">
+            <ul>
+                <li>
+                    <a href="#">
+                        صفحه اصلی
+                    </a>
+                </li>
+                <li>
+                    <a href="#"> سرویس ها</a>
+                </li>
+                <li>
+                    <a href="#">
+                        مستندات
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        وبلاگ
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        درباره ما
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="auth">
+            <f-button styles="transparent border" > ورود </f-button>
+            <f-button styles="transparent border" > ثبت نام </f-button>
         </div>
     </div>
 </template>
 
 <script>
   import logo from './logo'
+  import FButton from '~/components/elements/button'
     export default {
+      data(){
+        return {
+          show: false
+        }
+      },
       components:{
-
+        logo,
+        FButton
+      },
+      methods:{
+        toggleMenu(){
+          this.show = !this.show
+        }
       }
     }
 </script>
 
 <style lang="stylus" scoped >
     .sidebar
+        transform: translate3d(-100%, 0, 0);
+        overflow-y: scroll;
         height 100vh
         width 300px
         background-color #220286
@@ -29,4 +79,35 @@
         top 0
         left 0
         z-index 100
+        transition all .6s ease
+    .show-sidebar
+        transform: translate3d(0, 0, 0);
+    .sidebar-heading
+        padding 30px
+        border-bottom 2px solid rgba(255, 255, 255, 0.2)
+        .close
+            img
+                width 24px
+        .logo
+            img
+                width 96px
+    .navs
+        text-align center
+        border-bottom 2px solid rgba(255, 255, 255, 0.2)
+        ul
+            padding 0
+            margin 30px 0
+        li
+            margin 15px 0
+            a
+                padding 10px
+                display block
+
+    .auth
+        padding 30px
+        text-align center
+        button
+            margin 10px
+
+
 </style>

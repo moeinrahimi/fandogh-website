@@ -20,10 +20,12 @@
                 <f-button styles="transparent border" > ثبت نام </f-button>
             </div>
             <div class="menu">
-                <img :src="require('../../assets/svg/ic_hamburger.svg')" />
+                <a href="#" @click.prevent="toggleMenu">
+                    <img :src="require('../../assets/svg/ic_hamburger.svg')" />
+                </a>
             </div>
         </nav>
-        <sidebar />
+        <sidebar ref="menu" />
         <login ref="login" />
     </header>
 </template>
@@ -39,6 +41,11 @@ export default {
     FButton,
     Login,
     Sidebar
+  },
+  methods:{
+    toggleMenu(){
+      this.$refs.menu.toggleMenu()
+    }
   }
 }
 </script>
