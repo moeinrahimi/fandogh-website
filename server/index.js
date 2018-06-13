@@ -1,5 +1,5 @@
 import express from 'express'
-import { Nuxt, Builder } from 'nuxt-edge'
+import { Nuxt, Builder } from 'nuxt'
 
 const app = express()
 const host = process.env.HOST || '0.0.0.0'

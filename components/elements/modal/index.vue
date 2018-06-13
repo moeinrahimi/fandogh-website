@@ -26,11 +26,9 @@
   }
 </script>
 
-<style lang="stylus" >
+<style scoped lang="stylus" >
 .modal {
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
   top: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -66,13 +64,13 @@ body{
   position: relative;
 }
 .overlay{
-  position: absolute;
+  position: fixed;
   top: -50px;
   left: 0;
-  width: 100%;
+  width: 120vh;
   height: 100%;
   z-index: 10;
-  background-color: rgba(0,0,0,0.5); /*dim the background*/
+  background-color: rgba(0,0,0,0.8); /*dim the background*/
 }
 
 </style>
