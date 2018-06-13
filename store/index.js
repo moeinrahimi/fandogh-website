@@ -1,6 +1,6 @@
 import Vuex from 'vuex'
-
-
+import * as actions from './actions'
+import * as mutations from './mutations'
 const createStore = () => {
   return new Vuex.Store({
     state: {
@@ -8,16 +8,8 @@ const createStore = () => {
         login: false
       }
     },
-    actions:{
-      displayLogin: ({commit, state}) => {
-        commit('DISPLAY_LOGIN')
-      }
-    },
-    mutations: {
-      DISPLAY_LOGIN: (state) => {
-        this.state.modals.login = !this.state.modals.login
-      }
-    }
+    actions: actions,
+    mutations: mutations
   })
 }
 
