@@ -1,0 +1,18 @@
+branches:
+  only:
+  - master
+language: python
+cache: yarn
+python:
+  - "3.5" 
+# command to install dependencies
+install:
+  - pip install fandogh-cli --upgrade
+# command to run tests
+script:
+  - echo $TRAVIS_COMMIT  
+  - fandogh login --username=$FANDOGH_USERNAME --password=$FANDOGH_PASSWORD
+  - yarn
+  - yarn build
+  - fandogh image publish --version=$TRAVIS_COMMIT 
+  - fandogh service deploy --version=$TRAVIS_COMMIT --name=blog
