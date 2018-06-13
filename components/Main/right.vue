@@ -1,11 +1,13 @@
 <template>
     <section class="right-main">
-        <h1>
-                    همه چیز با یه داکرفایل شروع میشه ...
-        </h1>
-        <p>
-            فندق یه PaaS هست که به شما این امکان رو میده که سرویس‌های خودتون رو بر روی سرورهای ابری مستقر کنید و نگران مدیریت سرورها و سرویس‌هایی که نیاز دارید نباشید.
-        </p>
+        <div class="text">
+            <h1>
+                همه چیز با یه داکرفایل شروع میشه ...
+            </h1>
+            <p>
+                فندق یه PaaS هست که به شما این امکان رو میده که سرویس‌های خودتون رو بر روی سرورهای ابری مستقر کنید و نگران مدیریت سرورها و سرویس‌هایی که نیاز دارید نباشید.
+            </p>
+        </div>
         <div class="registration">
             <f-button styles="red small" > ورود </f-button>
             <f-button styles="blue small" > ثبت نام </f-button>
@@ -48,6 +50,9 @@ export default{
         border none
 
     @media only screen and (max-width: 576px)
+        .right-main
+            .text
+                padding 0 15px
         .registration
             text-align center
         .registration

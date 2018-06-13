@@ -1,5 +1,5 @@
 <template>
-  <section class="tutorial" >
+  <section id="tutorial" >
 
     <div class="container">
       <div class="text">
@@ -22,7 +22,7 @@
 
 <style lang="stylus">
 
-   .tutorial
+   #tutorial
      background-image linear-gradient(to left, #4010af, #220286)
      padding-bottom 100px
      .text

@@ -64,6 +64,8 @@
       margin-top 100px
 
   @media only screen and (max-width: 991px)
+      #solution
+        margin-top 100px
       .img-solution
         text-align center
         img

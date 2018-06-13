@@ -55,4 +55,7 @@ export default{
   .options
     div
      margin 10px 0
+  @media only screen and (max-width: 991px)
+    #prices
+      margin-top 100px
 </style>
