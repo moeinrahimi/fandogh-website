@@ -5,6 +5,6 @@ export default {
     let classes = ['fandogh-input']
     let styles = props.styles ? props.styles.split(' ') : []
     styles.forEach(element => classes.push(element));
-    return <input type={props.type} placeholder={props.placeholder} class={classes}  />
+    return <input value={props.value} type={props.type} onInput={ e => rest.listeners.input(e.target.value)} placeholder={props.placeholder} class={classes}/>
   }
 }
