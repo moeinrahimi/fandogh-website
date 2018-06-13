@@ -7,8 +7,8 @@
             فندق یه PaaS هست که به شما این امکان رو میده که سرویس‌های خودتون رو بر روی سرورهای ابری مستقر کنید و نگران مدیریت سرورها و سرویس‌هایی که نیاز دارید نباشید.
         </p>
         <div class="registration">
-            <f-button styles="red" > ورود </f-button>
-            <f-button styles="blue" > ثبت نام </f-button>
+            <f-button styles="red small" > ورود </f-button>
+            <f-button styles="blue small" > ثبت نام </f-button>
         </div>
     
     </section>
@@ -49,9 +49,10 @@ export default{
 
     @media only screen and (max-width: 576px)
         .registration
-
+            text-align center
+        .registration
             button
-                margin 0
+                margin 5px
 
 
 </style>
