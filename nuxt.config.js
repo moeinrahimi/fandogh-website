@@ -2,6 +2,9 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  env: {
+    API: process.env.API || 'http://fandogh.cloud:8080'
+  },
   head: {
     title: 'سرویس های ابری فندق',
     meta: [
