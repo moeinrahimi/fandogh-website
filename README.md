@@ -1,4 +1,4 @@
-# fandogh
+[![Build Status](https://travis-ci.org/fandoghpaas/fandogh-website.svg?branch=master)](https://travis-ci.org/fandoghpaas/fandogh-website)# fandogh
 
 > fandogh cloud landing
 
