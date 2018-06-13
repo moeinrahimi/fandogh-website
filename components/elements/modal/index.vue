@@ -67,8 +67,8 @@ body{
   position: fixed;
   top: -50px;
   left: 0;
-  width: 120vh;
-  height: 100%;
+  width: 100%;
+  height: 120vh;
   z-index: 10;
   background-color: rgba(0,0,0,0.8); /*dim the background*/
 }
