@@ -47,7 +47,7 @@ p {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     width: 410px; /* Full width */
-    height: 300px; /* Full height */
+    min-height: 300px; /* Full height */
     border-radius: 10px;
 }
 

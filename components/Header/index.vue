@@ -17,7 +17,7 @@
             </div>
             <div class="user">
                 <f-button style="width: 100px" @onClick="$refs.login.display()"  styles="transparent" > ورود </f-button>
-                <f-button styles="transparent border" > ثبت نام </f-button>
+                <f-button @onClick="$refs.register.display()" styles="transparent border" > ثبت نام </f-button>
             </div>
             <div class="menu">
                 <a href="#" @click.prevent="toggleMenu">
@@ -27,6 +27,7 @@
         </nav>
         <sidebar ref="menu" />
         <login ref="login" />
+        <register ref="register" />
     </header>
 </template>
 
@@ -35,8 +36,10 @@ import logo from './logo'
 import FButton from '~/components/elements/button'
 import Login from '~/components/Auth/Login'
 import Sidebar from './sidebar'
+import Register from "../Auth/Register";
 export default {
   components:{
+    Register,
     logo,
     FButton,
     Login,
