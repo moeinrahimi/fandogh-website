@@ -3,7 +3,7 @@
     <f-modal ref="modal" v-show="show" >
       <h2>وارد شوید</h2>
       <div class="fandogh-form-group center margin-10">
-        <f-input v-model="username" styles="input-color-blue" type="text" placeholder="نام کاربری" />
+        <f-input v-model="email" styles="input-color-blue" type="text" placeholder="ایمیل" />
       </div>
       <div class="fandogh-form-group center margin-10">
         <f-input v-model="password" styles="input-color-blue" type="text" placeholder="رمز عبور" />
@@ -41,7 +41,7 @@ import ForgotPassword from './ForgotPassword'
     },
     data(){
       return {
-        username: '',
+        email: '',
         password: ''
       }
     },

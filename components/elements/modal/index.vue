@@ -37,7 +37,8 @@ p {
 
 .modal 
   h2
-    font-size 20px 
+    font-size 18px
+    font-weight 900
     color #fff
     text-align center
 
