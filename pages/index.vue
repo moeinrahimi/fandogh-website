@@ -9,7 +9,6 @@
     <tutorial />
     <devider styles="no-margin" type="br" />
     <prices />
-  
   </section>
 </template>
 <script>

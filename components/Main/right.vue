@@ -9,20 +9,23 @@
             </p>
         </div>
         <div class="registration">
-            <f-button styles="red small" > ورود </f-button>
-            <f-button styles="blue small" > ثبت نام </f-button>
+            <f-button @onClick="showModal('login')" styles="red small" > ورود </f-button>
+            <f-button @onClick="showModal('register')" styles="blue small" > ثبت نام </f-button>
         </div>
     
     </section>
 </template>
 
 <script>
-
 import FButton from '~/components/elements/button'
-
 export default{
   components:{
       FButton
+  },
+  methods:{
+    showModal(modal){
+       this.$store.dispatch('showModal', modal)
+    }
   }
 }
 </script>

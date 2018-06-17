@@ -16,8 +16,8 @@
                 </div>
             </div>
             <div class="user">
-                <f-button style="width: 100px" @onClick="$refs.login.display()"  styles="transparent" > ورود </f-button>
-                <f-button @onClick="$refs.register.display()" styles="transparent border" > ثبت نام </f-button>
+                <f-button style="width: 100px" @onClick="showModal('login')"  styles="transparent" > ورود </f-button>
+                <f-button @onClick="showModal('register')" styles="transparent border" > ثبت نام </f-button>
             </div>
             <div class="menu">
                 <a href="#" @click.prevent="toggleMenu">
@@ -48,6 +48,9 @@ export default {
   methods:{
     toggleMenu(){
       this.$refs.menu.toggleMenu()
+    },
+    showModal(modal){
+      this.$store.dispatch('showModal', modal)
     }
   }
 }

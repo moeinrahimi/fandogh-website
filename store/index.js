@@ -5,7 +5,9 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       modals: {
-        login: false
+        login: false,
+        register: false,
+        forgot_password: false
       }
     },
     actions: actions,

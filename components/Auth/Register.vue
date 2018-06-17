@@ -1,5 +1,5 @@
 <template>
-    <f-modal ref="modal" >
+    <f-modal  ref="modal" v-show="show"  >
         <h2>عضو شوید</h2>
         <div class="fandogh-form-group center margin-10">
             <f-input v-model="username" styles="input-color-blue" type="text" placeholder="نام کاربری" />
@@ -15,10 +15,6 @@
         </div>
         <div class="fandogh-form-group center margin-20 ">
             <f-button styles="red block 80">عضویت</f-button>
-        </div>
-
-        <div class="fandogh-form-group center margin-20 ">
-            <a href="#"> فراموشی رمز عبور </a>
         </div>
     </f-modal>
 </template>
@@ -45,9 +41,14 @@
         namespace:''
       }
     },
-    methods:{
-      display(){
-        this.$refs.modal.display()
+    mounted(){
+      this.$refs.modal.$on('onOverlay', function () {
+        this.$store.dispatch('showModal')
+      })
+    },
+    computed:{
+      show(){
+        return this.$store.state.modals.register
       }
     }
   }

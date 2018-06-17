@@ -1,30 +1,14 @@
 <template>
   <div>
-    <div v-show="show" id="myModal" class="modal" >
-
+    <div  id="myModal" class="modal" >
         <!-- Modal content -->
         <div class="modal-content">
           <slot />
         </div>
     </div>
-    <div v-show="show" @click="display" class="overlay"></div>
+    <div  @click="$emit('onOverlay')" class="overlay"></div>
   </div>
 </template>
-
-<script>
-  export default {
-    data(){
-      return {
-        show: false
-      }
-    },
-    methods:{
-      display(){
-        this.show = !this.show
-      }
-    }
-  }
-</script>
 
 <style scoped lang="stylus" >
 .modal {
@@ -47,7 +31,7 @@ p {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     width: 410px; /* Full width */
-    min-height: 300px; /* Full height */
+    min-height: 200px; /* Full height */
     border-radius: 10px;
 }
 

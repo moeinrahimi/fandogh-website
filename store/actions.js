@@ -17,3 +17,7 @@ export const login = async ({commit, state}, {username, password}) => {
     return Promise.reject(e)
   }
 }
+
+export const showModal = ({commit, state}, modal) => {
+  commit('SET_MODAL', modal)
+}
