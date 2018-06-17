@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="ic_hamburger" transform="translate(0 -53.833)">
+    <g id="Group_133" data-name="Group 133" transform="translate(0 53.833)">
+      <path id="Path_604" data-name="Path 604" class="cls-1" d="M1.029,55.951H22.971a1.059,1.059,0,0,0,0-2.118H1.029a1.059,1.059,0,0,0,0,2.118Z" transform="translate(0 -53.833)"/>
+      <path id="Path_605" data-name="Path 605" class="cls-1" d="M1.029,183.451H22.971a1.059,1.059,0,0,0,0-2.118H1.029a1.059,1.059,0,0,0,0,2.118Z" transform="translate(0 -173.392)"/>
+      <path id="Path_606" data-name="Path 606" class="cls-1" d="M1.029,310.951H22.971a1.059,1.059,0,0,0,0-2.118H1.029a1.059,1.059,0,0,0,0,2.118Z" transform="translate(0 -292.951)"/>
+    </g>
+  </g>
+</svg>
