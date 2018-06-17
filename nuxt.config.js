@@ -6,7 +6,8 @@ module.exports = {
     API: process.env.API || 'http://fandogh.cloud:8080'
   },
   css: [
-    'flexboxgrid/css/flexboxgrid.css'
+    'flexboxgrid/css/flexboxgrid.css',
+    '@/assets/css/main.styl'
   ],
   head: {
     title: 'سرویس های ابری فندق',
@@ -33,9 +34,9 @@ module.exports = {
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
-        return ['script', 'style', 'font'].includes(type)
+        return ['style'].includes(type)
       }
     }
   },
-  plugins: ['~/plugins/bootstrap.js']
+
 }

@@ -18,7 +18,6 @@ export default {
 
 <style lang="stylus" >
   @import '../assets/css/main.styl'
-
   .wrapper {
     width 100%
   }  
