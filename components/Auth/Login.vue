@@ -3,16 +3,16 @@
     <f-modal ref="modal" v-show="show" >
       <h2>وارد شوید</h2>
       <div class="fandogh-form-group center margin-10">
-        <f-input v-model="email" styles="input-color-blue" type="text" placeholder="ایمیل" />
+        <f-input v-model="username" styles="input-color-blue" type="text" placeholder="ایمیل" />
       </div>
       <div class="fandogh-form-group center margin-10">
-        <f-input v-model="password" styles="input-color-blue" type="text" placeholder="رمز عبور" />
+        <f-input v-model="password" styles="input-color-blue" type="password" placeholder="رمز عبور" />
       </div>
       <div class="fandogh-form-group  margin-20">
         <f-checkbox id="checkbox1" title="مرا بخاطر بسپار" />
       </div>
       <div class="fandogh-form-group center margin-20 ">
-        <f-button styles="red block 80">ورود</f-button>
+        <f-button @onClick="login" styles="red block 80">ورود</f-button>
       </div>
 
       <div class="fandogh-form-group center margin-20 ">
@@ -41,8 +41,9 @@ import ForgotPassword from './ForgotPassword'
     },
     data(){
       return {
-        email: '',
-        password: ''
+        username: '',
+        password: '',
+        loading: false
       }
     },
     mounted(){
@@ -53,6 +54,12 @@ import ForgotPassword from './ForgotPassword'
     methods:{
       showModal(modal){
         this.$store.dispatch('showModal', modal)
+      },
+      login(){
+        this.loading = true
+        this.$store.dispatch('login', {username: this.username, password: this.password}).then(res => {
+          console.log(res)
+        })
       }
     },
     computed:{

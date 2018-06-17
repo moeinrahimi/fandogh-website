@@ -8,6 +8,9 @@ const createStore = () => {
         login: false,
         register: false,
         forgot_password: false
+      },
+      user:{
+        token: null
       }
     },
     actions: actions,
