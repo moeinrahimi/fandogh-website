@@ -21,3 +21,11 @@ export const login = async ({commit, state}, {username, password}) => {
 export const showModal = ({commit, state}, modal) => {
   commit('SET_MODAL', modal)
 }
+
+export const checkAuthentication = async ({commit, state}, token) => {
+  commit('SET_USER', {token})
+}
+
+export const logout = async ({commit, state}) => {
+  commit('LOGOUT')
+}

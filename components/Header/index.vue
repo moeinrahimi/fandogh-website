@@ -15,9 +15,12 @@
                     </ul>
                 </div>
             </div>
-            <div class="user">
+            <div class="user" v-if="!loggedIn">
                 <f-button style="width: 100px" @onClick="showModal('login')"  styles="transparent" > ورود </f-button>
                 <f-button @onClick="showModal('register')" styles="transparent border" > ثبت نام </f-button>
+            </div>
+            <div class="user" v-else>
+                <f-button style="width: 100px" @onClick="logout"  styles="transparent border" > خروج </f-button>
             </div>
             <div class="menu">
                 <a href="#" @click.prevent="toggleMenu">
@@ -45,12 +48,20 @@ export default {
     Login,
     Sidebar
   },
+  computed:{
+    loggedIn(){
+      return this.$store.state.user.token
+    }
+  },
   methods:{
     toggleMenu(){
       this.$refs.menu.toggleMenu()
     },
     showModal(modal){
       this.$store.dispatch('showModal', modal)
+    },
+    logout(){
+      this.$store.dispatch('logout')
     }
   }
 }

@@ -20,3 +20,7 @@ export const SET_USER = (state, {token}) => {
   state.user.token = token
   if(token) setToken(token)
 }
+export const LOGOUT = (state) => {
+  setToken(null)
+  state.user.token = null
+}

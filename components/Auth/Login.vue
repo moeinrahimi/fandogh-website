@@ -13,7 +13,7 @@
           <f-checkbox id="checkbox1" title="مرا بخاطر بسپار" />
         </div>
         <div class="fandogh-form-group center margin-20 ">
-          <f-button @onClick="login" styles="red block 80">ورود</f-button>
+          <f-button @onClick="login" styles="red block 80">{{title}}</f-button>
         </div>
 
         <div class="fandogh-form-group center margin-20 ">
@@ -59,10 +59,14 @@ import ForgotPassword from './ForgotPassword'
         this.$store.dispatch('showModal', modal)
       },
       login(){
+        if(this.loading) return
         this.loading = true
         this.error = null
         this.$store.dispatch('login', {username: this.username, password: this.password}).then(res => {
+          this.loading = false
+          this.$store.dispatch('showModal')
         }).catch(e => {
+          this.loading = false
           this.error = e
         })
       }
@@ -70,7 +74,10 @@ import ForgotPassword from './ForgotPassword'
     computed:{
       show(){
         return this.$store.state.modals.login
-      }
+      },
+      title(){
+        return this.loading ? '...' : 'ورود'
+      },
     }
   }
 </script>

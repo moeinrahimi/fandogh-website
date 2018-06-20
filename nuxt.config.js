@@ -5,6 +5,9 @@ module.exports = {
   env: {
     API: process.env.API || 'http://fandogh.cloud:8080'
   },
+  router: {
+    middleware: ['authentication']
+  },
   css: [
     'flexboxgrid/css/flexboxgrid.css',
     '@/assets/css/main.styl'
