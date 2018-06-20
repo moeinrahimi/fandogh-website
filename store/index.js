@@ -9,7 +9,8 @@ const createStore = () => {
       modals: {
         login: false,
         register: false,
-        forgot_password: false
+        forgot_password: false,
+        message: false
       },
       user:{
         token: getToken()

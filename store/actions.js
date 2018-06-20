@@ -17,6 +17,15 @@ export const login = async ({commit, state}, {username, password}) => {
     return Promise.reject(e)
   }
 }
+export const register = async ({commit, state}, data) => {
+  try {
+    let user = await Request().post('/api/accounts', data)
+    commit('SET_USER', user)
+    return user
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
 
 export const showModal = ({commit, state}, modal) => {
   commit('SET_MODAL', modal)
