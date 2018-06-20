@@ -4,12 +4,22 @@
         <!-- Modal content -->
         <div class="modal-content">
           <slot />
+            <transition name="bounce">
+                <div v-show="message" class="message">
+                    <p> {{message}} </p>
+                </div>
+            </transition>
         </div>
     </div>
     <div  @click="$emit('onOverlay')" class="overlay"></div>
   </div>
 </template>
 
+<script>
+    export default {
+      props: ['message']
+    }
+</script>
 <style scoped lang="stylus" >
 .modal {
   position: fixed; /* Stay in place */
@@ -17,9 +27,9 @@
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%)
-  overflow: auto; /* Enable scroll if needed */
   border-radius: 10px;
   z-index 11
+  overflow hidden
 }
 
 p {
@@ -58,5 +68,11 @@ body{
   background-color: rgba(0,0,0,0.8); /*dim the background*/
 }
 
+.message
+    height 50px
+    border-top 2px dotted #fff
+    text-align center
+    p
+      color #e96363
 </style>
 
