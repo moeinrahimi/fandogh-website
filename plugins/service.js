@@ -14,7 +14,7 @@ function request (params) {
       token = window.__NUXT__.state.user.token
     }
     
-    if (token) {
+    if (token && token !== 'null') {
       config.headers['Authorization'] = 'JWT '+token
     }
 

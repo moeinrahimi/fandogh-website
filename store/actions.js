@@ -1,4 +1,13 @@
 import Request from '~/plugins/request'
+import {getToken} from "../utils/cookie";
+
+
+export const nuxtServerInit = ({ commit }, { req }) => {
+  process.__COOKIE__ = req.headers.cookie
+  if(process.__COOKIE__) {
+    commit('SET_USER', {token: process.__COOKIE__})
+  }
+}
 
 /**
  *
@@ -31,10 +40,19 @@ export const showModal = ({commit, state}, modal) => {
   commit('SET_MODAL', modal)
 }
 
-export const checkAuthentication = async ({commit, state}, token) => {
-  commit('SET_USER', {token})
+export const setMessage = ({commit, state}, message) => {
+  commit('SET_MESSAGE', message)
+}
+
+export const checkAuthentication =  ({commit, state}, token) => {
+  return getToken()
 }
 
 export const logout = async ({commit, state}) => {
-  commit('LOGOUT')
+  try {
+    commit('LOGOUT')
+  } catch (e) {
+    console.error(e)
+    return Promise.reject(e)
+  }
 }

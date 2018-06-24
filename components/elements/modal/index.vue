@@ -11,13 +11,13 @@
             </transition>
         </div>
     </div>
-    <div  @click="$emit('onOverlay')" class="overlay"></div>
+    <div @click="$emit('onOverlay')"   class="overlay"></div>
   </div>
 </template>
 
 <script>
     export default {
-      props: ['message']
+      props: ['message', 'disableOverlay']
     }
 </script>
 <style scoped lang="stylus" >
@@ -41,7 +41,6 @@ p {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     width: 410px; /* Full width */
-    min-height: 200px; /* Full height */
     border-radius: 10px;
 }
 

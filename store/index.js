@@ -12,6 +12,7 @@ const createStore = () => {
         forgot_password: false,
         message: false
       },
+      message: '',
       user:{
         token: getToken()
       }

@@ -2,13 +2,13 @@
   <div class="wrapper" >
     <my-header />
     <nuxt/>
+
   </div>
 </template>
 
 <script>
 import MyHeader from '~/components/Header'
 import 'normalize.css'
-
 export default {
   components: {
     MyHeader

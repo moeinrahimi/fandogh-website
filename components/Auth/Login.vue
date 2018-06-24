@@ -51,7 +51,7 @@ import ForgotPassword from './ForgotPassword'
     },
     mounted(){
       this.$refs.modal.$on('onOverlay', function () {
-          this.$store.dispatch('showModal')
+          this.$store.dispatch('showModal', false)
       })
     },
     methods:{
@@ -65,6 +65,7 @@ import ForgotPassword from './ForgotPassword'
         this.$store.dispatch('login', {username: this.username, password: this.password}).then(res => {
           this.loading = false
           this.$store.dispatch('showModal')
+          location.reload()
         }).catch(e => {
           this.loading = false
           this.error = e

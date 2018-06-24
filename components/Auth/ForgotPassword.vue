@@ -32,7 +32,7 @@
     },
     mounted(){
       this.$refs.modal.$on('onOverlay', function () {
-        this.$store.dispatch('showModal')
+        this.$store.dispatch('showModal', false)
       })
     },
     computed:{

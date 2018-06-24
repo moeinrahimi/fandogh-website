@@ -17,7 +17,7 @@
             </div>
             <div class="user" v-if="!loggedIn">
                 <f-button style="width: 100px" @onClick="showModal('login')"  styles="transparent" > ورود </f-button>
-                <f-button @onClick="showModal('register')" styles="transparent border" > ثبت نام </f-button>
+                <f-button @onClick="showModal('message')" styles="transparent border" > ثبت نام </f-button>
             </div>
             <div class="user" v-else>
                 <f-button style="width: 100px" @onClick="logout"  styles="transparent border" > خروج </f-button>
@@ -31,6 +31,7 @@
         <sidebar ref="menu" />
         <login ref="login" />
         <register ref="register" />
+        <message ref="message" />
     </header>
 </template>
 
@@ -40,17 +41,21 @@ import FButton from '~/components/elements/button'
 import Login from '~/components/Auth/Login'
 import Sidebar from './sidebar'
 import Register from "../Auth/Register";
+import Message from "../Auth/Message";
+import {getToken} from "../../utils/cookie";
+
 export default {
   components:{
     Register,
     logo,
     FButton,
     Login,
-    Sidebar
+    Sidebar,
+    Message
   },
-  computed:{
-    loggedIn(){
-      return this.$store.state.user.token
+  data(){
+    return {
+      loggedIn: getToken()
     }
   },
   methods:{
@@ -62,6 +67,7 @@ export default {
     },
     logout(){
       this.$store.dispatch('logout')
+      this.loggedIn = false
     }
   }
 }
