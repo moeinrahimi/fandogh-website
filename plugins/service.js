@@ -17,7 +17,7 @@ function request (params) {
     if (token && token !== 'null') {
       config.headers['Authorization'] = 'JWT '+token
     }
-
+    
     if (params) config.params = {...config.params, ...params}
     return config
   }, error => {

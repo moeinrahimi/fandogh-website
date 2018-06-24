@@ -2,13 +2,6 @@ import Request from '~/plugins/request'
 import {getToken} from "../utils/cookie";
 
 
-export const nuxtServerInit = ({ commit }, { req }) => {
-  process.__COOKIE__ = req.headers.cookie
-  if(process.__COOKIE__) {
-    commit('SET_USER', {token: process.__COOKIE__})
-  }
-}
-
 /**
  *
  * @param commit
@@ -18,9 +11,13 @@ export const nuxtServerInit = ({ commit }, { req }) => {
  * @returns {Promise<*>}
  */
 export const login = async ({commit, state}, {username, password}) => {
-
-
-
+  try {
+    let user = await Request().post('/api/tokens', {username, password})
+    commit('SET_USER', user)
+    return user
+  } catch (e) {
+    return Promise.reject(e)
+  }
 }
 export const register = async ({commit, state}, data) => {
   try {
