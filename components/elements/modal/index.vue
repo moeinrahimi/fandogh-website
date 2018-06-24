@@ -11,7 +11,7 @@
             </transition>
         </div>
     </div>
-    <div @click="$emit('onOverlay')"   class="overlay"></div>
+    <div @click="$emit('onOverlay')" v-if="!disableOverlay"  class="overlay"></div>
   </div>
 </template>
 
@@ -20,6 +20,7 @@
       props: ['message', 'disableOverlay']
     }
 </script>
+
 <style scoped lang="stylus" >
 .modal {
   position: fixed; /* Stay in place */

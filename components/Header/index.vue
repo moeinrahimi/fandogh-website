@@ -75,10 +75,8 @@ export default {
 
 <style lang="stylus">
     .header-container
-        height: 60px
-        margin-top: 30px
-        padding 0 90px
-        box-sizing border-box
+        height 50px
+        padding 30px 90px
     header
         .menu
            display none
@@ -114,7 +112,6 @@ export default {
             height: 60px
             margin-top: 26px
             padding 0 30px
-            box-sizing border-box
         .navbar
             display none
         header

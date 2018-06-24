@@ -27,5 +27,6 @@ export default {
   @import '../assets/css/main.styl'
   .wrapper {
     width 100%
-  }  
+  }
+
 </style>

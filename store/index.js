@@ -10,7 +10,8 @@ const createStore = () => {
         login: false,
         register: false,
         forgot_password: false,
-        message: false
+        message: false,
+        recovery:false
       },
       message: '',
       user:{

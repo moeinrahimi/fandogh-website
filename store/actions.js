@@ -69,9 +69,10 @@ export const recoveryAccount = async ({commit, state}, {email}) => {
   }
 }
 
-export const resetPassword = async ({commit, state}, {id, password}) => {
+export const resetPassword = async ({commit, state}, {id, new_password, code}) => {
   try {
-    return await Request().patch('/api/users/recovery-tokens/'+code, {id, password})
+    let data = await Request().patch('/api/users/recovery-tokens/'+code, {new_password: new_password, id: id})
+    return data
   } catch (e) {
     return Promise.reject(e)
   }
