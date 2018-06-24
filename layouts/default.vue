@@ -12,6 +12,13 @@ import 'normalize.css'
 export default {
   components: {
     MyHeader
+  },
+  mounted(){
+    let message = this.$route.query.message
+    if(message) {
+      this.$store.dispatch('setMessage', message)
+      this.$store.dispatch('showModal', 'message')
+    }
   }
 }
 </script>

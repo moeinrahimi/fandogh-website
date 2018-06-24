@@ -24,6 +24,17 @@ export default function request (params, options) {
         if(e.response.data.message && isClient) Message().error(e.response.data.message)
         return Promise.reject(e.response.data.message)
       }
+    },
+    patch: async (url, body) => {
+      try {
+        const {data} = await service(params, options).patch(url, body)
+        if(data.message && isClient) Message().success(data.message)
+        return data
+      } catch (e){
+        console.log(e)
+        if(e.response.data.message && isClient) Message().error(e.response.data.message)
+        return Promise.reject(e.response.data.message)
+      }
     }
   }
 }

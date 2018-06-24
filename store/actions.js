@@ -18,13 +18,9 @@ export const nuxtServerInit = ({ commit }, { req }) => {
  * @returns {Promise<*>}
  */
 export const login = async ({commit, state}, {username, password}) => {
-  try {
-    let user = await Request().post('/api/tokens', {username, password})
-    commit('SET_USER', user)
-    return user
-  } catch (e) {
-    return Promise.reject(e)
-  }
+
+
+
 }
 export const register = async ({commit, state}, data) => {
   try {
@@ -53,6 +49,14 @@ export const logout = async ({commit, state}) => {
     commit('LOGOUT')
   } catch (e) {
     console.error(e)
+    return Promise.reject(e)
+  }
+}
+
+export const activation = async ({commit, state}, {code, id}) => {
+  try {
+    return  await Request().patch('/api/users/activation-codes/'+id, {id})
+  } catch (e) {
     return Promise.reject(e)
   }
 }
