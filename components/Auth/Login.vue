@@ -17,7 +17,7 @@
         </div>
 
         <div class="fandogh-form-group center margin-20 ">
-          <a @click="showModal('forgot_password')"> فراموشی رمز عبور </a>
+          <a href="#" @click="showModal('forgot_password')"> فراموشی رمز عبور </a>
         </div>
       </form>
     </f-modal>
