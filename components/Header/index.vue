@@ -7,10 +7,10 @@
                 </div>
                 <div class="navbar">
                     <ul>
-                        <li><a href="#">صفحه اصلی</a></li>
-                        <li><a href="#">سرویس ها</a></li>
-                        <li><a href="#">مستندات</a></li>
-                        <li><a href="#">بلاگ</a></li>
+                        <li><a href="/">صفحه اصلی</a></li>
+                        <li><a href="#prices">سرویس ها</a></li>
+                        <li><a target="_blank" href="http://blog.fandogh.cloud/guide/">مستندات</a></li>
+                        <li><a href="http://blog.fandogh.cloud">بلاگ</a></li>
                         <li><a href="#">درباره ما</a></li>
                     </ul>
                 </div>
