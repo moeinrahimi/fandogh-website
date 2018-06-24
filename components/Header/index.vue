@@ -17,7 +17,7 @@
             </div>
             <div class="user" v-if="!loggedIn">
                 <f-button style="width: 100px" @onClick="showModal('login')"  styles="transparent" > ورود </f-button>
-                <f-button @onClick="showModal('message')" styles="transparent border" > ثبت نام </f-button>
+                <f-button @onClick="showModal('register')" styles="transparent border" > ثبت نام </f-button>
             </div>
             <div class="user" v-else>
                 <f-button style="width: 100px" @onClick="logout"  styles="transparent border" > خروج </f-button>
