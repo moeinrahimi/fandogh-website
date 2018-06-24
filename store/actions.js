@@ -60,3 +60,19 @@ export const activation = async ({commit, state}, {code, id}) => {
     return Promise.reject(e)
   }
 }
+
+export const recoveryAccount = async ({commit, state}, {email}) => {
+  try {
+    return await Request().post('/api/users/recovery-tokens', {email})
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+
+export const resetPassword = async ({commit, state}, {id, password}) => {
+  try {
+    return await Request().patch('/api/users/recovery-tokens/'+code, {id, password})
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}

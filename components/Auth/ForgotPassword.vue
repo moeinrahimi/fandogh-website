@@ -5,7 +5,7 @@
             <f-input v-model="email" styles="input-color-blue" type="text" placeholder="ایمیل خود را وارد کنید" />
         </div>
         <div class="fandogh-form-group center margin-20 ">
-            <f-button styles="red block 80">ورود</f-button>
+            <f-button @onClick="recovery" styles="red block 80">{{title}}</f-button>
         </div>
     </f-modal>
 </template>
@@ -27,7 +27,10 @@
     },
     data(){
       return {
-       email: ''
+        email: '',
+        loading: false,
+        error: null,
+        message: null
       }
     },
     mounted(){
@@ -35,9 +38,29 @@
         this.$store.dispatch('showModal', false)
       })
     },
+    methods:{
+      recovery(){
+        if(this.loading) return
+        this.loading = true
+        this.error = null
+        this.$store.dispatch('recoveryAccount', this.$data).then( response => {
+          this.loading = false
+          this.$store.dispatch('showModal')
+          this.message = response
+          this.$store.dispatch('showModal', 'message')
+          this.$store.dispatch('setMessage', response.message)
+        }).catch(e => {
+          this.loading = false
+          this.error = e
+        })
+      }
+    },
     computed:{
       show(){
         return this.$store.state.modals.forgot_password
+      },
+      title(){
+        return this.loading ? '...' : 'ارسال ایمیل '
       }
     }
   }
