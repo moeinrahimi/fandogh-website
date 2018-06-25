@@ -6,7 +6,7 @@
           <slot />
             <transition name="bounce">
                 <div v-show="message" class="message">
-                    <p> {{message}} </p>
+                    <p v-html="message">  </p>
                 </div>
             </transition>
         </div>

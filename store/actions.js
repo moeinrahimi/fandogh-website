@@ -54,6 +54,7 @@ export const activation = async ({commit, state}, {code, id}) => {
   try {
     return  await Request().patch('/api/users/activation-codes/'+code, {id})
   } catch (e) {
+    console.log(e)
     return Promise.reject(e)
   }
 }

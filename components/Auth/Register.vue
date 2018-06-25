@@ -29,7 +29,7 @@
   import FInput from '~/components/elements/input'
   import FButton from '~/components/elements/button'
   import FCheckbox from '~/components/elements/checkbox'
-
+  import ErrorReporter from '~/utils/ErrorReporter'
   export default {
     components:{
       FModal,
@@ -60,9 +60,9 @@
           this.message = response
           this.$store.dispatch('showModal', 'message')
           this.$store.dispatch('setMessage', response.message)
-        }).catch(e => {
+        }).catch(error => {
           this.loading = false
-          this.error = e
+          this.error = ErrorReporter(error, this.$data)
         })
       }
     },
