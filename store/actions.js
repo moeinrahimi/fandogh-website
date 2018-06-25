@@ -50,7 +50,7 @@ export const logout = async ({commit, state}) => {
 
 export const activation = async ({commit, state}, {code, id}) => {
   try {
-    return  await Request().patch('/api/users/activation-codes/'+code, {id})
+    return  await Request().patch('/api/users/activation-codes/'+code, {id, code})
   } catch (e) {
     return Promise.reject(e)
   }
