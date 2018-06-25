@@ -74,5 +74,12 @@ body{
     text-align center
     p
       color #e96363
+
+@media only screen and (max-width: 576px)
+    .modal-content
+        width: 300px
+        overflow auto
+        max-height  320px
+
 </style>
 

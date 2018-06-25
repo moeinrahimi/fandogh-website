@@ -1,7 +1,6 @@
 import Request from '~/plugins/request'
 import {getToken} from "../utils/cookie";
 
-
 /**
  *
  * @param commit
@@ -45,7 +44,6 @@ export const logout = async ({commit, state}) => {
   try {
     commit('LOGOUT')
   } catch (e) {
-    console.error(e)
     return Promise.reject(e)
   }
 }
@@ -54,7 +52,6 @@ export const activation = async ({commit, state}, {code, id}) => {
   try {
     return  await Request().patch('/api/users/activation-codes/'+code, {id})
   } catch (e) {
-    console.log(e)
     return Promise.reject(e)
   }
 }

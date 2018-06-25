@@ -22,7 +22,7 @@ export default function request (params, options) {
         return data
       } catch (e){
         if(e.response.data.message && isClient) Message().error(e.response.data.message)
-        return Promise.reject(e.response.data.message)
+        return Promise.reject(e.response.data.message ? e.response.data.message : e.response.data)
       }
     },
     patch: async (url, body) => {
