@@ -6,13 +6,25 @@
   border: none;
   width: 370px;
   color #fff;
-  padding 10px 5px
+  padding 10px
   border-radius 4px
   direction ltr
 
-.input-color-blue::placeholder
-  color #2202f1
-  direction rtl
+
+.input-color-blue::-webkit-input-placeholder
+	color #725cb5
+	text-align right
+	
+.input-color-blue:-moz-placeholder
+	color #725cb5
+	text-align right
+
+.input-color-blue::-moz-placeholder
+	color #725cb5
+	text-align right
+.input-color-blue:-ms-input-placeholder
+	color #725cb5
+	text-align right
   
 @media only screen and (max-width: 576px)
   .fandogh-input
