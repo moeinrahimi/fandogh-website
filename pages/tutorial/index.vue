@@ -12,18 +12,15 @@
 شما از امروز این امکان رو دارید تا با استفاده از نام کاربری (ایمیل) و رمز عبوری که انتخاب کرده‌اید به بررسی این سرویس بپردازید. لطفا هر چیزی که به نظرتون میتونه به بهبود این سرویس کمک کنه رو به صورت تیکت در گیت هاب ما قرار بدید تا بتونیم بیشتر در موردشون گپ بزنیم.
                 </p>
                 <p>
+                در حال حاضر برای استفاده از امکانات فندق شما نیاز دارید که از <a href="https://github.com/fandoghpaas/fandogh-cli">CLI</a> فندق استفاده کنید.
+                مستندات نحوه استفاده در  <a href="http://blog.fandogh.cloud/guide">اینجا</a> در دسترس شما هستند.
                 مستندات استفاده از CLI:
                 </p>
 
-<a href="http://blog.fandogh.cloud/guide"></a>
+                <p>
+                همچنین در <a href="http://blog.fandogh.cloud">وبلاگ</a> فندق ما در مورد موضوعات مختلفی پست میذاریم که ممکنه به شما کمک کنه تا به صورت بهینه تری از فندق استفاده کنید.
+                </p>
 
-<a href="https://github.com/fandoghpaas/fandogh-cli"></a>
-
-<p>
-وبلاگ فندق:
-</p>
-
-<a hreg="http://blog.fandogh.cloud"></a>
                 <p class="center">
                     <a href="https://asciinema.org/a/4YL7hfdwWF8kxiyUxPt89ggCF" target="_blank"><img  src="https://asciinema.org/a/4YL7hfdwWF8kxiyUxPt89ggCF.png" /></a>
                 </p>
