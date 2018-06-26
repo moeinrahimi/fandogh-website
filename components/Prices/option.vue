@@ -5,7 +5,7 @@
       <slot />
     </div>
     <div class="optionButton">
-      <f-button :styles="styles" > انتخاب </f-button>
+      <!--<f-button :styles="styles" > انتخاب </f-button>-->
     </div>
   </div>
 </template>
