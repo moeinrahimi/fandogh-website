@@ -16,7 +16,7 @@
        <feature title="Managed Databases" local_title="پایگاه‌داده مدیریت شده" icon="database" class="col-lg-4 col-sm-6 col-xs-12" />
         <feature title="Cost Effective Platform" local_title="مقرون به صرفه" icon="cost-effective" class="col-lg-4 col-sm-6 col-xs-12" />
        <feature title="Production Ready" local_title="آماده استفاده در محیط عملیاتی" icon="ready" class="col-lg-4 col-sm-6 col-xs-12" />
-       <feature title="Highly Available" local_title="دسترسی‌پذیری بالا" icon="highly" class="col-lg-4 col-sm-6 col-xs-12" />
+       <feature title="Highly Available" local_title="دسترس پذیری بالا" icon="highly" class="col-lg-4 col-sm-6 col-xs-12" />
      </div>
    </div>
   
