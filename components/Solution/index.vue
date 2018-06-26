@@ -20,7 +20,7 @@
         <solution  title="مشاوره و خدمات پشتیبانی" description="مشاوره در حیطه معماری سیستم و نرم‌افزارِ شما، و کمک به حل مشکلات Scalability که ممکن است برای سرویس‌های شما ایجاد شود." :image="require('~/assets/svg/img-support-ill.svg')" />
         <solution direction="reverse" title="بدون وابستگی به زبان برنامه‌نویسی" description="مهم نیست با چه زبان برنامه‌نویسی سرویس خود را توسعه می‌دهید." :image="require('~/assets/svg/img-programming-ill.svg')" />
         <solution  title="ارایه سرویس‌های مدیریت شده" description="- پایگاه داده ها<br>
-- مانیتورینگ کانتیرها و متریک‌هایی که توسط شما تعریف می‌شوند<br>
+- مانیتورینگ کانتینرها و متریک‌هایی که توسط شما تعریف می‌شوند<br>
 - مشاهده Log سرویس‌ها به صورت متمرکز<br>
 - و …" :image="require('~/assets/svg/img_managedSerIll.svg')" />
       </div>
