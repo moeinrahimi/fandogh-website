@@ -57,7 +57,8 @@
         this.$store.dispatch('resetPassword', this.$data).then( response => {
           this.loading = false
           this.$store.dispatch('showModal')
-          this.$router.push({path:'/?message='+response.message})
+          this.$router.push({path:'/'})
+          this.$store.dispatch('setMessage', response.message)
         }).catch(e => {
           this.loading = false
           this.error = e

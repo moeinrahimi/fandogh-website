@@ -13,13 +13,19 @@ export default {
   components: {
     MyHeader
   },
-  mounted(){
-    let message = this.$route.query.message
-    if(message) {
-      this.$store.dispatch('setMessage', message)
-      this.$store.dispatch('showModal', 'message')
+  computed:{
+    message(){
+      return this.$store.state.message
     }
-  }
+  },
+  watch:{
+    $route(){
+      if(this.message) {
+        this.$store.dispatch('setMessage', this.message)
+        this.$store.dispatch('showModal', 'message')
+      }
+    }
+  },
 }
 </script>
 

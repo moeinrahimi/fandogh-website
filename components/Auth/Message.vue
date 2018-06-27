@@ -21,6 +21,7 @@
     methods:{
       close(){
         this.$store.dispatch('showModal', false)
+        this.$store.dispatch('setMessage', null)
       },
     },
     computed:{

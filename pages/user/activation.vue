@@ -4,14 +4,16 @@
 
 <script>
     export default {
-      async asyncData({store, route, redirect}){
-          try {
-            let result = await store.dispatch('activation', {code: route.query.code, id: route.query.user_id})
-            return redirect('/?message='+result.message)
-          } catch (e) {
-            console.log(e)
-            return redirect('/?message='+e)
-          }
+      beforeMount(){
+        try {
+          this.$store.dispatch('activation', {code: route.query.code, id: route.query.user_id}).then(res => {
+            this.$store.dispatch('setMessage', res.message)
+            this.$router.push('/')
+          })
+        } catch (e) {
+          this.$store.dispatch('setMessage', e)
+          this.$router.push('/')
+        }
       }
     }
 </script>
