@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   env: {
-    API: process.env.API || 'http://fandogh.cloud:8080'
+    API: process.env.API || 'http://fandogh.cloud:8080/fa'
   },
   router: {
     middleware: ['authentication']
