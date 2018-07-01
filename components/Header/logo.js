@@ -1,4 +1,4 @@
-import logo from './../../assets/svg/ic-fandogh.svg'
+import logo from './../../assets/img/logo.png'
 export default {
   functional:true,
   render(h, {props}) {
