@@ -33,6 +33,8 @@
   import FButton from '~/components/elements/button'
   import FCheckbox from '~/components/elements/checkbox'
   import ErrorReporter from '~/utils/ErrorReporter'
+  import Validation from '~/utils/validation'
+
   export default {
     components:{
       FModal,
@@ -55,6 +57,7 @@
     methods:{
       register(){
         if(this.password !== this.re_password) return this.error = 'رمز عبور و تکرار رمز عبور شما یکسان نیست'
+        if(!Validation.email(this.email)) return this.error = 'ایمیل وارد شده صحیح نیست'
         if(this.loading) return
         this.loading = true
         this.error = null
