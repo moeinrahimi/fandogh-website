@@ -2,7 +2,7 @@
     <f-modal ref="modal" v-show="show" >
         <h2>فراموشی رمز عبور</h2>
         <div class="fandogh-form-group center margin-10">
-            <f-input v-model="email" styles="input-color-blue" type="text" placeholder="ایمیل خود را وارد کنید" />
+            <f-input v-model="identifier" styles="input-color-blue" type="text" placeholder="ایمیل یا نام کاربری خود را وارد کنید" />
         </div>
         <div class="fandogh-form-group center margin-20 ">
             <f-button @onClick="recovery" styles="red block 80">{{title}}</f-button>
@@ -27,7 +27,7 @@
     },
     data(){
       return {
-        email: '',
+        identifier: '',
         loading: false,
         error: null,
         message: null

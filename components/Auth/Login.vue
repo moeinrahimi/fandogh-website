@@ -4,7 +4,7 @@
       <h2>وارد شوید</h2>
       <form @submit.prevent>
         <div class="fandogh-form-group center margin-10">
-          <f-input v-model="username" styles="input-color-blue" type="text" placeholder="ایمیل" />
+          <f-input v-model="username" styles="input-color-blue" type="text" placeholder="نام کاربری" />
         </div>
         <div class="fandogh-form-group center margin-10">
           <f-input v-model="password" styles="input-color-blue" type="password" placeholder="رمز عبور" />
