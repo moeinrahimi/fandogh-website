@@ -79,7 +79,7 @@ body{
     .modal-content
         width: 300px
         overflow auto
-        max-height  320px
+        max-height  400px
 
 </style>
 
