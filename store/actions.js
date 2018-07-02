@@ -56,9 +56,9 @@ export const activation = async ({commit, state}, {code, id}) => {
   }
 }
 
-export const recoveryAccount = async ({commit, state}, {email}) => {
+export const recoveryAccount = async ({commit, state}, {identifier}) => {
   try {
-    return await Request().post('/api/users/recovery-tokens', {email})
+    return await Request().post('/api/users/recovery-tokens', {identifier})
   } catch (e) {
     return Promise.reject(e)
   }
