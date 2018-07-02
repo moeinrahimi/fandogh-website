@@ -2,7 +2,7 @@
   <section id="features" >
    <div class="inner-content">
       <h2 class="title">
-      سرویس‌های ابری فندق
+      سرویس‌های <progress-hover>ابری</progress-hover> فندق
     </h2>
     <p class="description">
       فندوق سکویی است که به برنامه‌نویسان، مدیران سیستم و تیم‌های توسعه نرم‌افزار کمک میکنه تا به <br> راحتی بتونند محصولات خودشون رو توسعه بدن و با کمترین هزینه ممکن از اونها نگهداری کنند.
@@ -25,6 +25,7 @@
 <script>
 
 import Feature from './feature'
+
 
 export default {
   components:{

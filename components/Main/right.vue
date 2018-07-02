@@ -2,7 +2,7 @@
     <section class="right-main">
         <div class="text">
             <h1>
-                همه چیز با یه <Hover>داکرفایل</Hover> شروع میشه ...
+                همه چیز با یه <progress-hover>داکرفایل</progress-hover> شروع میشه ...
             </h1>
             <p>
                 فندق یه PaaS است که به شما این امکان رو میده که سرویس‌های خودتون رو بر روی سرورهای ابری مستقر کنید و نگران مدیریت سرورها و سرویس‌هایی که نیاز دارید نباشید.
@@ -18,11 +18,9 @@
 
 <script>
 import FButton from '~/components/elements/button'
-import Hover from '~/components/elements/progress-hover'
 export default{
   components:{
-    FButton,
-    Hover
+    FButton
   },
   methods:{
     showModal(modal){

@@ -47,9 +47,9 @@
         async initialShape(){
           this.container.style.minWidth = (this.extraWidth+this.content.clientWidth)+'px'
           this.progress.style.marginLeft = (-(this.extraWidth+this.content.clientWidth)/2)+'px'
-          this.progress.style.minHeight = (this.content.clientHeight/2)+'px'
+          this.progress.style.height = (this.content.clientHeight/3)+'px'
           this.container.style.marginLeft = (-(this.extraWidth+this.content.clientWidth)/2)+'px'
-          this.container.style.minHeight = (this.content.clientHeight/2)+'px'
+          this.container.style.height = (this.content.clientHeight/3)+'px'
 
           if(!this.hover){
             let reverse = false
@@ -59,7 +59,14 @@
               this.setPixels(this.pixels, reverse)
             }, 10000)
           }
+
         },
+        /**
+         * filling or empty progress bar method
+         * @param pixels
+         * @param reverse
+         * @returns {Promise<void>}
+         */
         async setPixels(pixels, reverse){
           console.log(reverse)
           if(this.start) return
@@ -112,14 +119,12 @@
         bottom: 0;
         left: 50%;
         content: ' ';
-        z-index: -1;
         position: absolute;
         display: inline-block;
         transition: all .6s ease;
     }
     .progress-container {
         background-color: rgba(255, 255, 255, 0.1);;
-        z-index: -2;
     }
     .progress {
         background: rgba(255, 255, 255, 0.3);;

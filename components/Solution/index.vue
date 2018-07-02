@@ -4,7 +4,7 @@
     <div class="inner-content">
       <div class="text">
         <h2 class="title">
-     چرا فندق راه‌حل مناسبی برای پروژه شماست؟
+     چرا فندق <progress-hover>راه‌حل</progress-hover> مناسبی برای پروژه شماست؟
         </h2>
         <p class="description">
           فقط برای منابعی که واقعا مصرف می‌کنید هزینه کنید!

@@ -39,7 +39,6 @@
 
 import logo from './logo'
 import FButton from '~/components/elements/button'
-import ProgressHover from '~/components/elements/progress-hover'
 import Login from '~/components/Auth/Login'
 import Sidebar from './sidebar'
 import Register from "../Auth/Register";
@@ -53,8 +52,7 @@ export default {
     FButton,
     Login,
     Sidebar,
-    Message,
-    ProgressHover
+    Message
   },
   data(){
     return {
