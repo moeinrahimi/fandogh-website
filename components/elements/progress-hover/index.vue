@@ -3,12 +3,8 @@
         <span class="content">
             <slot />
         </span>
-        <span v-show="!hover || onHover" class="progress progress-hover">
-
-        </span>
-         <span v-show="!hover || onHover" class="progress-container progress-hover">
-
-        </span>
+        <span v-show="!hover || onHover" class="progress progress-hover"></span>
+        <span v-show="!hover || onHover" class="progress-container progress-hover"></span>
     </span>
 </template>
 
@@ -54,18 +50,34 @@
           this.progress.style.minHeight = (this.content.clientHeight/2)+'px'
           this.container.style.marginLeft = (-(this.extraWidth+this.content.clientWidth)/2)+'px'
           this.container.style.minHeight = (this.content.clientHeight/2)+'px'
+
           if(!this.hover){
+            let reverse = false
             this.setPixels(this.pixels)
+            setInterval(_  => {
+              reverse = !reverse
+              this.setPixels(this.pixels, reverse)
+            }, 10000)
           }
         },
-        async setPixels(pixels){
+        async setPixels(pixels, reverse){
+          console.log(reverse)
           if(this.start) return
           this.start = true
           let minWidth = 0
-          for(let pixel of pixels ){
+          if(reverse){
+            minWidth = pixels.length
+            for(let pixel of pixels ){
+              await this.timeout(30)
+              minWidth -= 1
+              this.progress.style.minWidth = minWidth+'px'
+            }
+          } else {
+            for(let pixel of pixels ){
               await this.timeout(30)
               minWidth += 1
               this.progress.style.minWidth = minWidth+'px'
+            }
           }
           await Promise.all(pixels.map(async pixel => await this.timeout(30)))
           this.start = false
@@ -75,8 +87,8 @@
         },
         mouseLeave(){
           if(this.hover){
+            this.setPixels([1])
             this.onHover = false
-            this.setPixels([])
           }
         },
         mouseOver(){
