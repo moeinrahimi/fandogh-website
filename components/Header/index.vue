@@ -7,11 +7,11 @@
                 </div>
                 <div class="navbar">
                     <ul>
-                        <li><a href="/">صفحه اصلی</a></li>
-                        <li><a href="#prices">سرویس ها</a></li>
-                        <li><a target="_blank" href="http://blog.fandogh.cloud/guide/">مستندات</a></li>
-                        <li><a href="http://blog.fandogh.cloud">بلاگ</a></li>
-                        <li><a href="#">درباره ما</a></li>
+                        <li><a href="/"><progress-hover :hover="true">صفحه اصلی</progress-hover></a></li>
+                        <li><a href="#prices"><progress-hover :hover="true"> سرویس ها </progress-hover></a> </li>
+                        <li><a target="_blank" href="http://blog.fandogh.cloud/guide/"><progress-hover :hover="true"> مستندات </progress-hover></a></li>
+                        <li><a href="http://blog.fandogh.cloud"><progress-hover :hover="true">بلاگ</progress-hover></a></li>
+                        <li><a href="#"><progress-hover :hover="true"> درباره ما </progress-hover></a></li>
                     </ul>
                 </div>
             </div>
@@ -36,8 +36,10 @@
 </template>
 
 <script>
+
 import logo from './logo'
 import FButton from '~/components/elements/button'
+import ProgressHover from '~/components/elements/progress-hover'
 import Login from '~/components/Auth/Login'
 import Sidebar from './sidebar'
 import Register from "../Auth/Register";
@@ -51,7 +53,8 @@ export default {
     FButton,
     Login,
     Sidebar,
-    Message
+    Message,
+    ProgressHover
   },
   data(){
     return {

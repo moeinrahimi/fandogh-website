@@ -22,7 +22,6 @@
             </div>
         </f-modal>
 
-
     </div>
 </template>
 
