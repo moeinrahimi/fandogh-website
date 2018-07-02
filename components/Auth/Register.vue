@@ -3,19 +3,19 @@
         <f-modal  :message="error"  ref="modal" v-show="show"  >
             <h2>عضو شوید</h2>
             <div class="fandogh-form-group center margin-10">
-                <f-input v-model="email" styles="input-color-blue" type="text" placeholder="ایمیل" />
+                <f-input name="email" v-model="email" styles="input-color-blue" type="text" placeholder="ایمیل" />
             </div>
             <div class="fandogh-form-group center margin-10">
-                <f-input v-model="username" styles="input-color-blue" type="text" placeholder="نام کاربری" />
+                <f-input name="username" v-model="username" styles="input-color-blue" type="text" placeholder="نام کاربری" />
             </div>
             <div class="fandogh-form-group center margin-10">
-                <f-input v-model="password" styles="input-color-blue" type="password" placeholder="رمز عبور" />
+                <f-input  v-model="password" styles="input-color-blue" type="password" placeholder="رمز عبور" />
             </div>
             <div class="fandogh-form-group center margin-10">
-                <f-input v-model="re_password" styles="input-color-blue" type="password" placeholder="تکرار رمز عبور" />
+                <f-input  v-model="re_password" styles="input-color-blue" type="password" placeholder="تکرار رمز عبور" />
             </div>
             <div class="fandogh-form-group center margin-10">
-                <f-input v-model="namespace" styles="input-color-blue" type="text" placeholder="نام namespace" />
+                <f-input name="namspace" v-model="namespace" styles="input-color-blue" type="text" placeholder="نام namespace" />
             </div>
             <div class="fandogh-form-group center margin-20 ">
                 <f-button @onClick="register" styles="red block 80">{{title}}</f-button>
