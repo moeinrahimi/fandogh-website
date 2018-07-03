@@ -9,7 +9,7 @@
             </p>
         </div>
         <div class="registration">
-            <f-button @onClick="showModal('login')" styles="red small" > ورود </f-button>
+            <f-button @onClick="showModal('login')" styles="red small login" > ورود </f-button>
             <f-button @onClick="showModal('register')" styles="blue small" > ثبت نام </f-button>
         </div>
     
@@ -34,8 +34,8 @@ export default{
 
     .registration
         margin-top 50px
-        button 
-            margin 0 10px
+        button
+            margin-left 10px
     .right-main
         position relative
         margin-top 60px
