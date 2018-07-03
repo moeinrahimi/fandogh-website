@@ -20,15 +20,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"> سرویس ها</a>
+                    <a @click="toggleMenu" href="#prices"> سرویس ها</a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a target="_blank" href="http://blog.fandogh.cloud/guide/">
                         مستندات
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a target="_blank" href="http://blog.fandogh.cloud/">
                         وبلاگ
                     </a>
                 </li>
@@ -37,7 +37,6 @@
                         درباره ما
                     </a>
                 </li>
-
             </ul>
         </div>
         <div class="auth">
