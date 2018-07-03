@@ -13,4 +13,4 @@ script:
   - echo $TRAVIS_COMMIT  
   - fandogh login --username=$FANDOGH_USERNAME --password=$FANDOGH_PASSWORD
   - fandogh image publish --version=$TRAVIS_COMMIT || travis_terminate 1
-  - fandogh service deploy --version=$TRAVIS_COMMIT --name=fandoghhh || travis_terminate 1
+  - fandogh service deploy --version=$TRAVIS_COMMIT --name=start || travis_terminate 1
