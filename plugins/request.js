@@ -1,5 +1,5 @@
 import service from './service'
-import Message from './notification'
+
 const isClient = typeof window !== 'undefined'
 
 export default function request (params, options) {
@@ -8,31 +8,25 @@ export default function request (params, options) {
     get: async (url, body) => {
       try {
         const {data}  = await service(params, options).get(url, body)
-        if(data.message && isClient) Message().success(data.message)
         return data
       } catch (e){
-        if(e.response.data.message && isClient) Message().error(e.response.data.message)
         return Promise.reject(e.response.data.message)
       }
     },
     post: async (url, body) => {
       try {
         const {data} = await service(params, options).post(url, body)
-        if(data.message && isClient) Message().success(data.message)
         return data
       } catch (e){
-        if(e.response.data.message && isClient) Message().error(e.response.data.message)
         return Promise.reject(e.response.data.message ? e.response.data.message : e.response.data)
       }
     },
     patch: async (url, body) => {
       try {
         const {data} = await service(params, options).patch(url, body)
-        if(data.message && isClient) Message().success(data.message)
         return data
       } catch (e){
         console.log(e)
-        if(e.response.data.message && isClient) Message().error(e.response.data.message)
         return Promise.reject(e.response.data.message)
       }
     }
