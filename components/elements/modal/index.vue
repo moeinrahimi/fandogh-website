@@ -1,6 +1,11 @@
 <template>
   <div>
     <div  id="myModal" class="modal" >
+        <div class="close-modal">
+            <a href="#" @click="$emit('onOverlay')" class="close">
+                <img :src="require('../../../assets/svg/ic_close.svg')" />
+            </a>
+        </div>
         <!-- Modal content -->
         <div class="modal-content">
           <slot />
@@ -39,10 +44,11 @@ p {
 
 .modal-content {
     background-color: #220286;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    width: 410px; /* Full width */
-    border-radius: 10px;
+    margin: 15% auto
+    padding: 20px
+    width: 410px
+    border-radius: 10px
+    position relative
 }
 
 .modal 
@@ -74,6 +80,15 @@ body{
     text-align center
     p
       color #e96363
+.close-modal
+    position absolute
+    right 20px
+    top 80px
+    z-index 99
+    img
+        width 20px
+
+
 
 @media only screen and (max-width: 576px)
     .modal-content
