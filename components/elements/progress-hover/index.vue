@@ -42,15 +42,6 @@
           this.container.style.minWidth = (this.extraWidth+this.content.clientWidth)+'px'
           this.container.style.marginLeft = (-(this.extraWidth+this.content.clientWidth)/2)+'px'
           this.container.style.height = (this.content.clientHeight/3)+'px'
-          if(!this.hover){
-            let reverse = false
-            this.setPixels(this.pixels)
-            setInterval(_  => {
-              reverse = !reverse
-              this.setPixels(this.pixels, reverse)
-            }, 10000)
-          }
-
         },
         mouseLeave(){
           this.onHover = false
