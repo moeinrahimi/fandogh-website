@@ -22,10 +22,9 @@
   
   </section>
 </template>
+
 <script>
-
 import Feature from './feature'
-
 
 export default {
   components:{
@@ -37,8 +36,8 @@ export default {
 <style lang="stylus" >
   #features 
    background-image: linear-gradient(to left, #230073, #220286);
-   //height 100vh
    padding-bottom 100px
+   margin-bottom -1px
 </style>
 
 
