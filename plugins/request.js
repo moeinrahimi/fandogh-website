@@ -26,7 +26,6 @@ export default function request (params, options) {
         const {data} = await service(params, options).patch(url, body)
         return data
       } catch (e){
-        console.log(e)
         return Promise.reject(e.response.data.message)
       }
     }

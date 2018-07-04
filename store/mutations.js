@@ -13,8 +13,6 @@ export const SET_MODAL = (state, modal) => {
   Object.keys(modals).forEach(key => {
     if(modal !== key) modals[key] = false
   })
-  console.log(modal)
-  console.log(modals[modal])
   modals[modal] = !modals[modal]
 }
 
