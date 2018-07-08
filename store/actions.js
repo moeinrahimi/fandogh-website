@@ -83,3 +83,10 @@ export const getImages = async ({commit, state}, {id, new_password, code}) => {
   }
 }
 
+export const createImage = async ({commit, state}, {name}) => {
+  try {
+    return await Request().post('/api/images', name)
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
