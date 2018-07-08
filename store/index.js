@@ -18,7 +18,8 @@ const createStore = () => {
         token: getToken()
       },
       images: null,
-      versions: null
+      versions: null,
+      builds: null
     },
     actions: actions,
     mutations: mutations

@@ -112,3 +112,14 @@ export const createImageVersion = async ({commit, state}, {name, formData} ) => 
     return Promise.reject(e)
   }
 }
+
+export const getImageVersionBuilds = async ({commit, state}, {name, version} ) => {
+  try {
+    let builds = await Request().get(`/api/images/${name}/version/${version}/builds`)
+    commit('SET_IMAGE_VERSION_BUILDS', builds)
+    return builds
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+

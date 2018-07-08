@@ -38,3 +38,7 @@ export const SET_IMAGE_VERSIONS = (state, versions) => {
   state.versions = versions
 }
 
+export const SET_IMAGE_VERSION_BUILDS = (state, builds) => {
+  state.builds = builds
+}
+
