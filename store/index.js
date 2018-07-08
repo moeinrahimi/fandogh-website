@@ -16,7 +16,8 @@ const createStore = () => {
       message: '',
       user:{
         token: getToken()
-      }
+      },
+      images: null
     },
     actions: actions,
     mutations: mutations
