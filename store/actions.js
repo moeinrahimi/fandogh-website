@@ -73,7 +73,7 @@ export const resetPassword = async ({commit, state}, {id, new_password, code}) =
   }
 }
 
-export const getImages = async ({commit, state}, {id, new_password, code}) => {
+export const getImages = async ({commit, state}) => {
   try {
     let images = await Request().get('/api/images')
     commit('SET_IMAGES', images)
@@ -86,6 +86,16 @@ export const getImages = async ({commit, state}, {id, new_password, code}) => {
 export const createImage = async ({commit, state}, {name}) => {
   try {
     return await Request().post('/api/images', name)
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+
+export const getImageVersions = async ({commit, state}, name ) => {
+  try {
+    let versions = await Request().get(`/api/images/${name}/version`)
+    commit('SET_IMAGE_VERSIONS', versions)
+    return versions
   } catch (e) {
     return Promise.reject(e)
   }
