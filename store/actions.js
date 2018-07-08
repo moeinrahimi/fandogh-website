@@ -100,3 +100,15 @@ export const getImageVersions = async ({commit, state}, name ) => {
     return Promise.reject(e)
   }
 }
+
+export const createImageVersion = async ({commit, state}, {name, formData} ) => {
+  try {
+    return  await Request().post(`/api/images/${name}/version`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}

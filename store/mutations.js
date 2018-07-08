@@ -33,6 +33,7 @@ export const SET_MESSAGE = (state, message) => {
 export const SET_IMAGES = (state, images) => {
   state.images = images
 }
+
 export const SET_IMAGE_VERSIONS = (state, versions) => {
   state.versions = versions
 }
