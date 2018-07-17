@@ -14,6 +14,9 @@
 html
   background-image: linear-gradient(to left, #0f0050, #160074) !important;
   
+body.noscroll {
+  overflow: hidden;
+}
 .container
     margin-right: auto
     margin-left: auto
@@ -27,10 +30,10 @@ html
 
 li              
   list-style: none
-p, h1, h2, button, span, a, button, li, label
+p, h1, h2, h6, button, span, a, button, li, label
   font-family yekan, sans-serif
   color white
-p, button
+p, h6, button
   font-size font-small
 p
   line-height 1.88
@@ -57,7 +60,7 @@ h2.title
   padding 20px 0
   text-align center
   font-size 30px
-
+  
 p.description 
   text-align center
   font-size 18px
@@ -70,6 +73,30 @@ p.description
 
 .no-line-height
   line-height 0 !important
+  
+.article
+  background #fff
+  width 100%
+  min-height 500px
+  border-radius 20px
+  margin-top 100px
+  padding 50px 100px
+  box-sizing border-box
+  img
+    width 100%
+  h1,h2,h3
+    line-height initial
+  h1,h2,h3,h6,p
+    color #000
+    padding-bottom 30px
+  h6
+    padding-bottom 0
+  a
+    color #ff859e
+@media only screen and (max-width: 991px)
+  .article
+    padding 50px 30px
+  
 @media (max-width: 768px )
   .no-line-height
     line-height 1.8 !important
@@ -111,3 +138,4 @@ p.description
     transform: scale(1);
   }
 }
+
