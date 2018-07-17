@@ -1,6 +1,6 @@
 <template>
   <div>
-    <f-modal :message="error" ref="modal" v-show="show" >
+    <f-modal :noModal="noModal" :message="error" ref="modal" :disableOverlay="disableOverlay" v-show="force || show" >
       <h2>وارد شوید</h2>
       <form @submit.prevent>
         <div class="fandogh-form-group center margin-10">
@@ -34,6 +34,7 @@ import FCheckbox from '~/components/elements/checkbox'
 import ForgotPassword from './ForgotPassword'
 
   export default {
+    props:['force', 'disableOverlay', 'noModal'],
     components:{
       FModal,
       FInput,

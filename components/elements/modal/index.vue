@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div  id="myModal" class="modal" >
+    <div  id="myModal" class="modal" :class="{'no-modal': noModal}" >
         <div class="close-modal">
             <a href="#" @click="$emit('onOverlay')" class="close">
                 <img :src="require('../../../assets/svg/ic_close.svg')" />
@@ -22,7 +22,7 @@
 
 <script>
     export default {
-      props: ['message', 'disableOverlay']
+      props: ['message', 'disableOverlay', 'noModal']
     }
 </script>
 
@@ -88,13 +88,16 @@ body{
     img
         width 20px
 
-
+.no-modal
+  margin-top 105px
+  z-index 1
 
 @media only screen and (max-width: 576px)
     .modal-content
         width: 300px
         overflow auto
         max-height  400px
+
 
 </style>
 

@@ -35,26 +35,4 @@
     }
 </script>
 
-<style scoped lang="stylus">
-    .article
-        background #fff
-        width 100%
-        min-height 500px
-        border-radius 20px
-        margin-top 100px
-        padding 50px 100px
-        box-sizing border-box
-        img
-            width 100%
-        h1,h2,h3
-            line-height initial
-        h1,h2,h3,p
-           color #000
-           padding-bottom 30px
-        a
-            color #ff859e
-    @media only screen and (max-width: 991px)
-        .article
-            padding 50px 30px
 
-</style>
