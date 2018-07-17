@@ -46,4 +46,9 @@
                 text-align center
                 width 100%
 
+    @media only screen and (max-width: 576px)
+        .thin-footer
+            p
+                font-size 12px
+
 </style>
