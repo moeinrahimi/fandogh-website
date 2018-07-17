@@ -33,9 +33,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <router-link :to="{path:'/about-us'}">
                         درباره ما
-                    </a>
+                    </router-link>
                 </li>
             </ul>
         </div>
