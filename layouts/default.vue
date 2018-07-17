@@ -2,7 +2,6 @@
   <div class="wrapper" >
     <my-header />
     <nuxt/>
-
   </div>
 </template>
 
