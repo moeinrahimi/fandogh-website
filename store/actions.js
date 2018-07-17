@@ -72,3 +72,54 @@ export const resetPassword = async ({commit, state}, {id, new_password, code}) =
     return Promise.reject(e)
   }
 }
+
+export const getImages = async ({commit, state}) => {
+  try {
+    let images = await Request().get('/api/images')
+    commit('SET_IMAGES', images)
+    return images
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+
+export const createImage = async ({commit, state}, {name}) => {
+  try {
+    return await Request().post('/api/images', name)
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+
+export const getImageVersions = async ({commit, state}, name ) => {
+  try {
+    let versions = await Request().get(`/api/images/${name}/version`)
+    commit('SET_IMAGE_VERSIONS', versions)
+    return versions
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+
+export const createImageVersion = async ({commit, state}, {name, formData} ) => {
+  try {
+    return  await Request().post(`/api/images/${name}/version`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+
+export const getImageVersionBuilds = async ({commit, state}, {name, version} ) => {
+  try {
+    let builds = await Request().get(`/api/images/${name}/version/${version}/builds`)
+    commit('SET_IMAGE_VERSION_BUILDS', builds)
+    return builds
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+

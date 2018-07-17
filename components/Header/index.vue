@@ -11,7 +11,7 @@
                         <li><a href="#prices"><progress-hover :hover="true"> سرویس ها </progress-hover></a> </li>
                         <li><a target="_blank" href="http://blog.fandogh.cloud/guide/"><progress-hover :hover="true"> مستندات </progress-hover></a></li>
                         <li><a href="http://blog.fandogh.cloud"><progress-hover :hover="true">بلاگ</progress-hover></a></li>
-                        <li><a href="#"><progress-hover :hover="true"> درباره ما </progress-hover></a></li>
+                        <li><router-link  :to="{path:'/about-us'}" ><progress-hover :hover="true"> درباره ما </progress-hover></router-link></li>
                     </ul>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <f-modal class="recovery" :disableOverlay="true" :message="error" ref="modal" >
+        <f-modal noModal="true" :disableOverlay="true" :message="error" ref="modal" >
             <h2>تغییر رمز عبور</h2>
             <form @submit.prevent>
                 <div class="fandogh-form-group center margin-10">
@@ -75,10 +75,3 @@
     }
   }
 </script>
-
-<style  lang="stylus">
-    .recovery
-      .modal
-        margin-top 105px
-        z-index 1
-</style>

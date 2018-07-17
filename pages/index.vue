@@ -9,6 +9,7 @@
     <tutorial />
     <devider styles="no-margin" type="br" />
     <prices />
+    <f-footer />
   </section>
 </template>
 <script>
@@ -18,6 +19,7 @@
   import Solution from '~/components/Solution'
   import Tutorial from '~/components/Tutorial'
   import Prices from '~/components/Prices'
+  import FFooter from '~/components/Footer'
 
   export default {
     components:{
@@ -26,7 +28,8 @@
       Devider,
       Solution,
       Tutorial,
-      Prices
+      Prices,
+      FFooter
     }
   }
 </script>
