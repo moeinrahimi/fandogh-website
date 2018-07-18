@@ -33,4 +33,6 @@
             width 100%
             display block
             min-height auto
+            ul
+                margin-bottom 24px
 </style>
