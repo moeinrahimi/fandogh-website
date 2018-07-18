@@ -25,5 +25,9 @@
                     &.nuxt-link-active
                         background-color #000
                         border-right 2px solid #26c6ec
-
+    @media only screen and (max-width: 768px)
+        .single-sidebar
+            width 100%
+            display block
+            min-height auto
 </style>

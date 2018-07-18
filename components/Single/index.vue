@@ -3,7 +3,7 @@
         <div class="detail">
             <slot></slot>
         </div>
-        <div class="s-sidebar">
+        <div class="sidebar">
             <sidebar> </sidebar>
         </div>
     </div>
@@ -27,5 +27,15 @@
         .detail
             width calc(100% - 300px)
             margin-right 30px
+    @media only screen and (max-width: 768px)
+        .single
+            flex-flow wrap column-reverse
+            align-items center
+            .detail
+                width 100%
+                margin 0
+            .sidebar
+                width 100%
+                margin-bottom 24px
 
 </style>
