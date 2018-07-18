@@ -1,16 +1,19 @@
 <template>
   <div class="wrapper" >
-    <my-header />
+    <f-header />
     <nuxt/>
+    <f-footer />
   </div>
 </template>
 
 <script>
-import MyHeader from '~/components/Header'
+import FHeader from '~/components/Header'
+import FFooter from '~/components/Footer'
 import 'normalize.css'
 export default {
   components: {
-    MyHeader
+    FHeader,
+    FFooter
   },
   computed:{
     message(){
