@@ -15,7 +15,7 @@
         <div class="navs">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="/">
                         صفحه اصلی
                     </a>
                 </li>
