@@ -3,7 +3,7 @@
         <ul>
             <li><router-link :to="{path:'about-us'}">درباره ما</router-link></li>
             <li><router-link :to="{path:'/contact-us'}">تماس با ما</router-link></li>
-            <li><router-link :to="{path:'use-conditions'}">شرایط استفاده از خدمات</router-link></li>
+            <li><router-link :to="{path:'conditions-of-use'}">شرایط استفاده از خدمات</router-link></li>
         </ul>
     </div>
 </template>

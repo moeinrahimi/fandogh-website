@@ -41,5 +41,5 @@ module.exports = {
       }
     }
   },
-  plugins: ['~/plugins/progress-hover']
+  plugins: ['~/plugins/progress-hover', {src: '~/plugins/google-map', ssr: false}]
 }
