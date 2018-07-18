@@ -8,6 +8,9 @@
     </div>
 </template>
 <style lang="stylus" scoped>
+    ul,li
+        padding 0
+        margin 0
     .single-sidebar
         overflow hidden
         width 270px
