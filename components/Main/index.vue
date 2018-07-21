@@ -28,7 +28,7 @@
 
 <style lang="stylus" scoped>
   .main
-    margin-top: 90px
+    margin-top: 200px
     position relative
     clear both
   .illustrate

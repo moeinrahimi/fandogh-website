@@ -59,6 +59,16 @@ export default {
       loggedIn: getToken()
     }
   },
+  mounted(){
+    let headerContainer = document.querySelector('.header-container')
+    document.addEventListener('scroll',() =>{
+      if(window.pageYOffset > 10){
+        headerContainer.classList.add('header-container-fixed')
+      } else {
+        headerContainer.classList.remove('header-container-fixed')
+      }
+    })
+  },
   methods:{
     toggleMenu(){
       this.$refs.menu.toggleMenu()
@@ -76,48 +86,70 @@ export default {
 
 <style lang="stylus">
     .header-container
-        height 50px
         padding 30px 90px
+        position fixed
+        box-sizing border-box
+        z-index 1000
+        top 0
+        left 0
+        width 100%
+        display flex
+        align-items center
+        justify-content space-between
+        flex-flow wrap row
+
+    .header-container
+        -webkit-transition all 0.3s
+        -moz-transition all 0.3s
+        transition all 0.3s
+
+    .header-container-fixed
+        background-color #3f10ae
+        padding 15px 90px
+        position fixed
+        .logo
+            img
+                width 96px
+
     header
+        .right-menu
+          display flex
+          align-items center
+
+        display block
         .menu
            display none
         .header-container
-          .right-menu
-            float right 
-          .user
-            float left
-      
+
         .logo
-            display inline-block
             img
                 width 126px
         .user
           button 
             margin-right 10px
-
-   .navbar 
-     margin-top -20px  
-     display inline-block
-     vertical-align middle
-     ul
-      margin 0 
-      li 
-        display  inline-block
-        a 
-          text-decoration none
-          color white 
-          padding 20px
+         ul
+          margin 0
+          li
+            display  inline-block
+            a
+              text-decoration none
+              color white
+              padding 20px
 
     @media only screen and (max-width: 1230px)
         .header-container
             height: 60px
             margin-top: 26px
             padding 0 30px
+            position initial
+        .header-container-fixed
+            background-color transparent
+            padding 0 30px
+            z-index 10
+
         .navbar
             display none
         header
-            .right-menu
-                float right
             .user
                 display none
             .menu
