@@ -27,6 +27,10 @@
         .detail
             width calc(100% - 300px)
             margin-right 30px
+
+    @media only screen and (max-width: 1230px)
+        .single
+            margin-top: 90px
     @media only screen and (max-width: 768px)
         .single
             flex-flow wrap column-reverse
