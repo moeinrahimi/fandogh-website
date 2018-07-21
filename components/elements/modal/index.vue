@@ -44,7 +44,7 @@ p {
 
 .modal-content {
     background-color: #220286;
-    margin: 15% auto
+    margin: 25% auto
     padding: 20px
     width: 410px
     border-radius: 10px
@@ -83,7 +83,7 @@ body{
 .close-modal
     position absolute
     right 20px
-    top 80px
+    top 22%
     z-index 99
     img
         width 20px
