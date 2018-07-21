@@ -58,6 +58,7 @@
     @media only screen and (max-width: 900px)
         .footer
             .top-footer
+                padding 0 10px
                 flex-flow column
                 height auto
                 .footer--menu
