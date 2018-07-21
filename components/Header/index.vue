@@ -3,11 +3,11 @@
         <nav class="header-container" >
             <div class="right-menu">
                 <div class="logo">
-                    <logo  />
+                    <router-link :to="{path:'/'}"><logo  /></router-link>
                 </div>
                 <div class="navbar">
                     <ul>
-                        <li><a href="/"><progress-hover :hover="true">صفحه اصلی</progress-hover></a></li>
+                        <li><router-link :to="{path:'/'}"><progress-hover :hover="true">صفحه اصلی</progress-hover></router-link></li>
                         <li><a href="#prices"><progress-hover :hover="true"> سرویس ها </progress-hover></a> </li>
                         <li><a target="_blank" href="http://blog.fandogh.cloud/guide/"><progress-hover :hover="true"> مستندات </progress-hover></a></li>
                         <li><a href="http://blog.fandogh.cloud"><progress-hover :hover="true">بلاگ</progress-hover></a></li>
