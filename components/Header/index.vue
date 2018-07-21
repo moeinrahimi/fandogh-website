@@ -112,11 +112,18 @@ export default {
                 width 96px
 
     header
-        .right-menu
-          display flex
-          align-items center
-
         display block
+        .right-menu
+            display flex
+            align-items center
+            ul
+                margin 0
+                li
+                    display  inline-block
+                    a
+                        text-decoration none
+                        color white
+                        padding 20px
         .menu
            display none
         .header-container
@@ -127,14 +134,6 @@ export default {
         .user
           button 
             margin-right 10px
-         ul
-          margin 0
-          li
-            display  inline-block
-            a
-              text-decoration none
-              color white
-              padding 20px
 
     @media only screen and (max-width: 1230px)
         .header-container
