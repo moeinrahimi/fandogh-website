@@ -4,7 +4,7 @@
 
       <div>
         <div class="wrap" >
-          <img :src="image" />
+          <img :alt="title" :src="image" />
         </div>
         <div class="text-container">
           <p class="title"> {{title}} </p>

@@ -12,13 +12,13 @@
             <div class="footer--icons">
                 <ul>
                     <li>
-                        <a target="_blank" href="https://github.com/fandoghpaas"> <img src="~/assets/img/github-logo.png" /> </a>
+                        <a target="_blank" href="https://github.com/fandoghpaas"> <img alt="github icon" src="~/assets/img/github-logo.png" /> </a>
                     </li>
                     <li>
-                        <a target="_blank" href="https://twitter.com/fandoghpaas"> <img src="~/assets/img/twitter-logo-button.png" /> </a>
+                        <a target="_blank" href="https://twitter.com/fandoghpaas"> <img alt="twitter icon" src="~/assets/img/twitter-logo-button.png" /> </a>
                     </li>
                     <li>
-                        <a target="_blank" href="mailto:info@fandogh.cloud"> <img src="~/assets/img/closed-envelope-circle.png" /> </a>
+                        <a target="_blank" href="mailto:info@fandogh.cloud"> <img alt="email icon" src="~/assets/img/closed-envelope-circle.png" /> </a>
                     </li>
                 </ul>
             </div>

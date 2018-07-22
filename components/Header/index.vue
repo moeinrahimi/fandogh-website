@@ -3,7 +3,7 @@
         <nav class="header-container" >
             <div class="right-menu">
                 <div class="logo">
-                    <router-link :to="{path:'/'}"><logo  /></router-link>
+                    <router-link title="fandogh logo" :to="{path:'/'}"><logo  /></router-link>
                 </div>
                 <div class="navbar">
                     <ul>
@@ -24,7 +24,7 @@
             </div>
             <div class="menu">
                 <a href="#" @click.prevent="toggleMenu">
-                    <img :src="require('../../assets/svg/ic_hamburger.svg')" />
+                    <img alt="hamburger button" :src="require('../../assets/svg/ic_hamburger.svg')" />
                 </a>
             </div>
         </nav>

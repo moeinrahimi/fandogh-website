@@ -3,7 +3,7 @@
         <div class="row sidebar-heading no-margin">
             <div class="col-xs-6">
                 <a href="#" @click.prevent="toggleMenu" class="close">
-                    <img :src="require('../../assets/svg/ic_close.svg')" />
+                    <img alt="close icon" :src="require('../../assets/svg/ic_close.svg')" />
                 </a>
             </div>
             <div class="col-xs-6">

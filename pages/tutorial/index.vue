@@ -23,7 +23,7 @@
                     </p>
 
                     <p class="center">
-                        <a href="https://asciinema.org/a/Xr61CH1QatmhmyG2DmMaJ5v7g" target="_blank"><img  src="https://asciinema.org/a/4YL7hfdwWF8kxiyUxPt89ggCF.png" /></a>
+                        <a href="https://asciinema.org/a/Xr61CH1QatmhmyG2DmMaJ5v7g" target="_blank"><img alt="tutorial" src="https://asciinema.org/a/4YL7hfdwWF8kxiyUxPt89ggCF.png" /></a>
                     </p>
                 </article>
             </section>

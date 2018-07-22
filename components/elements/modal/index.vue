@@ -3,7 +3,7 @@
     <div  id="myModal" class="modal" :class="{'no-modal': noModal}" >
         <div class="close-modal">
             <a href="#" @click="$emit('onOverlay')" class="close">
-                <img :src="require('../../../assets/svg/ic_close.svg')" />
+                <img alt="close icon" :src="require('../../../assets/svg/ic_close.svg')" />
             </a>
         </div>
         <!-- Modal content -->
