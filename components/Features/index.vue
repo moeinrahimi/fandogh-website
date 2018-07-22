@@ -10,7 +10,7 @@
    </div>
 
    <div class="container">
-     <div class="row between-xs">
+     <div class="between-xs">
        <feature title="Auto Scaling" local_title="مقیاس پذیری آسان" icon="auto-scale" class="col-lg-4  col-sm-6 col-xs-12" />
        <feature title="Docker" local_title="به راحتی ساخت یک داکرفایل" icon="docker" class="col-lg-4 col-sm-6 col-xs-12" />
        <feature title="Managed Databases" local_title="پایگاه‌داده مدیریت شده" icon="database" class="col-lg-4 col-sm-6 col-xs-12" />
