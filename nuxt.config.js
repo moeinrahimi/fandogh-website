@@ -23,6 +23,9 @@ module.exports = {
       { rel: 'iScon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  modules: [
+    '@nuxtjs/pwa',
+  ],
   /*
   ** Global CSS
   */
