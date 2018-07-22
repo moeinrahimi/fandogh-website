@@ -46,6 +46,7 @@ export default {
     text-align center
     margin 1rem 0
     min-height 270px
+    display flex
 
   .box
     .wrap
