@@ -34,12 +34,5 @@ module.exports = {
     extractCSS: true,
     vendor: ['axios']
   },
-  render: {
-    bundleRenderer: {
-      shouldPreload: (file, type) => {
-        return ['style'].includes(type)
-      }
-    }
-  },
   plugins: ['~/plugins/progress-hover', {src: '~/plugins/google-map', ssr: false}]
 }
