@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row box middle-xs ">
+    <div class="box middle-xs ">
 
       <div>
         <div class="wrap" >
