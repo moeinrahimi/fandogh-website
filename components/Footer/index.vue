@@ -3,7 +3,7 @@
         <div class="top-footer">
             <div class="footer--menu">
                 <ul>
-                    <li><a target="_blank" href="http://blog.fandogh.cloud" >وبلاگ</a></li>
+                    <li><a target="_blank" href="http://blog.fandogh.cloud" >بلاگ</a></li>
                     <li><router-link :to="{path:'/conditions-of-use'}">شرایط استفاده از خدمات</router-link></li>
                     <li><router-link :to="{path:'/contact-us'}">ارتباط با ما</router-link></li>
                     <li><router-link :to="{path:'/about-us'}">درباره ما</router-link></li>
