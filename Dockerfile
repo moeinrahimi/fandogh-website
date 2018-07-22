@@ -1,5 +1,4 @@
-FROM node:8.11.2
-run npm i npm@6 -g
+FROM node:10.7.0
 
 ENV HOST 0.0.0.0
 ENV PORT 80
