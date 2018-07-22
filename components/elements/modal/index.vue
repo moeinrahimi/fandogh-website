@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div  id="myModal" class="modal" :class="{'no-modal': noModal}" >
+    <div  class="modal" :class="{'no-modal': noModal}" >
         <div class="close-modal">
             <a href="#" @click="$emit('onOverlay')" class="close">
                 <img alt="close icon" :src="require('../../../assets/svg/ic_close.svg')" />
@@ -83,7 +83,7 @@ body{
 .close-modal
     position absolute
     right 20px
-    top 22%
+    top 125px
     z-index 99
     img
         width 20px
