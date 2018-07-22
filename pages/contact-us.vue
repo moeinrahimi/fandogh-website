@@ -9,16 +9,20 @@
                     <p>
                         هدف ما در پروژه فندق، طراحی سکویی است برای تسهیل در استقرار و کاهش هزینه نگهداری سرویس‌های نرم‌افزاری که به کمک آن سرویس‌های ایرانی بتوانند تمرکز بیشتری روی کسب‌ و کار خود و نگرانی کمتری در مورد امور مربوط به استقرار، پایش، نگهداری و مقیاس‌پذیری داشته باشند.
                     </p>
-                    <GmapMap
-                            :center="{lat:35.716407, lng:51.366423}"
-                            :zoom="16"
-                            :options="{styles: mapStyle, disableDefaultUI: true}"
-                            class="map soft-corner">
-                        <GmapMarker
-                                :position="{lat:35.716407, lng:51.366423}"
-                                :icon="require('~/assets/img/marker.png')"
-                        />
-                    </GmapMap>
+
+                    <no-ssr>
+                        <GmapMap
+                                :center="{lat:35.716407, lng:51.366423}"
+                                :zoom="16"
+                                :options="{styles: mapStyle, disableDefaultUI: true}"
+                                class="map soft-corner">
+                            <GmapMarker
+                                    :position="{lat:35.716407, lng:51.366423}"
+                                    :icon="require('~/assets/img/marker.png')"
+                            />
+                        </GmapMap>
+                    </no-ssr>
+
                     <div>
                         <ul>
                             <li>

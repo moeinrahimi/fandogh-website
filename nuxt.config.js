@@ -44,6 +44,9 @@ module.exports = {
       }
     ]
   },
+  modifyUrlPrefix: {
+    '/': '/_nuxt/'
+  },
   /*
   ** Global CSS
   */
