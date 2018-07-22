@@ -7,8 +7,9 @@ RUN mkdir -p /app
 COPY . /app
 WORKDIR /app
 
-RUN npm install
-RUN npm run build
+RUN npm i yarn -g
+RUN yarn install
+RUN yarn run build
 # Expose the app port
 EXPOSE 80
 
