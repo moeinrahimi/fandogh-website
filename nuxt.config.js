@@ -23,11 +23,26 @@ module.exports = {
       { rel: 'iScon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
   modules: [
-    '@nuxtjs/pwa',
+    '@nuxtjs/pwa'
   ],
+  manifest: {
+    name: 'فندق',
+    description: 'سرویس های ابری فندق'
+  },
   workbox: {
-    // Workbox options
+    dev: true,
+    importScripts: [
+      'custom-sw.js'
+    ],
+    runtimeCaching: [
+      {
+        urlPattern: 'https://fandogh.cloud/.*',
+        handler: 'cacheFirst',
+        method: 'GET'
+      }
+    ]
   },
   /*
   ** Global CSS
