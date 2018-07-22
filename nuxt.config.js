@@ -26,6 +26,9 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa',
   ],
+  workbox: {
+    // Workbox options
+  },
   /*
   ** Global CSS
   */
