@@ -1,6 +1,6 @@
 <template>
     <header >
-        <nav class="header-container" >
+        <nav class="header-container" :class="{'no-fixed': noFixed}">
             <div class="right-menu">
                 <div class="logo">
                     <router-link title="fandogh logo" :to="{path:'/'}"><logo  /></router-link>
@@ -54,20 +54,23 @@ export default {
     Sidebar,
     Message
   },
+  props:['noFixed'],
   data(){
     return {
       loggedIn: getToken()
     }
   },
   mounted(){
-    let headerContainer = document.querySelector('.header-container')
-    document.addEventListener('scroll',() =>{
-      if(window.pageYOffset > 10){
-        headerContainer.classList.add('header-container-fixed')
-      } else {
-        headerContainer.classList.remove('header-container-fixed')
-      }
-    })
+    if(!this.noFixed) {
+      let headerContainer = document.querySelector('.header-container')
+      document.addEventListener('scroll', () => {
+        if (window.pageYOffset > 10) {
+          headerContainer.classList.add('header-container-fixed')
+        } else {
+          headerContainer.classList.remove('header-container-fixed')
+        }
+      })
+    }
   },
   methods:{
     toggleMenu(){
@@ -97,6 +100,7 @@ export default {
         align-items center
         justify-content space-between
         flex-flow wrap row
+        background-color transparent
 
     .header-container
         -webkit-transition all 0.3s
@@ -111,6 +115,8 @@ export default {
             img
                 width 96px
 
+    .no-fixed
+        background-color #3f10ae
     header
         display block
         .right-menu
@@ -138,8 +144,7 @@ export default {
     @media only screen and (max-width: 1230px)
         .header-container
             height: 60px
-            margin-top: 26px
-            padding 0 30px
+            padding 30px
             position initial
         .header-container-fixed
             background-color transparent
