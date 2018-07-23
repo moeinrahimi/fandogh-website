@@ -1,14 +1,17 @@
 <template>
     <div class="admin-sidebar">
-        <profile></profile>
+        <profile />
+        <namespace />
     </div>
 </template>
 
 <script>
     import Profile from './profile'
+    import Namespace from './namespace'
     export default {
       components:{
-        Profile
+        Profile,
+        Namespace
       }
     }
 </script>
