@@ -1,12 +1,15 @@
 <template>
     <div class="admin-sidebar">
-
+        <profile></profile>
     </div>
 </template>
 
 <script>
+    import Profile from './profile'
     export default {
-
+      components:{
+        Profile
+      }
     }
 </script>
 

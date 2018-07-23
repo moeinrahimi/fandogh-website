@@ -116,7 +116,7 @@ export default {
                 width 96px
 
     .no-fixed
-        background-color #3f10ae
+        background linear-gradient(to right, #160074, #0f0050)
     header
         display block
         .right-menu
