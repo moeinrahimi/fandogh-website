@@ -1,19 +1,29 @@
 <template>
-    <div class="test1">
-        test...........
+    <div >
+        <f-table :header="header" :data="data"></f-table>
     </div>
 </template>
 
 <script>
+    import FTable from '~/components/Dashboard/table'
     export default {
-      layout: 'dashboard'
+      layout: 'dashboard',
+      data(){
+        return {
+          header: ['نام', 'آخرین ورژن', 'تاریخ ساخت ایمیج', 'آخرین به روز‌رسانی', 'تغییرات'],
+          data: [
+            ['backend', 1.25, '۱۳ اردیبهشت ۱۳۹۷','۱۳ اردیبهشت ۱۳۹۷', ''],
+            ['backend', 1.25, '۱۳ اردیبهشت ۱۳۹۷','۱۳ اردیبهشت ۱۳۹۷', ''],
+            ['backend', 1.25, '۱۳ اردیبهشت ۱۳۹۷','۱۳ اردیبهشت ۱۳۹۷', '']
+          ]
+        }
+      },
+      components:{
+        FTable
+      }
     }
 </script>
 
 <style >
-    .test1 {
-        min-height: 10px;
-        display: block;
-        z-index: 1999;
-    }
+
 </style>

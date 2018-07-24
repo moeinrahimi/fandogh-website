@@ -47,6 +47,7 @@
         margin-right 350px
         padding 30px
         min-height: calc(100vh - 170px);
+        width calc(100% - 350px)
     .wrapper
         width 100%
         background #f0f4f8
