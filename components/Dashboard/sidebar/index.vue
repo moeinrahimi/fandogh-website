@@ -2,16 +2,19 @@
     <div class="admin-sidebar">
         <profile />
         <namespace />
+        <sidebar-menu />
     </div>
 </template>
 
 <script>
     import Profile from './profile'
     import Namespace from './namespace'
+    import SidebarMenu from './menu'
     export default {
       components:{
         Profile,
-        Namespace
+        Namespace,
+        SidebarMenu
       }
     }
 </script>

@@ -1,0 +1,51 @@
+<template>
+    <div class="sidebar-menu">
+        <ul>
+            <li>
+                <router-link :to="{path:'/dashboard/images'}"><img src="./icons/images.svg" /> ایمیج ها  </router-link>
+            </li>
+            <li>
+                <a href="#"><img src="./icons/services.svg" /> سرویس ها  </a>
+            </li>
+            <li>
+                <a href="#"><img src="./icons/managed_services.svg" /> سرویس های مدیریت شده  </a>
+            </li>
+            <li>
+                <a href="#"><img src="./icons/settings.svg" /> تنظیمات  </a>
+            </li>
+            <li>
+                <a href="#"><img src="./icons/exit.svg" /> خروج  </a>
+            </li>
+
+        </ul>
+    </div>
+</template>
+
+<script>
+    export default {
+
+    }
+</script>
+
+<style lang="stylus" scoped>
+    .sidebar-menu
+        margin 45px 0
+        ul
+            padding 0
+            margin 0
+            li
+                img
+                    width 20px
+                    vertical-align middle
+                    margin-left 32px
+                list-style none
+                a
+                    width 100%
+                    padding 23px
+                    display inline-block
+                    box-sizing border-box
+                    &.nuxt-link-active
+                        background-color rgba(0,0,0, .5)
+                        border-right #26c6ec 2px solid
+
+</style>
