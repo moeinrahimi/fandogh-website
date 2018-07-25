@@ -39,13 +39,16 @@
 <style lang="stylus" scoped>
 
     .table
-        background-color #fff
         width 100%
         font-family yekan, sans-serif
         .table-content
+            background-color #fff
             overflow-x auto
+            border solid 1px #e7e8ea
+            border-radius 0 0 10px 10px
         td, th
             max-width 220px
+            min-width 180px
             white-space nowrap
             padding 20px
             box-sizing border-box
