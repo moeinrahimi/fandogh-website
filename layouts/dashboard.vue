@@ -48,6 +48,7 @@
         padding 30px
         min-height: calc(100vh - 170px);
         width calc(100% - 350px)
+        box-sizing border-box
     .wrapper
         width 100%
         background #f0f4f8

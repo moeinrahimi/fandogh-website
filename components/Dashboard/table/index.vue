@@ -9,10 +9,16 @@
             <table cellspacing="0" >
                 <tbody>
                     <tr>
-                        <th v-for="(name, index) in header" :class="[index%2 ? 'gray-1' : 'white']">{{name}}</th>
+                        <th v-for="(name, index) in header" :class="[index%2 ? 'gray-1' : 'white']" :key="index">{{name}}</th>
+                        <th v-if="actions && actions.length">
+                            تغییرات
+                        </th>
                     </tr>
-                    <tr v-for="(array, index) in data">
-                        <td v-for="(value, jendex) in array" :class="[index%2 !== 0 && jendex%2 === 0 ? 'white' : index%2 === 0 && jendex%2 !== 0 ? 'gray-2': 'gray-1']" v-html="value">  </td>
+                    <tr v-for="(dataRow, index) in data" :key="dataRow.meta.id">
+                        <td v-for="(value, jendex) in dataRow.rows" :key="jendex" :class="[index%2 !== 0 && jendex%2 === 0 ? 'white' : index%2 === 0 && jendex%2 !== 0 ? 'gray-2': 'gray-1']" v-html="value">  </td>
+                        <td v-if="actions && actions.length" :class="[index%2 !== 0 && dataRow.rows.length%2 === 0 ? 'white' : index%2 === 0 && dataRow.rows.length%2 !== 0 ? 'gray-2': 'gray-1']"  >
+                            <component v-for="(action, index) in actions" :key="index" is="action-button"  @onClick="$parent[action.action](dataRow.meta.id)" v-html="action.title" > </component>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -21,8 +27,12 @@
 </template>
 
 <script>
+  import ActionButton from '~/components/Dashboard/table/action-button'
     export default {
-      props:['header', 'data']
+      props:['header', 'data', 'actions'],
+      components:{
+        ActionButton
+      }
     }
 </script>
 
@@ -32,12 +42,15 @@
         background-color #fff
         width 100%
         font-family yekan, sans-serif
+        .table-content
+            overflow-x auto
         td, th
             min-width 220px
             height 90px
             text-align center
             &:last-child
                 width 100%
+                min-width 400px
 
         .table-header
             background-color: #291996;
@@ -46,6 +59,7 @@
             padding 10px
             text-align center
             border-radius 10px 10px 0 0
+            width 100%
             h2
                 font-size 16px
                 line-height 0
