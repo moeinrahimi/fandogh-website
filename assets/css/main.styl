@@ -30,6 +30,14 @@ li
 p, h1, h2, h3, h6, button, span, a, button, li, label
   font-family yekan, sans-serif
   color white
+  &.alert-text
+    color #ff2d55
+    text-decoration underline
+  &.pending-text
+    color #296bdd
+  &.success-text
+    color #2cac46
+
 p, h6, button
   font-size font-small
 p
@@ -91,6 +99,7 @@ p.description
   a
     color #ff859e
 
+
 @media only screen and (max-width: 991px)
   .article
     padding 50px 30px
@@ -104,6 +113,8 @@ p.description
     font-size font-x-small
     font-family yekan, sans-serif
 
+.font-bold
+  font-weight bold
 .fandogh-form-group
   margin 10px 0
 .center

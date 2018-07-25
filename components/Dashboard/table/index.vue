@@ -2,7 +2,7 @@
     <div class="table">
         <div class="table-header">
             <h2>
-                ایمیج های شما
+                {{title}}
             </h2>
         </div>
         <div class="table-content">
@@ -29,7 +29,7 @@
 <script>
   import ActionButton from '~/components/Dashboard/table/action-button'
     export default {
-      props:['header', 'data', 'actions'],
+      props:['header', 'data', 'actions', 'title'],
       components:{
         ActionButton
       }
