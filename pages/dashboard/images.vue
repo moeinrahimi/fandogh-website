@@ -1,12 +1,15 @@
 <template>
     <div class="images" >
+        <div class="images-add row-block">
+            <f-button styles="red" > افزودن ایمیج </f-button>
+        </div>
         <f-table :header="header" :data="data" :actions="[{title:`<img src='/icons/ic-time.svg' /> ورژن ها `, action:'versions'}, {title:`<img src='/icons/ic-time.svg' /> ورژن ها `, action:'versions'}, {title:`<img src='/icons/ic-time.svg' /> ورژن ها `, action:'versions'}]"></f-table>
     </div>
 </template>
 
 <script>
     import FTable from '~/components/Dashboard/table'
-    import ActionButton from '~/components/Dashboard/table/action-button'
+    import FButton from '~/components/elements/button'
     export default {
       layout: 'dashboard',
       data(){
@@ -36,7 +39,7 @@
       },
       components:{
         FTable,
-        ActionButton
+        FButton
       },
       methods:{
         versions(id){
