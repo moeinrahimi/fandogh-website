@@ -45,12 +45,15 @@
         .table-content
             overflow-x auto
         td, th
-            min-width 220px
+            max-width 220px
+            white-space nowrap
+            padding 20px
+            box-sizing border-box
             height 90px
             text-align center
             &:last-child
                 width 100%
-                min-width 400px
+                min-width 420px
 
         .table-header
             background-color: #291996;

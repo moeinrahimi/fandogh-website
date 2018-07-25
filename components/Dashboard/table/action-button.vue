@@ -14,6 +14,7 @@
         color #4f4f4f
         font-size 12px
         margin 15px
+        display inline-block
         img
             width 16px
             height 16px
