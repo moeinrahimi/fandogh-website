@@ -5,7 +5,7 @@
                 <router-link :to="{path:'/dashboard/images'}"><img src="./icons/images.svg" /> ایمیج ها  </router-link>
             </li>
             <li>
-                <router-link :to="{path:'/dashboard/versions'}" ><img src="./icons/services.svg" /> سرویس ها  </router-link>
+                <router-link :to="{path:'/dashboard/services'}" ><img src="./icons/services.svg" /> سرویس ها  </router-link>
             </li>
             <li>
                 <a href="#"><img src="./icons/managed_services.svg" /> سرویس های مدیریت شده  </a>
