@@ -69,6 +69,8 @@
             h2
                 font-size 16px
                 line-height 0
+                color #fff
+                padding 0
     .white
         background-color #fff
     .gray-1
