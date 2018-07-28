@@ -6,10 +6,10 @@
         <f-input styles="input-white input-block input-dashboard" placeholder="نام ایمیج را در این قسمت بنویسید"> </f-input>
       </div>
       <div class="fandogh-form-group">
-        <f-input styles="input-white input-block input-dashboard" placeholder="نام ایمیج را در این قسمت بنویسید"> </f-input>
+        <f-input styles="input-white input-block input-dashboard" placeholder="ورژن ایمیج را در این قسمت بنویسید"> </f-input>
       </div>
-      <div class="fandogh-form-group">
-        <file />
+      <div class="fandogh-form-group margin-40">
+        <file id="file" />
       </div>
       <div class="fandogh-form-group margin-top-100">
         <f-button styles="red block"  > اتمام ساخت </f-button>
