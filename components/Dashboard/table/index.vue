@@ -1,11 +1,11 @@
 <template>
-    <div class="table">
+    <div class="table" :class="{'small-table': small}">
         <div class="table-header">
             <h2>
                 {{title}}
             </h2>
         </div>
-        <div class="table-content">
+        <div class="table-content" >
             <table cellspacing="0" >
                 <tbody>
                     <tr>
@@ -14,7 +14,7 @@
                             تغییرات
                         </th>
                     </tr>
-                    <tr v-for="(dataRow, index) in data" :key="dataRow.meta.id">
+                    <tr v-for="(dataRow, index) in data" :key="dataRow.meta ? dataRow.meta : index ">
                         <td v-for="(value, jendex) in dataRow.rows" :key="jendex" :class="[index%2 !== 0 && jendex%2 === 0 ? 'white' : index%2 === 0 && jendex%2 !== 0 ? 'gray-2': 'gray-1']" v-html="value">  </td>
                         <td v-if="actions && actions.length" :class="[index%2 !== 0 && dataRow.rows.length%2 === 0 ? 'white' : index%2 === 0 && dataRow.rows.length%2 !== 0 ? 'gray-2': 'gray-1']"  >
                             <component v-for="(action, index) in actions" :key="index" is="action-button"  @onClick="$parent[action.action](dataRow.meta.id)" v-html="action.title" > </component>
@@ -29,9 +29,24 @@
 <script>
   import ActionButton from '~/components/Dashboard/table/action-button'
     export default {
-      props:['header', 'data', 'actions', 'title'],
+      props:['header', 'data', 'actions', 'title', 'small'],
       components:{
         ActionButton
+      },
+      mounted(){
+        if(this.small){
+          let THs  = document.querySelectorAll('.table th')
+          let TDs  = document.querySelectorAll('.table td')
+
+          THs.forEach(th => {
+            th.style.width = (100 / THs.length) + '%'
+            th.style.minWidth = (100 / THs.length) + '%'
+          })
+          TDs.forEach(td => {
+            td.style.width = (100 / TDs.length) + '%'
+            td.style.minWidth = (100 / TDs.length) + '%'
+          })
+        }
       }
     }
 </script>
@@ -77,4 +92,12 @@
         background-color  rgba(217,217,217, .2)
     .gray-2
         background-color #F1F3F9
+    .table.small-table
+        table
+            table-layout: fixed ;
+            width: 100% ;
+            /*td, th*/
+                /*width 50%*/
+                /*min-width 50%*/
+
 </style>
