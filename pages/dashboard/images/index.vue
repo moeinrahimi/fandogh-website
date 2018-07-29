@@ -12,6 +12,12 @@
     import FButton from '~/components/elements/button'
     export default {
       layout: 'dashboard',
+      async asyncData({store, route}){
+        try {
+          let images = await store.dispatch('getImages')
+        } catch (e) {
+        }
+      },
       data(){
         return {
           header: ['نام', 'آخرین ورژن', 'تاریخ ساخت ایمیج', 'آخرین به روز‌رسانی'],
