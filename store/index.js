@@ -1,7 +1,6 @@
 import Vuex from 'vuex'
 import * as actions from './actions'
 import * as mutations from './mutations'
-import {getToken} from "../utils/cookie";
 
 const createStore = () => {
   return new Vuex.Store({
@@ -15,7 +14,7 @@ const createStore = () => {
       },
       message: '',
       user:{
-        token: getToken()
+        token: null
       },
       images: null,
       versions: null,

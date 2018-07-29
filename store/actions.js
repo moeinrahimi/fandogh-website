@@ -37,7 +37,7 @@ export const setMessage = ({commit, state}, message) => {
 }
 
 export const checkAuthentication =  ({commit, state}, token) => {
-  commit('SET_USER', {token})
+  commit('SET_USER', {token:token})
 }
 
 export const logout = async ({commit, state}) => {

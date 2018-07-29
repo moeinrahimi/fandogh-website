@@ -10,6 +10,7 @@ export default function request (params, options) {
         const {data}  = await service(params, options).get(url, body)
         return data
       } catch (e){
+        //if(e.response.status === 401)
         return Promise.reject(e.response.data.message)
       }
     },
@@ -18,6 +19,7 @@ export default function request (params, options) {
         const {data} = await service(params, options).post(url, body)
         return data
       } catch (e){
+
         return Promise.reject(e.response.data.message ? e.response.data.message : e.response.data)
       }
     },
