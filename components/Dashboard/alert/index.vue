@@ -15,10 +15,10 @@
         <div class="alert-content">
           <h6> آیا از حذف شدن ایمیج خود مطمئن هستید؟</h6>
           <div class="margin-20">
-            <f-button styles="alert"> حذف شود </f-button>
+            <f-button styles="alert" @onClick="$emit('onDelete', true)"> حذف شود </f-button>
           </div>
           <div class="margin-20">
-            <f-button styles="light"> منصرف شدم </f-button>
+            <f-button styles="light" @onClick="$emit('onDelete', false)"> منصرف شدم </f-button>
           </div>
         </div>
       </div>
