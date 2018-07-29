@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div  class="alert"  >
+    <div v-if="display"  class="alert"  >
       <div class="close-modal">
         <a href="#" @click="$emit('onOverlay')" class="close">
           <img alt="close icon" :src="require('../../../assets/svg/ic_close.svg')" />
@@ -15,15 +15,15 @@
         <div class="alert-content">
           <h6> آیا از حذف شدن ایمیج خود مطمئن هستید؟</h6>
           <div class="margin-20">
-            <f-button styles="alert" @onClick="$emit('onDelete', true)"> حذف شود </f-button>
+            <f-button styles="alert" @onClick="onDelete(true)"> حذف شود </f-button>
           </div>
           <div class="margin-20">
-            <f-button styles="light" @onClick="$emit('onDelete', false)"> منصرف شدم </f-button>
+            <f-button styles="light" @onClick="onDelete(false)"> منصرف شدم </f-button>
           </div>
         </div>
       </div>
     </div>
-    <div @click="$emit('onOverlay')" v-if="!disableOverlay"  class="overlay"></div>
+    <div @click="toggle" v-if="display" class="overlay"></div>
   </div>
 </template>
 
@@ -31,6 +31,20 @@
   import FButton from '~/components/elements/button'
   export default {
     props: ['message', 'disableOverlay', 'noModal'],
+    data(){
+      return {
+        display: false
+      }
+    },
+    methods:{
+      toggle(){
+        this.display = !this.display
+      },
+      onDelete(bool){
+        this.$emit('onDelete', bool)
+        this.toggle()
+      }
+    },
     components:{
       FButton
     }
