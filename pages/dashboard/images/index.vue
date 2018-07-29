@@ -1,7 +1,7 @@
 <template>
     <div class="images" >
         <div class="row-block">
-            <f-button styles="red" > افزودن ایمیج </f-button>
+            <f-button styles="red" @onClick="$router.push('/dashboard/images/create')" > افزودن ایمیج </f-button>
         </div>
         <f-table title="ایمیج های شما" :header="header" :data="data" :actions="[{title:`<img src='/icons/ic-time.svg' /> ورژن ها `, action:'versions'}, {title:`<img src='/icons/ic-time.svg' /> ورژن ها `, action:'versions'}, {title:`<img src='/icons/ic-time.svg' /> ورژن ها `, action:'versions'}]"></f-table>
     </div>
