@@ -1,5 +1,7 @@
 <template>
-    <recovery />
+    <div class="flex centered-page">
+        <recovery />
+    </div>
 </template>
 
 <script>
