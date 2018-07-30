@@ -62,5 +62,5 @@ module.exports = {
     extractCSS: true,
     vendor: ['axios']
   },
-  plugins: ['~/plugins/progress-hover', {src: '~/plugins/google-map', ssr: false}]
+  plugins: ['~/plugins/progress-hover', {src: '~/plugins/google-map', ssr: false},'~/plugins/mixins']
 }

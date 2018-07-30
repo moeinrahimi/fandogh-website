@@ -3,7 +3,7 @@
         <div class="row-block">
             <f-button styles="red" @onClick="$router.push('/dashboard/images/create')" > افزودن ایمیج </f-button>
         </div>
-        <f-table title="ایمیج های شما" :header="header" :data="data" :actions="[{title:`<img src='/icons/ic-time.svg' /> ورژن ها `, action:'versions'}, {title:`<img src='/icons/ic-time.svg' /> ورژن ها `, action:'versions'}, {title:`<img src='/icons/ic-time.svg' /> ورژن ها `, action:'versions'}]"></f-table>
+        <f-table title="ایمیج های شما" :header="header" :data="_images" :actions="[{title:`<img src='/icons/ic-time.svg' /> ورژن ها `, action:'versions'}, {title:`<img src='/icons/ic-time.svg' /> ورژن ها `, action:'versions'}, {title:`<img src='/icons/ic-time.svg' /> ورژن ها `, action:'versions'}]"></f-table>
     </div>
 </template>
 
@@ -14,7 +14,7 @@
       layout: 'dashboard',
       async asyncData({store, route, redirect}){
         try {
-          let images = await store.dispatch('getImages')
+         await store.dispatch('getImages')
         } catch (e) {
           if(e.status === 401){
             redirect('/user/login')
@@ -23,32 +23,24 @@
       },
       data(){
         return {
-          header: ['نام', 'آخرین ورژن', 'تاریخ ساخت ایمیج', 'آخرین به روز‌رسانی'],
+          header: ['نام','تاریخ ساخت ایمیج', 'آخرین ورژن', 'آخرین به روز‌رسانی'],
           data: [
-            {
-              meta: {
-                id: 24
-              },
-              rows: ['backend', 1.25, '۱۳ اردیبهشت ۱۳۹۷','۱۳ اردیبهشت ۱۳۹۷'],
-            },
-            {
-              meta: {
-                id: 26
-              },
-              rows: ['backend', 1.25, '۱۳ اردیبهشت ۱۳۹۷','۱۳ اردیبهشت ۱۳۹۷'],
-            },
-            {
-              meta: {
-                id: 28
-              },
-              rows: ['backend', 1.25, '۱۳ اردیبهشت ۱۳۹۷','۱۳ اردیبهشت ۱۳۹۷'],
-            },
           ]
         }
       },
       components:{
         FTable,
         FButton
+      },
+      computed:{
+        images(){
+          return this.$store.state.images
+        },
+        _images(){
+          if(this.images){
+            return this.$dataTable({rows: this.images, length: 4, props: ['name', 'created_at'], id: 'name'})
+          }
+        }
       },
       methods:{
         versions(id){
