@@ -10,6 +10,7 @@
 <script>
     import FTable from '~/components/Dashboard/table'
     import FButton from '~/components/elements/button'
+    import FDate from '~/utils/date'
     export default {
       layout: 'dashboard',
       async asyncData({store, route, redirect}){
@@ -34,7 +35,12 @@
       },
       computed:{
         images(){
-          return this.$store.state.images
+          let images =this.$store.state.images
+          if(images) {
+            return images.map(({created_at, ...item}) => {
+              return { ...item,  created_at: FDate({date: created_at})}
+            })
+          }
         },
         _images(){
           if(this.images){
