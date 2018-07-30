@@ -66,8 +66,8 @@ import ForgotPassword from './ForgotPassword'
         this.error = null
         this.$store.dispatch('login', {username: this.username, password: this.password}).then(res => {
           this.loading = false
-          this.$store.dispatch('showModal')
-          location.replace('/tutorial')
+          this.$router.push('/dashboard/images')
+          this.$store.dispatch('showModal', false)
         }).catch(e => {
           this.loading = false
           this.error = e
