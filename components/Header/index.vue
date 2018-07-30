@@ -20,7 +20,8 @@
                 <f-button @onClick="showModal('register')" styles="transparent border" > ثبت نام </f-button>
             </div>
             <div class="user" v-else>
-                <f-button style="width: 100px" @onClick="logout"  styles="transparent border" > خروج </f-button>
+                <f-button style="width: 100px" @onClick="logout"  styles="transparent" > خروج </f-button>
+                <f-button style="width: 100px" @onClick="$router.push('/dashboard/images')"  styles="transparent border" > داشبورد </f-button>
             </div>
             <div class="menu">
                 <a href="#" @click.prevent="toggleMenu">
