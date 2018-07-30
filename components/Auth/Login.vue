@@ -10,7 +10,7 @@
           <f-input name="password" v-model="password" styles="input-color-blue" type="password" placeholder="رمز عبور" />
         </div>
         <div class="fandogh-form-group  margin-20">
-          <f-checkbox v-model="remind_me" id="checkbox1" title="مرا بخاطر بسپار" />
+          <f-checkbox v-model="remind_me" :id="noModal ? 'checkbox1' : 'checkbox2'" title="مرا بخاطر بسپار" />
         </div>
         <div class="fandogh-form-group center margin-20 ">
           <f-button @onClick="login" styles="red block 80">{{title}}</f-button>
