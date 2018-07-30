@@ -12,10 +12,13 @@
     import FButton from '~/components/elements/button'
     export default {
       layout: 'dashboard',
-      async asyncData({store, route}){
+      async asyncData({store, route, redirect}){
         try {
           let images = await store.dispatch('getImages')
         } catch (e) {
+          if(e.status === 401){
+            redirect('/user/login')
+          }
         }
       },
       data(){

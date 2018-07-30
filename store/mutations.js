@@ -18,12 +18,11 @@ export const SET_MODAL = (state, modal) => {
 
 export const SET_USER = (state, {token}) => {
   state.user.token = token
- // Vue.set(state.user, 'token', token)
   if(token) setToken(token)
 }
 export const LOGOUT = (state) => {
   removeToken()
-  Vue.set(state.user, 'token', null)
+  state.user.token = null
 }
 
 export const SET_MESSAGE = (state, message) => {

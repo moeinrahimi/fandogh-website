@@ -57,7 +57,7 @@ export default {
   props:['noFixed'],
   data(){
     return {
-      loggedIn: getToken()
+     // loggedIn: getToken()
     }
   },
   mounted(){
@@ -72,6 +72,11 @@ export default {
       })
     }
   },
+  computed:{
+    loggedIn(){
+      return this.$store.state.user.token
+    }
+  },
   methods:{
     toggleMenu(){
       this.$refs.menu.toggleMenu()
@@ -81,7 +86,6 @@ export default {
     },
     logout(){
       this.$store.dispatch('logout')
-      this.loggedIn = false
     }
   }
 }

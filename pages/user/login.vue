@@ -7,6 +7,9 @@
   export default {
     components: {
       Login
+    },
+    mounted(){
+      this.$store.dispatch('logout')
     }
   }
 </script>

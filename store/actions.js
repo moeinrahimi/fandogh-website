@@ -1,6 +1,9 @@
 import Request from '~/plugins/request'
 import {getToken} from "../utils/cookie";
 
+export const nuxtServerInit = async ({state, dispatch}, {req}) => {
+  dispatch('checkAuthentication', req.cookies['USER_TOKEN'])
+}
 /**
  *
  * @param commit
