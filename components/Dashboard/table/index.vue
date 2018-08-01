@@ -52,10 +52,10 @@
 </script>
 
 <style lang="stylus" scoped>
-
+    @import url('http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900')
     .table
         width 100%
-        font-family yekan, sans-serif
+        font-family 'Roboto', yekan, sans-serif
         .table-content
             background-color #fff
             overflow-x auto
@@ -68,11 +68,17 @@
             padding 20px
             box-sizing border-box
             height 90px
+            color #75879c
+            font-size 18px
             text-align center
             &:last-child
                 width 100%
                 min-width 420px
 
+        th
+            font-size 16px
+            font-weight bold
+            color #000
         .table-header
             background-color: #291996;
             display block
