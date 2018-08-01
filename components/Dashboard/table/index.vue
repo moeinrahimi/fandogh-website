@@ -17,7 +17,7 @@
                     <tr v-for="(dataRow, index) in data" :key="dataRow.meta ? dataRow.meta : index ">
                         <td v-for="(value, jendex) in dataRow.rows" :key="jendex" :class="[index%2 !== 0 && jendex%2 === 0 ? 'white' : index%2 === 0 && jendex%2 !== 0 ? 'gray-2': 'gray-1']" v-html="value">  </td>
                         <td v-if="actions && actions.length" :class="[index%2 !== 0 && dataRow.rows.length%2 === 0 ? 'white' : index%2 === 0 && dataRow.rows.length%2 !== 0 ? 'gray-2': 'gray-1']"  >
-                            <component v-for="(action, index) in actions" :key="index" is="action-button"  @onClick="$parent[action.action](dataRow.meta.id)" v-html="action.title" > </component>
+                            <component :class="actions.length >= 3 ? 'action-button-s' : 'action-button-m'" v-for="(action, index) in actions" :key="index" is="action-button"  @onClick="$parent[action.action](dataRow.meta.id)" v-html="action.title" > </component>
                         </td>
                     </tr>
                 </tbody>
@@ -55,17 +55,19 @@
     @import url('http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900')
     .table
         width 100%
+        margin 0 auto
         font-family 'Roboto', yekan, sans-serif
         .table-content
             background-color #fff
             overflow-x auto
             border solid 1px #e7e8ea
-            border-radius 0 0 10px 10px
+            border-radius 0 0 15px 10px
         td, th
-            max-width 220px
-            min-width 180px
+            max-width 160px
+            text-overflow ellipsis
+            overflow hidden
             white-space nowrap
-            padding 20px
+            padding 10px
             box-sizing border-box
             height 90px
             color #75879c
@@ -73,7 +75,7 @@
             text-align center
             &:last-child
                 width 100%
-                min-width 420px
+                min-width 300px
 
         th
             font-size 16px
@@ -105,5 +107,9 @@
             /*td, th*/
                 /*width 50%*/
                 /*min-width 50%*/
+    @media (min-width: 1400px)
+        .table
+            td, th
+                max-width 260px
 
 </style>
