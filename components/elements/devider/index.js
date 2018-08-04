@@ -25,6 +25,6 @@ export default {
 
     let styles = props.styles ? props.styles.split(' ') : []
 
-    return <div class={["divider", ...styles]}  > <img src={svg} alt="" />  </div>
+    return <div class={["divider", ...styles]}  > <img src={svg} alt="devider" />  </div>
   }
 }

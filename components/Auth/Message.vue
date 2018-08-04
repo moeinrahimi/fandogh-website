@@ -18,6 +18,11 @@
       FModal,
       FButton,
     },
+    mounted(){
+        this.$refs.modal.$on('onOverlay', function () {
+          this.$store.dispatch('showModal', false)
+        })
+    },
     methods:{
       close(){
         this.$store.dispatch('showModal', false)

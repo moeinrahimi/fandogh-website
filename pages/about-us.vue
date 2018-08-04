@@ -46,7 +46,7 @@
 </template>
 
 <script>
-   import Single from '~/components/single'
+   import Single from '~/components/Single'
   export default {
      components:{
        Single

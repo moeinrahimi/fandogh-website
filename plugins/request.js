@@ -1,5 +1,6 @@
 import service from './service'
-
+import store from '../store'
+import {setToken} from "../utils/cookie";
 const isClient = typeof window !== 'undefined'
 
 export default function request (params, options) {
@@ -10,7 +11,7 @@ export default function request (params, options) {
         const {data}  = await service(params, options).get(url, body)
         return data
       } catch (e){
-        return Promise.reject(e.response.data.message)
+        return Promise.reject(e.response)
       }
     },
     post: async (url, body) => {
@@ -26,7 +27,7 @@ export default function request (params, options) {
         const {data} = await service(params, options).patch(url, body)
         return data
       } catch (e){
-        return Promise.reject(e.response.data.message)
+        return Promise.reject(e.response)
       }
     }
   }

@@ -1,6 +1,9 @@
 import Request from '~/plugins/request'
 import {getToken} from "../utils/cookie";
 
+export const nuxtServerInit = async ({state, dispatch}, {req}) => {
+  dispatch('checkAuthentication', req.cookies['USER_TOKEN'])
+}
 /**
  *
  * @param commit
@@ -37,7 +40,7 @@ export const setMessage = ({commit, state}, message) => {
 }
 
 export const checkAuthentication =  ({commit, state}, token) => {
-  return getToken()
+  commit('SET_USER', {token:token})
 }
 
 export const logout = async ({commit, state}) => {

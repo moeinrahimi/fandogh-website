@@ -3,7 +3,7 @@
         <div class="row sidebar-heading no-margin">
             <div class="col-xs-6">
                 <a href="#" @click.prevent="toggleMenu" class="close">
-                    <img :src="require('../../assets/svg/ic_close.svg')" />
+                    <img alt="close icon" :src="require('../../assets/svg/ic_close.svg')" />
                 </a>
             </div>
             <div class="col-xs-6">
@@ -23,12 +23,12 @@
                     <a @click="toggleMenu" href="#prices"> سرویس ها</a>
                 </li>
                 <li>
-                    <a target="_blank" href="http://blog.fandogh.cloud/guide/">
+                    <a rel="noopener" target="_blank" href="http://blog.fandogh.cloud/guide/">
                         مستندات
                     </a>
                 </li>
                 <li>
-                    <a target="_blank" href="http://blog.fandogh.cloud/">
+                    <a rel="noopener" target="_blank" href="http://blog.fandogh.cloud/">
                         وبلاگ
                     </a>
                 </li>
@@ -74,6 +74,7 @@
 <style lang="stylus" scoped >
     .sidebar
         transform: translate3d(-100%, 0, 0);
+        opacity  0
         overflow-y: scroll;
         height 100vh
         width 300px
@@ -82,9 +83,10 @@
         top 0
         left 0
         z-index 100
-        transition all .6s ease
+        transition all .5s ease
     .show-sidebar
         transform: translate3d(0, 0, 0);
+        opacity  1
     .sidebar-heading
         padding 30px
         border-bottom 2px solid rgba(255, 255, 255, 0.2)

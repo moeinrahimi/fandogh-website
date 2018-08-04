@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div  id="myModal" class="modal" :class="{'no-modal': noModal}" >
-        <div class="close-modal">
+    <div  class="modal" :class="{'no-modal': noModal}" >
+        <div v-if="!noModal" class="close-modal">
             <a href="#" @click="$emit('onOverlay')" class="close">
-                <img :src="require('../../../assets/svg/ic_close.svg')" />
+                <img alt="close icon" :src="require('../../../assets/svg/ic_close.svg')" />
             </a>
         </div>
         <!-- Modal content -->
@@ -44,7 +44,7 @@ p {
 
 .modal-content {
     background-color: #220286;
-    margin: 15% auto
+    margin: 25% auto
     padding: 20px
     width: 410px
     border-radius: 10px
@@ -83,14 +83,15 @@ body{
 .close-modal
     position absolute
     right 20px
-    top 80px
+    top 125px
     z-index 99
     img
         width 20px
 
 .no-modal
-  margin-top 105px
+  transform: translateX(0)
   z-index 1
+  position initial
 
 @media only screen and (max-width: 576px)
     .modal-content

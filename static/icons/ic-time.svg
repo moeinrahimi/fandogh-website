@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.764 17">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #4f4f4f;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="ic_time" transform="translate(-1.5 -1.2)">
+    <path id="Path_612" data-name="Path 612" class="cls-1" d="M17.764,9.882A7.882,7.882,0,1,1,9.882,2,7.752,7.752,0,0,1,16.9,6.335" transform="translate(0 -0.064)"/>
+    <path id="Path_613" data-name="Path 613" class="cls-1" d="M20.36,1.7l-.631,4.65L15,5.72" transform="translate(-2.754)"/>
+    <path id="Path_614" data-name="Path 614" class="cls-1" d="M10.941,7v3.941H7" transform="translate(-1.059 -1.123)"/>
+  </g>
+</svg>

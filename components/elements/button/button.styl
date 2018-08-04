@@ -7,6 +7,7 @@
   padding: 14px 0;
   min-width: 160px;
   transition: .6s ease transform, .6s ease box-shadow
+  font-family yekan, sans-serif
   
 .btn-border
   border: solid 2px #ffffff;
@@ -28,9 +29,22 @@
   &:hover 
     box-shadow: 0 3px 26px 0 rgba(254, 93, 144, 1);
 
+.btn-alert
+  background-color #ff2d55
+  &:hover
+    box-shadow: 0 3px 26px 0 #ff2d55;
 .btn-block
   display block
   width 100%
+.btn-light
+  color #2d2d2d
+  background #fff
+.upload-btn-wrapper input[type=file]
+  &:hover
+    +.btn-blue
+        box-shadow: 0 3px 26px 0 rgba(33, 203, 235, 1);
+
+
   
 @media only screen and (max-width: 576px)
   .btn

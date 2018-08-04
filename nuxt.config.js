@@ -2,8 +2,12 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  loading:{
+    color: '#ff628f',
+    height: '5px'
+  },
   env: {
-    API: process.env.API || 'http://fandogh.cloud:8080/fa'
+    API: process.env.API || 'https://api.fandogh.cloud/fa'
   },
   router: {
     middleware: ['authentication']
@@ -23,6 +27,30 @@ module.exports = {
       { rel: 'iScon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  modules: [
+    '@nuxtjs/pwa'
+  ],
+  manifest: {
+    name: 'فندق',
+    description: 'سرویس های ابری فندق'
+  },
+  workbox: {
+    dev: true,
+    importScripts: [
+      'custom-sw.js'
+    ],
+    runtimeCaching: [
+      {
+        urlPattern: 'https://fandogh.cloud/.*',
+        handler: 'cacheFirst',
+        method: 'GET'
+      }
+    ]
+  },
+  modifyUrlPrefix: {
+    '/': '/_nuxt/'
+  },
   /*
   ** Global CSS
   */
@@ -34,5 +62,5 @@ module.exports = {
     extractCSS: true,
     vendor: ['axios']
   },
-  plugins: ['~/plugins/progress-hover', {src: '~/plugins/google-map', ssr: false}]
+  plugins: ['~/plugins/progress-hover', {src: '~/plugins/google-map', ssr: false},'~/plugins/mixins']
 }

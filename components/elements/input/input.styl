@@ -9,6 +9,8 @@
   padding 10px
   border-radius 4px
   direction ltr
+  box-sizing border-box
+  font-family sans-serif yekan
 
 
 .input-color-blue::-webkit-input-placeholder
@@ -25,8 +27,37 @@
 .input-color-blue:-ms-input-placeholder
 	color #725cb5
 	text-align right
-  
+
+.input-white
+  background-color: #ffffff;
+  border: solid 1px #e7e8ea;
+  color #000
+  font-size 14px
+
+.input-block
+  width 100%
+
+.input-dashboard
+  padding 15px
+  border-radius 10px
+  color #47494e
+.input-dashboard::-webkit-input-placeholder
+  text-align right
+  font-size 12px
+.input-dashboard:-moz-placeholder
+  text-align right
+  font-size 12px
+.input-dashboard::-webkit-input-placeholder
+  text-align right
+  font-size 12px
+.input-disable
+  pointer-events none
+  border 1px dotted #b5b5b5
+  background transparent
+  text-align center
+  color #b5b5b5
+  font-size 20px
 @media only screen and (max-width: 576px)
   .fandogh-input
-    font-size: 13px;
-    width: 270px;
+    font-size: 13px
+    width: 270px

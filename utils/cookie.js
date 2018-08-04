@@ -5,11 +5,11 @@ const userId = 'USER_ID'
 const userToken = 'USER_TOKEN'
 
 export const getToken = () => {
-  return Cookie.get(userToken)
+  return Cookie.get(userToken, {path:'/'})
 }
 
 export const removeToken = () => {
-  return Cookie.remove(userToken)
+  return Cookie.remove(userToken, {path:'/'})
 }
 
 export const setToken = (value) => {
@@ -21,7 +21,7 @@ export const getUserId = () => {
 }
 
 export const removeUserId = () => {
-  return Cookie.remove(userId)
+  return Cookie.remove(userId, {path:'/'})
 }
 
 export const setUserId = (value) => {

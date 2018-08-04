@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="row box middle-xs ">
+    <div class="box middle-xs ">
 
       <div>
         <div class="wrap" >
-          <img :src="image" />
+          <img :alt="title" :src="image" />
         </div>
         <div class="text-container">
           <p class="title"> {{title}} </p>
@@ -46,6 +46,7 @@ export default {
     text-align center
     margin 1rem 0
     min-height 270px
+    display flex
 
   .box
     .wrap
