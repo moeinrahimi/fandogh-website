@@ -15,7 +15,7 @@
 <script>
   import FHeader from '~/components/Header'
   import FFooter from '~/components/Footer'
-  import AdminSidebar from '~/components/dashboard/sidebar'
+  import AdminSidebar from '~/components/Dashboard/sidebar'
   import 'normalize.css'
   export default {
     components: {
