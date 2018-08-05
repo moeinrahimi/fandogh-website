@@ -13,7 +13,8 @@
       </div>
       <div class="fandogh-form-group margin-top-100">
         <f-button v-if="!loading" @onClick="createImage" styles="red block"  > اتمام ساخت </f-button>
-        <progress-bar v-if="loading" :progress="progress"> </progress-bar>
+        <f-button  v-if="loading && !loadingProgress"  styles="red block"  > در حال ساخت </f-button>
+        <progress-bar v-if="loadingProgress" :progress="progress"> </progress-bar>
       </div>
 
     </div>
@@ -34,7 +35,8 @@
       return {
         name: '',
         version: '',
-        loading: false
+        loading: false,
+        loadingProgress: false
       }
     },
     computed:{
@@ -60,6 +62,7 @@
             })
 
           if(this.version.length){
+            this.loadingProgress = true
 
             let fd = formData([
               {
@@ -72,14 +75,19 @@
               }
             ])
             this.$store.dispatch('createImageVersion', {name: this.name, formData: fd}).then(res => {
+              console.log(res)
               this.$notify({
                 title: res.message,
                 time: 4000,
                 type: 'success'
               })
+              this.loading = false
+              this.loadingProgress = false
               this.$router.push('/dashboard/images')
             }).catch(e => {
               console.log(e)
+              this.loading = false
+              this.loadingProgress = false
               ErrorReporter(e, this.$data, true).forEach(error => {
                 this.$notify({
                   title: error,
@@ -89,9 +97,11 @@
               })
             })
           } else {
+            this.loading = false
             this.$router.push('/dashboard/images')
           }
         }).catch(e => {
+          this.loading = false
           ErrorReporter(e, this.$data, true).forEach(error => {
             this.$notify({
               title: error,

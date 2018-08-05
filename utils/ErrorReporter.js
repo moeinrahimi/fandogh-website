@@ -13,6 +13,7 @@ const  ErrorReporter = (error, data, returnArray) => {
     })
   } else {
     errorString = error
+    array = [error]
   }
   return returnArray ? array : errorString
 }
