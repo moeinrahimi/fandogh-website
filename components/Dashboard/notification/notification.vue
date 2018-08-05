@@ -1,10 +1,10 @@
 <template>
   <transition  name="slide-fade">
     <div v-show="show" class="notification" :class="option.type || 'success'">
-      <img v-if="option.type === 'alert'"  class="icon" src="./images/alert.svg" alt="notification">
+      <img v-if="option.type === 'error'"  class="icon" src="./images/alert.svg" alt="notification">
       <img v-else  class="icon" src="./images/success.svg" alt="notification">
       <span :class="option.type || 'success'">{{option.title}}</span>
-      <img  v-if="option.type === 'alert'" @click="close" src="./images/close-alert.svg" alt="close" class="close" >
+      <img  v-if="option.type === 'error'" @click="close" src="./images/close-alert.svg" alt="close" class="close" >
       <img  v-else @click="close" src="./images/close-success.svg" alt="close" class="close" >
     </div>
   </transition>
@@ -45,7 +45,7 @@
     align-items center
     z-index 999
     margin-top 10px
-    &.alert
+    &.error
       border-right 4px solid #ff2d55
     &.success
       border-right 4px solid #2cac46
@@ -54,7 +54,7 @@
       font-size 12px
       line-height 1.3
       padding-left 14px
-      &.alert
+      &.error
         color #ff2d55
       &.success
         color #2cac46
