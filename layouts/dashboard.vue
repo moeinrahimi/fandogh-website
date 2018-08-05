@@ -8,6 +8,7 @@
             <div class="dash-container">
                 <nuxt/>
             </div>
+            <notification />
         </div>
     </div>
 </template>
@@ -17,11 +18,13 @@
   import FFooter from '~/components/Footer'
   import AdminSidebar from '~/components/Dashboard/sidebar'
   import 'normalize.css'
+  import Notification from '~/components/Dashboard/notification'
   export default {
     components: {
       FHeader,
       FFooter,
-      AdminSidebar
+      AdminSidebar,
+      Notification
     },
     computed:{
       message(){
