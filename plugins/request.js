@@ -14,9 +14,9 @@ export default function request (params, options) {
         return Promise.reject(e.response)
       }
     },
-    post: async (url, body) => {
+    post: async (url, body, config) => {
       try {
-        const {data} = await service(params, options).post(url, body)
+        const {data} = await service(params, options).post(url, body, config)
         return data
       } catch (e){
         return Promise.reject(e.response.data.message ? e.response.data.message : e.response.data)

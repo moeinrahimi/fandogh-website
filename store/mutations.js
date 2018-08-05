@@ -40,4 +40,7 @@ export const SET_IMAGE_VERSIONS = (state, versions) => {
 export const SET_IMAGE_VERSION_BUILDS = (state, builds) => {
   state.builds = builds
 }
+export const UPDATE_PROGRESS = (state, percent) => {
+  state.progress = percent
+}
 
