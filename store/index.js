@@ -13,6 +13,7 @@ const createStore = () => {
         recovery:false
       },
       message: '',
+      progress: 0,
       user:{
         token: null
       },

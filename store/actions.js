@@ -87,8 +87,9 @@ export const getImages = async ({commit, state}) => {
 }
 
 export const createImage = async ({commit, state}, {name}) => {
+  console.log(name)
   try {
-    return await Request().post('/api/images', name)
+    return await Request().post('/api/images', {name})
   } catch (e) {
     return Promise.reject(e)
   }
@@ -104,9 +105,18 @@ export const getImageVersions = async ({commit, state}, name ) => {
   }
 }
 
+const progressEventListener = (commit) => {
+ return  progressEvent => {
+   console.log(progressEvent)
+    let percentCompleted = Math.floor((progressEvent.loaded * 100) / progressEvent.total);
+    commit('UPDATE_PROGRESS', percentCompleted)
+ }
+}
+
 export const createImageVersion = async ({commit, state}, {name, formData} ) => {
   try {
     return  await Request().post(`/api/images/${name}/version`, formData, {
+      onUploadProgress: progressEventListener(commit),
       headers: {
         'Content-Type': 'multipart/form-data'
       }
