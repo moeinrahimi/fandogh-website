@@ -81,5 +81,6 @@
       background-image: linear-gradient(to right, #00e3dc, #4fa8fd);
       height 18px
       border-radius 50px
+      transition all .5 ease
 
 </style>
