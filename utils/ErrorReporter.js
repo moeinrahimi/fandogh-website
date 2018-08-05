@@ -1,10 +1,12 @@
-const  ErrorReporter = (error, data) => {
+const  ErrorReporter = (error, data, returnArray) => {
   let errorString = ''
+  let array = []
   if(typeof error === 'object'){
     Object.keys(data).map(field => {
       let errorArray = error[field]
       if(errorArray){
         errorArray.map(errorItem => {
+          array.push(errorItem)
           errorString += errorItem+'<br/>'
         })
       }
@@ -12,7 +14,7 @@ const  ErrorReporter = (error, data) => {
   } else {
     errorString = error
   }
-  return errorString
+  return returnArray ? array : errorString
 }
 
 export default ErrorReporter
