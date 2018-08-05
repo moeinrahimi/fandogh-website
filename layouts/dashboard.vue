@@ -49,7 +49,7 @@
         margin-top 110px
         margin-right 350px
         padding 30px
-        min-height: calc(100vh - 170px);
+        min-height: calc(100vh - 110px);
         width calc(100% - 350px)
         box-sizing border-box
     .wrapper
