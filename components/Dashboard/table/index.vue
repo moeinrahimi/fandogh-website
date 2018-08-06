@@ -63,7 +63,8 @@
             border solid 1px #e7e8ea
             border-radius 0 0 15px 10px
         td, th
-            max-width 160px
+            min-width 220px
+            max-width 220px
             text-overflow ellipsis
             overflow hidden
             white-space nowrap
@@ -75,7 +76,6 @@
             text-align center
             &:last-child
                 width 100%
-                min-width 300px
 
         th
             font-size 16px
