@@ -41,6 +41,7 @@ export const SET_IMAGE_VERSION_BUILDS = (state, builds) => {
   state.builds = builds
 }
 export const UPDATE_PROGRESS = (state, percent) => {
+  if(state.progress >= 100) state.progress = 0
   state.progress = percent
 }
 

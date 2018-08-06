@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #4f4f4f;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="ic_sAdd" transform="translate(-1 -1)">
+    <line id="Line_16" data-name="Line 16" class="cls-1" y2="14" transform="translate(8.5 1.5)"/>
+    <line id="Line_17" data-name="Line 17" class="cls-1" x2="14" transform="translate(1.5 8.5)"/>
+  </g>
+</svg>

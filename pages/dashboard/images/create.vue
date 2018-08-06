@@ -74,8 +74,8 @@
                 name: 'file'
               }
             ])
+
             this.$store.dispatch('createImageVersion', {name: this.name, formData: fd}).then(res => {
-              console.log(res)
               this.$notify({
                 title: res.message,
                 time: 4000,
@@ -85,7 +85,6 @@
               this.loadingProgress = false
               this.$router.push('/dashboard/images')
             }).catch(e => {
-              console.log(e)
               this.loading = false
               this.loadingProgress = false
               ErrorReporter(e, this.$data, true).forEach(error => {
