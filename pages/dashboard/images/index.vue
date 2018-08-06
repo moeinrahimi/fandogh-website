@@ -50,10 +50,10 @@
       },
       methods:{
         versions(id){
-          alert(id)
+          this.$router.push(`/dashboard/versions/${id}`)
         },
         createVersion(id){
-          this.$router.push(`/dashboard/versions/create/${decodeURI(id)}`)
+          this.$router.push(`/dashboard/versions/create/${id}`)
         }
       }
     }
