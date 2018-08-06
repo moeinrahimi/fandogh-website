@@ -53,7 +53,6 @@
           alert(id)
         },
         createVersion(id){
-          console.log(encodeURI(id))
           this.$router.push(`/dashboard/versions/create/${decodeURI(id)}`)
         }
       }
