@@ -97,7 +97,7 @@ export const createImage = async ({commit, state}, {name}) => {
 
 export const getImageVersions = async ({commit, state}, name ) => {
   try {
-    let versions = await Request().get(`/api/images/${name}/version`)
+    let versions = await Request().get(`/api/images/${name}/versions`)
     commit('SET_IMAGE_VERSIONS', versions)
     return versions
   } catch (e) {
@@ -115,7 +115,7 @@ const progressEventListener = (commit) => {
 
 export const createImageVersion = async ({commit, state}, {name, formData} ) => {
   try {
-    return  await Request().post(`/api/images/${name}/version`, formData, {
+    return  await Request().post(`/api/images/${name}/versions`, formData, {
       onUploadProgress: progressEventListener(commit),
       headers: {
         'Content-Type': 'multipart/form-data'
