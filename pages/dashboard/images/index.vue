@@ -3,7 +3,7 @@
         <div class="row-block">
             <f-button styles="red" @onClick="$router.push('/dashboard/images/create')" > افزودن ایمیج </f-button>
         </div>
-        <f-table title="ایمیج های شما" :header="header" :data="_images" :actions="[{title:`<img src='/icons/ic-time.svg'/><span> ورژن ها </span>`, action:'versions'}, {title:`<img src='/icons/ic-upload.svg' /> <span>آپلود</span> `, action:'versions'}, {title:`<img src='/icons/ic-delete.svg' /> <span>حذف</span> `, action:'versions'}]"></f-table>
+        <f-table title="ایمیج های شما" :header="header" :data="_images" :actions="[{title:`<img src='/icons/ic-time.svg'/><span> ورژن ها </span>`, action:'versions'}, {title:`<img src='/icons/ic-upload.svg' /> <span>آپلود</span> `, action:'createVersion'}, {title:`<img src='/icons/ic-delete.svg' /> <span>حذف</span> `, action:'versions'}]"></f-table>
     </div>
 </template>
 
@@ -51,6 +51,10 @@
       methods:{
         versions(id){
           alert(id)
+        },
+        createVersion(id){
+          console.log(encodeURI(id))
+          this.$router.push(`/dashboard/versions/create/${decodeURI(id)}`)
         }
       }
     }
