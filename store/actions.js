@@ -107,7 +107,6 @@ export const getImageVersions = async ({commit, state}, name ) => {
 
 const progressEventListener = (commit) => {
  return  progressEvent => {
-   console.log(progressEvent)
     let percentCompleted = Math.floor((progressEvent.loaded * 100) / progressEvent.total);
     commit('UPDATE_PROGRESS', percentCompleted)
  }
