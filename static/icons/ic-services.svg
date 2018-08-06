@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #4f4f4f;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="ic_aServices" transform="translate(0 -3)">
+    <path id="Path_652" data-name="Path 652" class="cls-1" d="M5,3.5h6A4.5,4.5,0,0,1,15.5,8h0A4.5,4.5,0,0,1,11,12.5H5"/>
+    <circle id="Ellipse_45" data-name="Ellipse 45" class="cls-1" cx="4.5" cy="4.5" r="4.5" transform="translate(0.5 3.5)"/>
+  </g>
+</svg>
