@@ -3,7 +3,7 @@
     <div class="col-md-6 col-xs-12" >
       <h2>آپلود ورژن</h2>
       <div class="fandogh-form-group">
-        <f-input v-model="image"  styles="input-white input-block input-dashboard input-disable" placeholder="نام ایمیج را در این قسمت بنویسید"> </f-input>
+        <f-input v-model="name"  styles="input-white input-block input-dashboard input-disable" placeholder="نام ایمیج را در این قسمت بنویسید"> </f-input>
       </div>
       <div class="fandogh-form-group">
         <f-input v-model="version" styles="input-white input-block input-dashboard" placeholder="ورژن ایمیج را در این قسمت بنویسید"> </f-input>
@@ -33,7 +33,7 @@
     layout: 'dashboard',
     data(){
       return {
-        image: this.$route.params.namespace +'/'+ this.$route.params.image,
+        name: this.$route.params.image,
         version: '',
         loading: false,
       }
