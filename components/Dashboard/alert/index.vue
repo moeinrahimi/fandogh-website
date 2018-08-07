@@ -10,10 +10,10 @@
       <div class="modal-content">
         <div class="alert-image">
           <img src="./images/img_delete.svg" />
-          <h2>ایمیج حذف شود ؟</h2>
+          <h2>{{options.title}}</h2>
         </div>
         <div class="alert-content">
-          <h6>{{options.title}}</h6>
+          <h6>{{options.description}}</h6>
           <div class="margin-20">
             <f-button styles="alert" @onClick="onDelete(true)"> حذف شود </f-button>
           </div>
@@ -51,6 +51,7 @@
       },
       alert(options, callback){
         this.display = true
+        console.log(options)
         this.options = options
         this.$on('delete', (bool) =>{
           callback(bool)
@@ -93,6 +94,8 @@
         font-size 16px
         font-weight normal
         text-align center
+        color #000
+
     .modal-content
       overflow hidden
       background-color: #fff;
@@ -102,12 +105,12 @@
       border-radius: 10px
       position relative
 
-  .modal
-    h2
-      font-size 18px
-      font-weight 900
-      color #fff
-      text-align center
+
+      h2
+        font-size 18px
+        font-weight 900
+        color #000
+        text-align center
 
   html, body{
     min-height: 100%;
