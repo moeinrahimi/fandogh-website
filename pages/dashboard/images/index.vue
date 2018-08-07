@@ -70,10 +70,11 @@
         },
         delete(id) {
           this.$alertify({
-            title: ' آیا از حذف شدن ایمیج خود مطمئن هستید؟'
+            title: 'ایمیج حذف شود؟',
+            description: ' آیا از حذف شدن ایمیج خود مطمئن هستید؟'
           }, (status) =>{
             if(status){
-              this.$store.dispatch('deleteImage', id, (res) => {
+              this.$store.dispatch('deleteImage', id).then(res =>{
                 this.$store.dispatch('getImages')
                 this.$notify({
                   title: res.message,
