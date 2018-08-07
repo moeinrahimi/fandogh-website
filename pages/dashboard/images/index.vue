@@ -38,14 +38,26 @@
         images(){
           let images =this.$store.state.images
           if(images) {
-            return images.map(({created_at, ...item}) => {
-              return { ...item,  created_at: FDate({date: created_at})}
+            return images.map(({created_at, name , last_version}) => {
+              if(last_version) {
+                return {
+                  name,
+                  created_at: FDate({date: created_at}),
+                  version: last_version.version,
+                  date: FDate({date: last_version.date})
+                }
+              } else {
+                return {
+                  name,
+                  created_at: FDate({date: created_at})
+                }
+              }
             })
           }
         },
         _images(){
           if(this.images){
-            return this.$dataTable({rows: this.images, length: 4, props: ['name', 'created_at'], id: 'name'})
+            return this.$dataTable({rows: this.images, length: 4, props: ['name', 'created_at', 'version', 'date'], id: 'name'})
           }
         }
       },
