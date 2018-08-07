@@ -29,6 +29,14 @@ export default function request (params, options) {
       } catch (e){
         return Promise.reject(e.response)
       }
+    },
+    delete: async (url, body) => {
+      try {
+        const {data} = await service(params, options).delete(url, body)
+        return data
+      } catch (e){
+        return Promise.reject(e.response)
+      }
     }
   }
 }

@@ -107,9 +107,10 @@
             /*td, th*/
                 /*width 50%*/
                 /*min-width 50%*/
-    @media (min-width: 1400px)
+    @media (max-width: 1400px)
         .table
             td, th
-                max-width 260px
-
+                min-width 170px
+                max-width 170px
+                font-size 12px
 </style>

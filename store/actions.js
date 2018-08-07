@@ -87,9 +87,16 @@ export const getImages = async ({commit, state}) => {
 }
 
 export const createImage = async ({commit, state}, {name}) => {
-  console.log(name)
   try {
     return await Request().post('/api/images', {name})
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+
+export const deleteImage = async ({commit, state}, name) => {
+  try {
+    return await Request().delete(`/api/images/${name}`)
   } catch (e) {
     return Promise.reject(e)
   }

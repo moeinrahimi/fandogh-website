@@ -9,6 +9,7 @@
                 <nuxt/>
             </div>
             <notification />
+            <alert />
         </div>
     </div>
 </template>
@@ -19,12 +20,14 @@
   import AdminSidebar from '~/components/Dashboard/sidebar'
   import 'normalize.css'
   import Notification from '~/components/Dashboard/notification'
+  import Alert from '~/components/Dashboard/alert'
   export default {
     components: {
       FHeader,
       FFooter,
       AdminSidebar,
-      Notification
+      Notification,
+      Alert
     },
     computed:{
       message(){

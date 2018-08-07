@@ -13,7 +13,7 @@
           <h2>ایمیج حذف شود ؟</h2>
         </div>
         <div class="alert-content">
-          <h6> آیا از حذف شدن ایمیج خود مطمئن هستید؟</h6>
+          <h6>{{options.title}}</h6>
           <div class="margin-20">
             <f-button styles="alert" @onClick="onDelete(true)"> حذف شود </f-button>
           </div>
@@ -29,20 +29,33 @@
 
 <script>
   import FButton from '~/components/elements/button'
+  import Vue from 'vue'
   export default {
     props: ['message', 'disableOverlay', 'noModal'],
     data(){
       return {
-        display: false
+        display: false,
+        options: null
       }
+    },
+    created(){
+      Vue.prototype.$alertify = this.alert
     },
     methods:{
       toggle(){
         this.display = !this.display
       },
       onDelete(bool){
-        this.$emit('onDelete', bool)
         this.toggle()
+        this.$emit('delete', bool)
+      },
+      alert(options, callback){
+        this.display = true
+        this.options = options
+        this.$on('delete', (bool) =>{
+          callback(bool)
+          this.$off('delete')
+        })
       }
     },
     components:{
