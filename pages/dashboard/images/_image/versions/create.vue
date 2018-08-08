@@ -9,7 +9,7 @@
         <f-input v-model="version" styles="input-white input-block input-dashboard" placeholder="ورژن ایمیج را در این قسمت بنویسید"> </f-input>
       </div>
       <div class="fandogh-form-group margin-40">
-        <file id="file" />
+        <file id="source" />
       </div>
       <div class="fandogh-form-group margin-top-100">
         <f-button @onClick="createImageVersion" styles="red block" v-if="!loading"  > اتمام ساخت </f-button>
@@ -65,7 +65,7 @@
             },
             {
               type: 'image',
-              name: 'file'
+              name: 'source'
             }
           ])
           this.$store.dispatch('createImageVersion', {name: this.name, formData: fd}).then(res => {
