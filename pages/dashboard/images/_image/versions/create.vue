@@ -74,7 +74,7 @@
               time: 4000,
               type: 'success'
             })
-            this.$router.push('/dashboard/images/'+this.name+'/versions')
+            this.$router.push(`/dashboard/images/${this.name}/versions/${this.version}/logs`)
           }).catch(e => {
             this.loading = false
             ErrorReporter(e, this.$data, true).forEach(error => {

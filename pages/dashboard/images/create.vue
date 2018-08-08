@@ -83,7 +83,7 @@
               })
               this.loading = false
               this.loadingProgress = false
-              this.$router.push('/dashboard/images')
+              this.$router.push(`/dashboard/images/${this.name}/versions/${this.version}/logs`)
             }).catch(e => {
               this.loading = false
               this.loadingProgress = false
