@@ -17,8 +17,7 @@
     layout: 'dashboard',
     async asyncData({store, route}){
       try {
-        let versions = await store.dispatch('getImageVersions', route.params.version)
-        console.log(versions)
+        let versions = await store.dispatch('getImageVersions', route.params.image)
       } catch (e) {
         console.log(e)
       }

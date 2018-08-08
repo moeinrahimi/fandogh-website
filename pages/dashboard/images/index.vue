@@ -63,10 +63,10 @@
       },
       methods:{
         versions(id){
-          this.$router.push(`/dashboard/versions/${id}`)
+          this.$router.push(`/dashboard/images/${id}/versions`)
         },
         createVersion(id){
-          this.$router.push(`/dashboard/versions/create/${id}`)
+          this.$router.push(`/dashboard/images/${id}/versions/create`)
         },
         delete(id) {
           this.$alertify({
