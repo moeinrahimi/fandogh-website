@@ -11,7 +11,7 @@
     import FTable from '~/components/Dashboard/table'
     import FButton from '~/components/elements/button'
     import FDate from '~/utils/date'
-    import Alert from '../../../components/Dashboard/alert'
+    import Alert from '~/components/Dashboard/alert'
     export default {
       layout: 'dashboard',
       async asyncData({store, route, redirect}){

@@ -21,7 +21,7 @@
   .logs
     width 100%
     min-height 500px
-    max-height 100vh
+    max-height 600px
     overflow-y scroll
     border solid 1px #e7e8ea
     background #fff
