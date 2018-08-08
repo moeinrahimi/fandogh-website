@@ -9,7 +9,7 @@
         <f-input name="version" v-model="version" class="version" styles="input-white input-block input-dashboard" placeholder="ورژن ایمیج را در این قسمت بنویسید"> </f-input>
       </div>
       <div class="fandogh-form-group margin-40">
-        <file class="file" id="file" />
+        <file class="file" id="source" />
       </div>
       <div class="fandogh-form-group margin-top-100">
         <f-button v-if="!loading" @onClick="createImage" styles="red block"  > اتمام ساخت </f-button>
@@ -71,7 +71,7 @@
               },
               {
                 type: 'image',
-                name: 'file'
+                name: 'source'
               }
             ])
 
