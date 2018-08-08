@@ -134,7 +134,7 @@ export const createImageVersion = async ({commit, state}, {name, formData} ) => 
 
 export const getImageVersionBuilds = async ({commit, state}, {name, version} ) => {
   try {
-    let builds = await Request().get(`/api/images/${name}/version/${version}/builds`)
+    let builds = await Request().get(`/api/images/${name}/versions/${version}/builds`)
     commit('SET_IMAGE_VERSION_BUILDS', builds)
     return builds
   } catch (e) {

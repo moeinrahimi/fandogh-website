@@ -54,38 +54,38 @@
 
         if(!FormValidator(this.$data, ['version'])) return
 
+        this.loading = true
+        if(this.version.length){
           this.loading = true
-          if(this.version.length){
-            this.loading = true
 
-            let fd = formData([
-              {
-                name: 'version',
-                value: this.version
-              },
-              {
-                type: 'image',
-                name: 'file'
-              }
-            ])
-            this.$store.dispatch('createImageVersion', {name: this.name, formData: fd}).then(res => {
+          let fd = formData([
+            {
+              name: 'version',
+              value: this.version
+            },
+            {
+              type: 'image',
+              name: 'file'
+            }
+          ])
+          this.$store.dispatch('createImageVersion', {name: this.name, formData: fd}).then(res => {
+            this.$notify({
+              title: res.message,
+              time: 4000,
+              type: 'success'
+            })
+            this.$router.push(`/dashboard/images/${this.name}/versions/${this.version}/logs`)
+          }).catch(e => {
+            this.loading = false
+            ErrorReporter(e, this.$data, true).forEach(error => {
               this.$notify({
-                title: res.message,
-                time: 4000,
-                type: 'success'
-              })
-              this.$router.push('/dashboard/versions/'+this.name)
-            }).catch(e => {
-              this.loading = false
-              ErrorReporter(e, this.$data, true).forEach(error => {
-                this.$notify({
-                  title: error,
-                  time: 5000,
-                  type: 'error'
-                })
+                title: error,
+                time: 5000,
+                type: 'error'
               })
             })
-          }
+          })
+        }
       }
     }
   }
