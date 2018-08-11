@@ -45,3 +45,6 @@ export const UPDATE_PROGRESS = (state, percent) => {
   state.progress = percent
 }
 
+export const SET_SERVICES = (state, services) => {
+  state.services = services
+}

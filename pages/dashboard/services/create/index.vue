@@ -13,6 +13,9 @@
         <div class="fandogh-form-group">
           <f-input v-model="port"  styles="input-white input-block input-dashboard" placeholder="پورت سرویس : به صورت پیش‌فرض 80" > </f-input>
         </div>
+        <div class="fandogh-form-group">
+          <multi-select v-model="options" :selects="['hello']" :options="['hello', 'hello1', 'hello2']" />
+        </div>
         <div class="flex margin-40">
           <f-checkbox v-model="internal" id="checkbox2"  styles="input-light" title="Internal (داخلی)  "  /> <span class="field-description"> سرویس شما به صورت داخلی اجرا می‌شود و از بیرون قابل دسترس نمی‌باشد. </span>
         </div>
@@ -23,6 +26,7 @@
           <div class="col-md-4">
               <f-input v-model="image"  styles="input-white input-block input-dashboard" placeholder="مقدار متغییر"> </f-input>
           </div>
+
           <div class="col-md-4">
             <f-button styles="blue block" > افزودن به جدول</f-button>
           </div>
@@ -43,6 +47,7 @@
   import FButton from '~/components/elements/button'
   import FTable from '~/components/Dashboard/table'
   import FCheckbox from '~/components/elements/checkbox'
+  import MultiSelect from '~/components/Dashboard/multiselect'
 
   export default {
     data(){
@@ -50,6 +55,9 @@
         internal: false,
         image: this.$route.params.image,
         header: ['نام متغییر', 'مقدار متغیر'],
+        options:['هلو'],
+        port:'',
+        service: '',
         data: [
           {
             rows: ['NODE_ENV', 'Production']
@@ -62,7 +70,8 @@
       FInput,
       FButton,
       FCheckbox,
-      FTable
+      FTable,
+      MultiSelect
     }
   }
 </script>

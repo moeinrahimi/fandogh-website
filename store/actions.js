@@ -141,4 +141,20 @@ export const getImageVersionBuilds = async ({commit, state}, {name, version} ) =
     return Promise.reject(e)
   }
 }
+export const getServices = async ({commit, state}) => {
+  try {
+    let services = await Request().get(`/api/services`)
+    commit('SET_SERVICES', services)
+    return services
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+export const deleteService = async ({commit, state}, name) => {
+  try {
+    return await Request().delete(`/api/services/${name}`)
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
 
