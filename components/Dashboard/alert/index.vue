@@ -51,7 +51,6 @@
       },
       alert(options, callback){
         this.display = true
-        console.log(options)
         this.options = options
         this.$on('delete', (bool) =>{
           callback(bool)
