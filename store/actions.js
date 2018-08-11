@@ -150,4 +150,11 @@ export const getServices = async ({commit, state}) => {
     return Promise.reject(e)
   }
 }
+export const deleteService = async ({commit, state}, name) => {
+  try {
+    return await Request().delete(`/api/services/${name}`)
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
 

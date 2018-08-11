@@ -3,7 +3,7 @@
     <div class="row-block">
       <f-button styles="red" @onClick="$router.push('/dashboard/services/create')" > اجرای سرویس جدید </f-button>
     </div>
-    <f-table :header="header" title="سرویس‌ های شما" :data="_services" :actions="[{title:`<img src='/icons/ic-time.svg' /> حذف `, action:'test'}, {title:`<img src='/icons/ic-time.svg' /> مشاهده جزییات `, action:'test'}]"></f-table>
+    <f-table :header="header" title="سرویس‌ های شما" :data="_services" :actions="[{title:`<img src='/icons/ic-delete.svg' /><span> حذف </span>`, action:'delete'}, {title:`<img src='/icons/ic-logs.svg' /> <span>مشاهده جزییات</span> `, action:'logs'}]"></f-table>
   </div>
 </template>
 
@@ -47,7 +47,28 @@
       FButton
     },
     methods:{
-      test(){
+      delete(id){
+        this.$alertify({
+          title: `سرویس ${id} حذف شود؟`,
+          description: ' آیا از حذف شدن سرویس خود مطمئن هستید؟'
+        }, (status) =>{
+          if(status){
+            this.$store.dispatch('deleteService', id).then(res =>{
+              this.$store.dispatch('getServices')
+              this.$notify({
+                title: res.message,
+                type: 'success'
+              })
+            }).catch(e => {
+              this.$notify({
+                title: e.message,
+                type: 'error'
+              })
+            })
+          }
+        })
+      },
+      logs(){
 
       }
     }
