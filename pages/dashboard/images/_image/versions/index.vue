@@ -4,7 +4,6 @@
       <f-button styles="red" @onClick="$router.push('/dashboard/versions/create')" > افزودن ورژن </f-button>
     </div>
     <f-table :header="header" title="ورژن های شما" :data="_versions" :actions="[{title:`<img src='/icons/ic-add.svg' /> <span>ایجاد سرویس</span> `, action:'versions'}, {title:`<img src='/icons/ic-services.svg' /> <span>سرویس های فعال</span> `, action:'versions'}, {title:`<img src='/icons/ic-logs.svg' /> <span>مشاهده لاگ</span> `, action:'logs'}]"></f-table>
-    <alert ref="alert" @onDelete="test" ></alert>
   </div>
 </template>
 
@@ -17,7 +16,7 @@
     layout: 'dashboard',
     async asyncData({store, route}){
       try {
-        let versions = await store.dispatch('getImageVersions', route.params.image)
+        await store.dispatch('getImageVersions', route.params.image)
       } catch (e) {
         console.log(e)
       }
