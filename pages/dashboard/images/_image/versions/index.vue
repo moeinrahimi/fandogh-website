@@ -35,20 +35,23 @@
       versions(){
         let versions = this.$store.state.versions
         if(versions) {
-          return versions.map(({date, version, state}) => {
-            return {version,date: FDate({date: date}), state}
+          return versions.map(({date, version, state, size}) => {
+            return {version,date: FDate({date: date}), state: this.getState(state, version), size}
           })
         }
       },
       _versions(){
         if(this.versions){
-          return this.$dataTable({rows: this.versions, length: 4, props: ['version', 'date', 'size', 'state'], id: 'version'})
+          return this.$dataTable({rows: this.versions, length: 4, props: ['version', 'date', 'state', 'size'], id: 'version'})
         }
       }
     },
     methods:{
       versions(id){
         this.$refs.alert.toggle()
+      },
+      getState(state, version){
+        return state === 'FAILED' ? `<a href="/dashboard/images/${this.$route.params.image}/versions/${version}/logs" class="error-text">خطا</a>` : state === 'BUILT' ? `<span  class="success-text">ساخته شده</span>` : `<a href="/dashboard/images/${this.$route.params.image}/versions/${version}/logs" class="pending-text">در حال ساخت ...</a>`
       },
       logs(value){
         this.$router.push(`/dashboard/images/${this.$route.params.image}/versions/${value}/logs`)
