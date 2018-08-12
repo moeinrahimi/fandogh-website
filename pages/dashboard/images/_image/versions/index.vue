@@ -23,7 +23,7 @@
     },
     data(){
       return {
-        header: ['ورژن', 'تاریخ', 'وضعیت', 'حجم'],
+        header: ['ورژن', 'تاریخ', 'حجم', 'وضعیت'],
       }
     },
     components:{
@@ -36,13 +36,13 @@
         let versions = this.$store.state.versions
         if(versions) {
           return versions.map(({date, version, state, size}) => {
-            return {version,date: FDate({date: date}), state: this.getState(state, version), size}
+            return {version,date: FDate({date: date}),size, state: this.getState(state, version) }
           })
         }
       },
       _versions(){
         if(this.versions){
-          return this.$dataTable({rows: this.versions, length: 4, props: ['version', 'date', 'state', 'size'], id: 'version'})
+          return this.$dataTable({rows: this.versions, length: 4, props: ['version', 'date','size', 'state' ], id: 'version'})
         }
       }
     },
