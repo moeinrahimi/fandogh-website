@@ -11,6 +11,9 @@
                 <a href="#"><img src="./icons/managed_services.svg" /> سرویس های مدیریت شده  </a>
             </li>
             <li>
+                <router-link :to="{path:'/dashboard/domains'}" ><img src="./icons/domain.svg" /> دامنه  </router-link>
+            </li>
+            <li>
                 <a href="#"><img src="./icons/settings.svg" /> تنظیمات  </a>
             </li>
             <li>
