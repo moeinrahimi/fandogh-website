@@ -20,7 +20,8 @@ const createStore = () => {
       },
       images: null,
       versions: null,
-      builds: null
+      builds: null,
+      domains: null
     },
     actions: actions,
     mutations: mutations

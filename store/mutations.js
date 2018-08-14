@@ -16,7 +16,7 @@ export const SET_MODAL = (state, modal) => {
   modals[modal] = !modals[modal]
 }
 
-export const SET_USER = (state, {token}) => {
+export const SET_USER = (state, {token, namespace, }) => {
   state.user.token = token
   if(token) setToken(token)
 }
@@ -47,4 +47,7 @@ export const UPDATE_PROGRESS = (state, percent) => {
 
 export const SET_SERVICES = (state, services) => {
   state.services = services
+}
+export const SET_DOMAINS = (state, domains) => {
+  state.domains = domains
 }

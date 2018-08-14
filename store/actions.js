@@ -158,3 +158,12 @@ export const deleteService = async ({commit, state}, name) => {
   }
 }
 
+export const getDomains = async ({commit, state}) => {
+  try {
+    let domains = await Request().get(`/api/domains`)
+    commit('SET_DOMAINS', domains)
+    return domains
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}

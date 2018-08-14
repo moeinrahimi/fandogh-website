@@ -69,7 +69,7 @@
         })
       },
       logs(){
-
+        this.$router.push(`/dashboard/services/${value}/logs`)
       }
     }
   }
