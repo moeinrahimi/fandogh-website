@@ -36,7 +36,7 @@
         let versions = this.$store.state.versions
         if(versions) {
           return versions.map(({date, version, state, size}) => {
-            return {version,date: FDate({date: date}),size, state: this.getState(state, version) }
+            return {version,date: FDate({date: date}),size: ` Mb ${(size/1000000).toFixed(1)}  `, state: this.getState(state, version) }
           })
         }
       },
