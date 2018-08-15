@@ -167,3 +167,11 @@ export const getDomains = async ({commit, state}) => {
     return Promise.reject(e)
   }
 }
+
+export const createDomain = async ({commit, state}, form) => {
+  try {
+    return  await Request().post(`/api/domains`, form)
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}

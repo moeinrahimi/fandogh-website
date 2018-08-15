@@ -14,11 +14,13 @@ export default (fields, requiredFields) => {
       } else {
         if(requiredFields[key].pattern) {
           let pattern = new RegExp(requiredFields[key].pattern)
-          if(!pattern.test(field)) pass = false
-          Vue.prototype.$notify({
-            title: `از کارکترهای مجاز برای فیلد ${name} استفاده کنید`,
-            type: 'error'
-          })
+          if(!pattern.test(field)) {
+            pass = false
+            Vue.prototype.$notify({
+              title: `از کارکترهای مجاز برای فیلد ${name} استفاده کنید`,
+              type: 'error'
+            })
+          }
         }
       }
 

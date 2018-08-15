@@ -56,7 +56,7 @@
     },
     methods:{
       getDomainStatus(status, name){
-        return status ? `<span class="success-text">در حال استفاده </span>` :  `<a href="verify/${name}" class="error-text">تایید نشده</a>`
+        return status ? `<span class="success-text">در حال استفاده </span>` :  `<a href="/dashboard/domains/verification/${name}" class="error-text">تایید نشده</a>`
       },
       verify(id){
 
