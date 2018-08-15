@@ -5,14 +5,20 @@
         </div>
         <div class="namespace--name">
             <span> نام فضا</span>
-            <h6>Idea-Negaran-Bina</h6>
+            <h6>{{namespace}}</h6>
         </div>
     </div>
 </template>
 
 <script>
-    export default {
+    import {getValue} from "~/utils/cookie";
 
+    export default {
+      computed:{
+        namespace(){
+          return getValue('namespace')
+        }
+      }
     }
 </script>
 

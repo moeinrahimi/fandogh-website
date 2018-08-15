@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import {setToken, removeToken} from "../utils/cookie";
+import {setToken, removeToken, setValue} from "../utils/cookie";
 
 /**
  *
@@ -16,9 +16,14 @@ export const SET_MODAL = (state, modal) => {
   modals[modal] = !modals[modal]
 }
 
-export const SET_USER = (state, {token, namespace, }) => {
+export const SET_USER = (state, {token, namespaces, username, email }) => {
   state.user.token = token
-  if(token) setToken(token)
+  if(token) {
+    setToken(token)
+    if(namespaces) setValue({key: 'namespace', value: namespaces[0]})
+    setValue({key: 'username', value: username})
+    setValue({key: 'email', value: email})
+  }
 }
 export const LOGOUT = (state) => {
   removeToken()
