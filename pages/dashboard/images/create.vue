@@ -28,6 +28,7 @@
   import {formData} from "~/utils/formData";
   import ProgressBar from '~/components/Dashboard/progress-bar'
   import ErrorReporter from '~/utils/ErrorReporter'
+  import FormValidator from '~/utils/formValidator'
 
   export default {
     layout: 'dashboard',
@@ -52,6 +53,9 @@
     },
     methods:{
       createImage(){
+
+        if(!FormValidator(this.$data, {name: {required: true, pattern: '^[A-Za-z0-9-_]+$', name: 'نام ایمیج'}})) return
+
         this.loading = true
         this.$store.dispatch('createImage', {name: this.name}).then(res => {
 

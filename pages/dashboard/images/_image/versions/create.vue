@@ -52,7 +52,7 @@
     methods:{
       createImageVersion(){
 
-        if(!FormValidator(this.$data, ['version'])) return
+        if(!FormValidator(this.$data, {version: {required: true}})) return false
 
         this.loading = true
         if(this.version.length){
