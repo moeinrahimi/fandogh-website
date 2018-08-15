@@ -16,14 +16,14 @@ export const setToken = (value) => {
   return Cookie.set(userToken, value, {path:'/'})
 }
 
-export const getUserId = () => {
-  return Cookie.get(userId)
+export const getValue = (key) => {
+  return Cookie.get(key, {path:'/'})
 }
 
-export const removeUserId = () => {
-  return Cookie.remove(userId, {path:'/'})
+export const removeValue = (key) => {
+  return Cookie.remove(key, {path:'/'})
 }
 
-export const setUserId = (value) => {
-  return Cookie.set(userId, value)
+export const setValue = ({key, value}) => {
+  return Cookie.set(key, value, {path:'/'})
 }

@@ -1,17 +1,28 @@
 <template>
     <div class="profile">
         <div class="profile--pic">
-            <img src="http://via.placeholder.com/150x150" alt="profile">
+            <img :src="avatar" alt="profile">
         </div>
         <div class="profile--name">
-            <h6> بهروز میرزایی </h6>
+            <h6> {{username}} </h6>
         </div>
     </div>
 </template>
 
 <script>
-    export default {
+    import {getValue} from "~/utils/cookie";
+    import Gravatar from '~/utils/gravatar'
 
+    export default {
+      computed:{
+        username(){
+          return getValue('username')
+        },
+        avatar(){
+          let email = getValue('email')
+          return Gravatar(email, 150)
+        }
+      }
     }
 </script>
 
