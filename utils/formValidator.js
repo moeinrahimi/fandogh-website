@@ -2,15 +2,26 @@ import Vue from 'vue'
 export default (fields, requiredFields) => {
   let pass = true
   Object.keys(fields).forEach(key => {
-    if(requiredFields.includes(key)){
+    if(Object.keys(requiredFields).includes(key)){
       let field = fields[key]
-      if(!(field && field.length)) {
+      let name = ` "${requiredFields[key].name || key}" `
+      if(requiredFields[key].required && (!field || !field.length)) {
         pass = false
         Vue.prototype.$notify({
-          title: `فیلد ${key} اجباری است`,
+          title: `فیلد ${name} اجباری است`,
           type: 'error'
         })
+      } else {
+        if(requiredFields[key].pattern) {
+          let pattern = new RegExp(requiredFields[key].pattern)
+          if(!pattern.test(field)) pass = false
+          Vue.prototype.$notify({
+            title: `از کارکترهای مجاز برای فیلد ${name} استفاده کنید`,
+            type: 'error'
+          })
+        }
       }
+
     }
   })
   return pass
