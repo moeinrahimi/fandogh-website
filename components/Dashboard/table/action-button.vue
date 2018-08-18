@@ -1,5 +1,5 @@
 <template>
-    <a @click="$emit('onClick')" class="action-button" href="#"> <slot/> </a>
+    <a  @click.prevent="$emit('onClick')" class="action-button" href="#"> <slot/> </a>
 </template>
 <script>
     export default {
