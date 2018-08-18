@@ -8,13 +8,13 @@
           <f-input v-model="name"  styles="input-white input-block input-dashboard input-disable" > </f-input>
         </div>
         <div class="fandogh-form-group">
-          <f-textarea v-model="record" placeholder="لطفا روی دامنه مورد نظر یک رکورد با مقدار TXT زیر ایجاد کنید و روی کلید بررسی دامنه کلیک کنید"></f-textarea>
+          <f-textarea disabled ß placeholder="لطفا روی دامنه مورد نظر یک رکورد با مقدار TXT زیر ایجاد کنید و روی کلید بررسی دامنه کلیک کنید"></f-textarea>
         </div>
         <div class="fandogh-form-group">
           <f-lable :value="domain.verification_key" title="کد فعالسازی"></f-lable>
         </div>
         <div class="fandogh-form-group margin-top-100">
-          <f-button styles="red block"  > بررسی دامنه </f-button>
+          <f-button @onClick="verify" styles="red block"  > بررسی دامنه </f-button>
         </div>
       </div>
     </div>
@@ -34,7 +34,6 @@
     data(){
       return {
         name: this.$route.params.name,
-        record: '',
         test:''
       }
     },
@@ -52,6 +51,26 @@
       FButton,
       FTextarea,
       FLable
+    },
+    methods:{
+      verify(){
+        this.$store.dispatch('verificationDomain', {name: this.name}).then(res => {
+          if(res.verified){
+            this.$notify({
+                  title: 'دامنه شما با موفقیت به سرویس متصل شد.',
+                  type: 'success'
+          })
+          this.$router.push('/dashboard/domains')
+          } else {
+            this.$notify({
+                  title: 'رکورد TXT شما روی دامنه صحیح نیست',
+                  type: 'error'
+          })
+          }
+        }).catch(e => {
+          console.log(e)
+        })
+      }
     }
   }
 </script>
