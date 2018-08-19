@@ -35,4 +35,12 @@
             border-radius 64px
             padding 30px
 
+    @media only screen and (min-width: 1400px)
+        .profile
+            .profile--pic img 
+                padding 0
+                padding-top 20px
+            flex-direction column
+            justify-content center
+
 </style>
