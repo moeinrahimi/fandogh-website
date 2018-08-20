@@ -30,14 +30,15 @@
     .profile
         display flex
         align-items center
-        .profile--pic img
-            width 64px
-            border-radius 64px
+        .profile--pic
             padding 30px
+            img
+                width 64px
+                border-radius 64px
 
     @media only screen and (min-width: 1400px)
         .profile
-            .profile--pic img 
+            .profile--pic
                 padding 0
                 padding-top 20px
             flex-direction column

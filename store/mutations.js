@@ -56,3 +56,6 @@ export const SET_SERVICES = (state, services) => {
 export const SET_DOMAINS = (state, domains) => {
   state.domains = domains
 }
+export const SET_NUMBER_SIDEBAR = (state, number) => {
+  state.sidebar = state.sidebar === number ? 0 : number
+}

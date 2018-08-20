@@ -5,6 +5,7 @@ import * as mutations from './mutations'
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      sidebar: 0,
       modals: {
         login: false,
         register: false,
