@@ -50,7 +50,7 @@
 
     .dash-container
         margin-top 110px
-        margin-right 350px
+        margin-left 350px
         padding 30px
         min-height: calc(100vh - 110px);
         width calc(100% - 350px)
@@ -64,6 +64,10 @@
         justify-content flex-start
     @media only screen and (max-width: 1230px)
         .dash-container
-            margin-top 0
+            margin 0
+            margin-top 60px
+            width 100%
+
+
 
 </style>

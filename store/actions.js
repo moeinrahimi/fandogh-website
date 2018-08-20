@@ -34,6 +34,9 @@ export const register = async ({commit, state}, data) => {
 export const showModal = ({commit, state}, modal) => {
   commit('SET_MODAL', modal)
 }
+export const toggleSidebar = ({commit, state}, number) => {
+  commit('SET_NUMBER_SIDEBAR', number)
+}
 
 export const setMessage = ({commit, state}, message) => {
   commit('SET_MESSAGE', message)

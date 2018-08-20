@@ -1,7 +1,12 @@
 <template>
     <header >
-        <nav class="header-container" :class="{'no-fixed': noFixed}">
+        <nav class="header-container" :class="{'no-fixed': noFixed, 'header-dashboard': dashboard}">
             <div class="right-menu">
+                <div class="menu">
+                    <a href="#" @click.prevent="toggleMenu(1)">
+                        <img alt="hamburger button" :src="require('../../assets/svg/ic_hamburger.svg')" />
+                    </a>
+                </div>
                 <div class="logo">
                     <router-link title="fandogh logo" :to="{path:'/'}"><logo  /></router-link>
                 </div>
@@ -23,11 +28,13 @@
                 <f-button style="width: 100px" @onClick="logout"  styles="transparent" > خروج </f-button>
                 <f-button style="width: 100px" @onClick="$router.push('/dashboard/images')"  styles="transparent border" > داشبورد </f-button>
             </div>
-            <div class="menu">
-                <a href="#" @click.prevent="toggleMenu">
-                    <img alt="hamburger button" :src="require('../../assets/svg/ic_hamburger.svg')" />
+
+            <div class="profile">
+                <a href="#" @click.prevent="toggleMenu(2)">
+                    <img :src="avatar" alt="profile">
                 </a>
             </div>
+
         </nav>
         <sidebar ref="menu" />
         <login ref="login" />
@@ -44,7 +51,8 @@ import Login from '~/components/Auth/Login'
 import Sidebar from './sidebar'
 import Register from "../Auth/Register";
 import Message from "../Auth/Message";
-import {getToken} from "../../utils/cookie";
+import {getValue} from "~/utils/cookie";
+import Gravatar from '~/utils/gravatar'
 
 export default {
   components:{
@@ -76,11 +84,22 @@ export default {
   computed:{
     loggedIn(){
       return this.$store.state.user.token
+    },
+    avatar(){
+      let email = getValue('email')
+      return Gravatar(email, 150)
+    },
+    dashboard(){
+      return this.$route.fullPath.includes('dashboard')
     }
   },
   methods:{
-    toggleMenu(){
-      this.$refs.menu.toggleMenu()
+    toggleMenu(number){
+      if(this.$route.fullPath.includes('dashboard')) {
+        this.$store.dispatch('toggleSidebar', number)
+      } else {
+        this.$router.push('/dashboard/images')
+      }
     },
     showModal(modal){
       this.$store.dispatch('showModal', modal)
@@ -100,7 +119,7 @@ export default {
         box-sizing border-box
         z-index 1000
         top 0
-        left 0
+        right 0
         width 100%
         display flex
         align-items center
@@ -138,7 +157,10 @@ export default {
                         padding 20px
         .menu
            display none
+           margin-left 16px
         .header-container
+            .profile
+                display none
 
         .logo
             img
@@ -148,6 +170,7 @@ export default {
             margin-right 10px
 
     @media only screen and (max-width: 1230px)
+
         .header-container
             height: 60px
             padding 30px
@@ -156,10 +179,19 @@ export default {
             background-color transparent
             padding 0 30px
             z-index 10
+        .header-dashboard
+        &.dashboard
+            position fixed
 
         .navbar
             display none
         header
+            .header-container
+                .profile
+                    display block
+                    img
+                        width 32px
+                        border-radius 32px
             .user
                 display none
             .menu

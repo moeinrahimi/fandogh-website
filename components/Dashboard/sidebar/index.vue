@@ -1,5 +1,5 @@
 <template>
-    <div class="admin-sidebar">
+    <div :class="{'show-sidebar': sidebar}" class="admin-sidebar">
         <profile />
         <namespace />
         <sidebar-menu />
@@ -15,6 +15,11 @@
         Profile,
         Namespace,
         SidebarMenu
+      },
+      computed:{
+      	sidebar(){
+          return this.$store.state.sidebar === 2
+        }
       }
     }
 </script>
@@ -27,7 +32,13 @@
         width 350px
         position fixed
         top 110px
+        left 0
+        transition all ease .5s
     @media only screen and (max-width: 1230px)
       .admin-sidebar
-          top 60px
+        top 60px
+        transform translate(-100%)
+      &.show-sidebar
+        transform translate(0)
+
 </style>

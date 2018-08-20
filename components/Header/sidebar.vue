@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar" :class="{'show-sidebar': show}">
+    <div class="sidebar" :class="{'show-sidebar': sidebar}">
         <div class="row sidebar-heading no-margin">
             <div class="col-xs-6">
                 <a href="#" @click.prevent="toggleMenu" class="close">
@@ -39,9 +39,13 @@
                 </li>
             </ul>
         </div>
-        <div class="auth">
+        <div v-if="!loggedIn" class="auth">
             <f-button @onClick="showModal('login')" styles="transparent border" > ورود </f-button>
             <f-button @onClick="showModal('register')" styles="transparent border" > ثبت نام </f-button>
+        </div>
+        <div v-else class="auth">
+            <f-button @onClick="$router.push('/dashboard/images/')" styles="transparent border" > داشبورد </f-button>
+            <f-button @onClick="logout" styles="transparent border" >  خروج </f-button>
         </div>
     </div>
 </template>
@@ -60,20 +64,32 @@
         FButton
       },
       methods:{
+        loggedIn(){
+          return this.$store.state.user.token
+        },
         toggleMenu(){
-          this.show = !this.show
+          this.$store.dispatch('toggleSidebar', 1)
         },
         showModal(modal){
           this.toggleMenu()
           this.$store.dispatch('showModal', modal)
         },
+        logout(){
+          this.$store.dispatch('logout')
+          this.$router.push('/user/login')
+        }
+      },
+      computed:{
+        sidebar(){
+          return this.$store.state.sidebar === 1
+        }
       }
     }
 </script>
 
 <style lang="stylus" scoped >
     .sidebar
-        transform: translate3d(-100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
         opacity  0
         overflow-y: scroll;
         height 100vh
@@ -81,8 +97,8 @@
         background-color #220286
         position fixed
         top 0
-        left 0
-        z-index 100
+        right 0
+        z-index 9999
         transition all .5s ease
     .show-sidebar
         transform: translate3d(0, 0, 0);
