@@ -29,7 +29,7 @@
                 <f-button style="width: 100px" @onClick="$router.push('/dashboard/images')"  styles="transparent border" > داشبورد </f-button>
             </div>
 
-            <div class="profile">
+            <div v-if="loggedIn" class="profile">
                 <a href="#" @click.prevent="toggleMenu(2)">
                     <img :src="avatar" alt="profile">
                 </a>
@@ -95,7 +95,7 @@ export default {
   },
   methods:{
     toggleMenu(number){
-      if(this.$route.fullPath.includes('dashboard')) {
+      if(this.$route.fullPath.includes('dashboard') && number === 2) {
         this.$store.dispatch('toggleSidebar', number)
       } else {
         this.$router.push('/dashboard/images')
