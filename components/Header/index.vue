@@ -95,7 +95,7 @@ export default {
   },
   methods:{
     toggleMenu(number){
-      if(this.$route.fullPath.includes('dashboard') && number === 2) {
+      if(this.$route.fullPath.includes('dashboard') || number === 1) {
         this.$store.dispatch('toggleSidebar', number)
       } else {
         this.$router.push('/dashboard/images')
