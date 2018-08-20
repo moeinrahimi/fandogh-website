@@ -2,6 +2,11 @@
     <header >
         <nav class="header-container" :class="{'no-fixed': noFixed}">
             <div class="right-menu">
+                <div class="menu">
+                    <a href="#" @click.prevent="toggleMenu">
+                        <img alt="hamburger button" :src="require('../../assets/svg/ic_hamburger.svg')" />
+                    </a>
+                </div>
                 <div class="logo">
                     <router-link title="fandogh logo" :to="{path:'/'}"><logo  /></router-link>
                 </div>
@@ -23,11 +28,7 @@
                 <f-button style="width: 100px" @onClick="logout"  styles="transparent" > خروج </f-button>
                 <f-button style="width: 100px" @onClick="$router.push('/dashboard/images')"  styles="transparent border" > داشبورد </f-button>
             </div>
-            <div class="menu">
-                <a href="#" @click.prevent="toggleMenu">
-                    <img alt="hamburger button" :src="require('../../assets/svg/ic_hamburger.svg')" />
-                </a>
-            </div>
+
         </nav>
         <sidebar ref="menu" />
         <login ref="login" />
@@ -100,7 +101,7 @@ export default {
         box-sizing border-box
         z-index 1000
         top 0
-        left 0
+        right 0
         width 100%
         display flex
         align-items center
@@ -138,6 +139,7 @@ export default {
                         padding 20px
         .menu
            display none
+           margin-left 16px
         .header-container
 
         .logo

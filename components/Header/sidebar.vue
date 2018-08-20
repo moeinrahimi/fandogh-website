@@ -73,7 +73,7 @@
 
 <style lang="stylus" scoped >
     .sidebar
-        transform: translate3d(-100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
         opacity  0
         overflow-y: scroll;
         height 100vh
@@ -81,7 +81,7 @@
         background-color #220286
         position fixed
         top 0
-        left 0
+        right 0
         z-index 100
         transition all .5s ease
     .show-sidebar
