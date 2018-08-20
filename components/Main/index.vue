@@ -47,7 +47,8 @@
 
   @media only screen and (max-width: 1230px)
       .main
-          margin-top: 90px
+          margin-top 90px
+          padding-top 0
   @media only screen and (max-width: 991px)
       .right
         width 100%

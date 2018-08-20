@@ -39,9 +39,13 @@
                 </li>
             </ul>
         </div>
-        <div class="auth">
+        <div v-if="!loggedIn" class="auth">
             <f-button @onClick="showModal('login')" styles="transparent border" > ورود </f-button>
             <f-button @onClick="showModal('register')" styles="transparent border" > ثبت نام </f-button>
+        </div>
+        <div v-else class="auth">
+            <f-button @onClick="$router.push('/dashboard/images/')" styles="transparent border" > داشبورد </f-button>
+            <f-button @onClick="logout" styles="transparent border" >  خروج </f-button>
         </div>
     </div>
 </template>
@@ -60,6 +64,9 @@
         FButton
       },
       methods:{
+        loggedIn(){
+          return this.$store.state.user.token
+        },
         toggleMenu(){
           this.$store.dispatch('toggleSidebar', 1)
         },
@@ -67,6 +74,10 @@
           this.toggleMenu()
           this.$store.dispatch('showModal', modal)
         },
+        logout(){
+          this.$store.dispatch('logout')
+          this.$router.push('/user/login')
+        }
       },
       computed:{
         sidebar(){
