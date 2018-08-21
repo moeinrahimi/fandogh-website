@@ -1,6 +1,6 @@
 <template>
     <div>
-        <f-modal  :message="error"  ref="modal" v-show="show"  >
+        <f-modal :noModal="noModal"  :disableOverlay="disableOverlay" :message="error"  ref="modal" v-show="force || show"  >
             <h2>عضو شوید</h2>
             <div class="fandogh-form-group center margin-10">
                 <f-input name="email" v-model="email" styles="input-color-blue" type="text" placeholder="ایمیل" />
@@ -35,6 +35,7 @@
   import Validation from '~/utils/validation'
 
   export default {
+    props:['force', 'disableOverlay', 'noModal'],
     components:{
       FModal,
       FInput,
