@@ -40,8 +40,8 @@
             </ul>
         </div>
         <div v-if="!loggedIn" class="auth">
-            <f-button @onClick="showModal('login')" styles="transparent border" > ورود </f-button>
-            <f-button @onClick="showModal('register')" styles="transparent border" > ثبت نام </f-button>
+            <f-button @onClick="$router.push('/user/login')" styles="transparent border" > ورود </f-button>
+            <f-button @onClick="$router.push('/user/register')" styles="transparent border" > ثبت نام </f-button>
         </div>
         <div v-else class="auth">
             <!--<f-button @onClick="goToDashboard" styles="transparent border" > داشبورد </f-button>-->
