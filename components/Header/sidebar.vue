@@ -44,7 +44,7 @@
             <f-button @onClick="showModal('register')" styles="transparent border" > ثبت نام </f-button>
         </div>
         <div v-else class="auth">
-            <f-button @onClick="goToDashboard" styles="transparent border" > داشبورد </f-button>
+            <!--<f-button @onClick="goToDashboard" styles="transparent border" > داشبورد </f-button>-->
             <f-button @onClick="logout" styles="transparent border" >  خروج </f-button>
         </div>
     </div>
