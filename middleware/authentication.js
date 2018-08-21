@@ -2,6 +2,7 @@ import {getToken} from "../utils/cookie";
 
 export default async function ({req, isServer, redirect, route}){
   if(!route.path.includes('dashboard')) return
+  return redirect('/tutorial')
   if(isServer){
     if(!req.cookies['USER_TOKEN']){
       redirect('/user/login')

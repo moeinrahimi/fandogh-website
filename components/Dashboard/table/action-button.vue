@@ -35,5 +35,8 @@
             span
                 width 100px
 
-
+   @media (min-width: 1920px)
+       .action-button         
+           span
+               width 100px
 </style>
