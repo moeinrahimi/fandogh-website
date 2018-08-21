@@ -44,7 +44,7 @@
             <f-button @onClick="showModal('register')" styles="transparent border" > ثبت نام </f-button>
         </div>
         <div v-else class="auth">
-            <f-button @onClick="$router.push('/dashboard/images/')" styles="transparent border" > داشبورد </f-button>
+            <f-button @onClick="goToDashboard" styles="transparent border" > داشبورد </f-button>
             <f-button @onClick="logout" styles="transparent border" >  خروج </f-button>
         </div>
     </div>
@@ -64,9 +64,6 @@
         FButton
       },
       methods:{
-        loggedIn(){
-          return this.$store.state.user.token
-        },
         toggleMenu(){
           this.$store.dispatch('toggleSidebar', 1)
         },
@@ -77,11 +74,19 @@
         logout(){
           this.$store.dispatch('logout')
           this.$router.push('/user/login')
+          this.toggleMenu()
+        },
+        goToDashboard(){
+          this.$router.push('/dashboard/images/')
+          this.toggleMenu()
         }
       },
       computed:{
         sidebar(){
           return this.$store.state.sidebar === 1
+        },
+        loggedIn(){
+          return this.$store.state.user.token
         }
       }
     }
