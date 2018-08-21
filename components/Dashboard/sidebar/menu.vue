@@ -2,16 +2,16 @@
     <div class="sidebar-menu">
         <ul>
             <li>
-                <router-link :to="{path:'/dashboard/images'}"><img src="./icons/images.svg" /> ایمیج ها  </router-link>
+                <router-link event="disabled" @click.native="closeMenu('/dashboard/images')" :to="{path:'/dashboard/images'}"><img src="./icons/images.svg" /> ایمیج ها  </router-link>
             </li>
             <li>
-                <router-link :to="{path:'/dashboard/services'}" ><img src="./icons/services.svg" /> سرویس ها  </router-link>
+                <router-link event="disabled" @click.native="closeMenu('/dashboard/services')" :to="{path:'/dashboard/services'}" ><img src="./icons/services.svg" /> سرویس ها  </router-link>
             </li>
             <li>
                 <a href="#"><img src="./icons/managed_services.svg" /> سرویس های مدیریت شده  </a>
             </li>
             <li>
-                <router-link :to="{path:'/dashboard/domains'}" ><img src="./icons/domain.svg" /> دامنه  </router-link>
+                <router-link event="disabled" @click.native="closeMenu('/dashboard/domains')" :to="{path:'/dashboard/domains'}" ><img src="./icons/domain.svg" /> دامنه  </router-link>
             </li>
             <li>
                 <a href="#"><img src="./icons/settings.svg" /> تنظیمات  </a>
@@ -26,7 +26,12 @@
 
 <script>
     export default {
-
+      methods:{
+        closeMenu(path){
+          this.$store.dispatch('toggleSidebar', 0)
+          this.$router.push(path)
+        }
+      }
     }
 </script>
 
