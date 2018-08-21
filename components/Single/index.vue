@@ -20,7 +20,7 @@
 
 <style lang="stylus" scoped>
     .single
-        margin-top 200px
+        padding-top 200px
         display flex
         flex-flow wrap row-reverse
         align-items flex-start
@@ -30,7 +30,7 @@
 
     @media only screen and (max-width: 1230px)
         .single
-            margin-top: 90px
+            padding-top: 90px
     @media only screen and (max-width: 768px)
         .single
             flex-flow wrap column-reverse

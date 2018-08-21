@@ -1,5 +1,6 @@
 .checkbox input[type="checkbox"] {
     opacity: 0;
+
 }
 
 .checkbox label::before{
@@ -12,7 +13,7 @@
     
 }
 
-.checkbox label::after {
+.checkbox label::after
     content: '';
     display: block;
     width: 6px;
@@ -20,14 +21,16 @@
     border: solid #fff;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
-}
 
 
-.checkbox 
+
+.checkbox
+  box-sizing border-box
   label 
     position relative
-    margin 5px
-  
+    margin 14px
+
+
 
 .checkbox label::before,
 .checkbox label::after {
@@ -54,4 +57,15 @@
 .checkbox input[type="checkbox"]:focus + label::before {
     outline: rgb(59, 153, 252) auto 5px;
 }
+
+.input-light
+    label::before
+        background #fff
+
+
+    label::after
+      border: solid #26c6ec;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+
 

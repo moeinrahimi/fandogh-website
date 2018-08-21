@@ -1,7 +1,8 @@
 import express from 'express'
 import { Nuxt, Builder } from 'nuxt-edge'
-
+var cookieParser = require('cookie-parser')
 const app = express()
+app.use(cookieParser())
 const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3600
 

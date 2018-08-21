@@ -1,6 +1,9 @@
 import Request from '~/plugins/request'
 import {getToken} from "../utils/cookie";
 
+export const nuxtServerInit = async ({state, dispatch}, {req}) => {
+  dispatch('checkAuthentication', req.cookies['USER_TOKEN'])
+}
 /**
  *
  * @param commit
@@ -31,13 +34,16 @@ export const register = async ({commit, state}, data) => {
 export const showModal = ({commit, state}, modal) => {
   commit('SET_MODAL', modal)
 }
+export const toggleSidebar = ({commit, state}, number) => {
+  commit('SET_NUMBER_SIDEBAR', number)
+}
 
 export const setMessage = ({commit, state}, message) => {
   commit('SET_MESSAGE', message)
 }
 
 export const checkAuthentication =  ({commit, state}, token) => {
-  return getToken()
+  commit('SET_USER', {token:token})
 }
 
 export const logout = async ({commit, state}) => {
@@ -85,7 +91,15 @@ export const getImages = async ({commit, state}) => {
 
 export const createImage = async ({commit, state}, {name}) => {
   try {
-    return await Request().post('/api/images', name)
+    return await Request().post('/api/images', {name})
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+
+export const deleteImage = async ({commit, state}, name) => {
+  try {
+    return await Request().delete(`/api/images/${name}`)
   } catch (e) {
     return Promise.reject(e)
   }
@@ -93,7 +107,7 @@ export const createImage = async ({commit, state}, {name}) => {
 
 export const getImageVersions = async ({commit, state}, name ) => {
   try {
-    let versions = await Request().get(`/api/images/${name}/version`)
+    let versions = await Request().get(`/api/images/${name}/versions`)
     commit('SET_IMAGE_VERSIONS', versions)
     return versions
   } catch (e) {
@@ -101,9 +115,17 @@ export const getImageVersions = async ({commit, state}, name ) => {
   }
 }
 
+const progressEventListener = (commit) => {
+ return  progressEvent => {
+    let percentCompleted = Math.floor((progressEvent.loaded * 100) / progressEvent.total);
+    commit('UPDATE_PROGRESS', percentCompleted)
+ }
+}
+
 export const createImageVersion = async ({commit, state}, {name, formData} ) => {
   try {
-    return  await Request().post(`/api/images/${name}/version`, formData, {
+    return  await Request().post(`/api/images/${name}/versions`, formData, {
+      onUploadProgress: progressEventListener(commit),
       headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -115,11 +137,52 @@ export const createImageVersion = async ({commit, state}, {name, formData} ) => 
 
 export const getImageVersionBuilds = async ({commit, state}, {name, version} ) => {
   try {
-    let builds = await Request().get(`/api/images/${name}/version/${version}/builds`)
+    let builds = await Request().get(`/api/images/${name}/versions/${version}/builds`)
     commit('SET_IMAGE_VERSION_BUILDS', builds)
     return builds
   } catch (e) {
     return Promise.reject(e)
   }
 }
+export const getServices = async ({commit, state}) => {
+  try {
+    let services = await Request().get(`/api/services`)
+    commit('SET_SERVICES', services)
+    return services
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+export const deleteService = async ({commit, state}, name) => {
+  try {
+    return await Request().delete(`/api/services/${name}`)
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
 
+export const getDomains = async ({commit, state}) => {
+  try {
+    let domains = await Request().get(`/api/domains`)
+    commit('SET_DOMAINS', domains)
+    return domains
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+
+export const createDomain = async ({commit, state}, form) => {
+  try {
+    return  await Request().post(`/api/domains`, form)
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+export const verificationDomain = async ({commit, state}, {name}) => {
+  try {
+    return  await Request().post(`/api/domains/${name}/verifications`
+  )
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}

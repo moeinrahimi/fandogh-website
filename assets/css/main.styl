@@ -9,13 +9,12 @@
 @font-face
   font-family yekan-light
   font-style normal
-  src url('~/assets/fonts/iranyekanweblight.ttf') 
+  src url('~/assets/fonts/iranyekanweblight.ttf')
 
-html
-  background-image: linear-gradient(to left, #0f0050, #160074) !important;
+  
 body.noscroll
   overflow: hidden
-  
+
 .container
     margin-right: auto
     margin-left: auto
@@ -29,9 +28,24 @@ body.noscroll
 
 li              
   list-style: none
-p, h1, h2, h3, h6, button, span, a, button, li, label
+p, h1, h2, h3, h6, button, span, a, li, label
   font-family yekan, sans-serif
   color white
+.dash-container
+  p, h1, h2, h3, h6, span, a, li, label
+    color #000
+  h2
+    line-height 1.8
+    padding-bottom 20px
+    font-size 18px
+  .error-text
+    color #ff2d55
+    text-decoration underline
+  .pending-text
+    color #296bdd
+  .success-text
+    color #2cac46
+
 p, h6, button
   font-size font-small
 p
@@ -46,10 +60,11 @@ a
 input
   font-size font-small
   color #000
-input::placeholder
-  color gray
-  font-family yekan, sans-serif
-  font-size: font-small
+input,textarea
+  &::placeholder
+    color gray
+    font-family yekan, sans-serif
+    font-size font-small
 .img-responsive
   width 100%
 
@@ -70,7 +85,10 @@ p.description
 .inner-content
   padding 0 150px
   
-  
+.row-block
+  margin-bottom 30px
+  display block
+
 .article
   background #fff
   width 100%
@@ -90,6 +108,13 @@ p.description
   a
     color #ff859e
 
+.flex
+  display flex
+  align-items center
+.centered-page
+  min-height 86vh
+  justify-content center
+  align-items center
 @media only screen and (max-width: 991px)
   .article
     padding 50px 30px
@@ -103,8 +128,14 @@ p.description
     font-size font-x-small
     font-family yekan, sans-serif
 
+.font-bold
+  font-weight bold
 .fandogh-form-group
-  margin 10px 0
+  margin 15px 0
+  display block
+  &:first-of-type
+    margin-top 0
+
 .center
   text-align center
 
@@ -114,7 +145,11 @@ p.description
   margin 10px
 .margin-20
   margin 20px
-  
+.margin-40
+  margin 40px 0
+
+.margin-top-100
+  margin-top 100px
 .80
   width 80%
 

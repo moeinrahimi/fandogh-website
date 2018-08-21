@@ -1,6 +1,6 @@
 <template>
     <div class="main container">
-        <div class="middle-xs no-margin">
+        <div class="middle-xs no-margin inner-main">
             <div class="right" >
                 <right />
             </div>
@@ -28,9 +28,12 @@
 
 <style lang="stylus" scoped>
   .main
-    margin-top: 200px
+    box-sizing: content-box
+    padding-top: 200px
     position relative
     clear both
+    .inner-main
+        position relative
   .illustrate
     text-align: left
   .left
@@ -44,7 +47,8 @@
 
   @media only screen and (max-width: 1230px)
       .main
-          margin-top: 90px
+          margin-top 90px
+          padding-top 0
   @media only screen and (max-width: 991px)
       .right
         width 100%

@@ -2,6 +2,10 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  loading:{
+    color: '#ff628f',
+    height: '5px'
+  },
   env: {
     API: process.env.API || 'https://api.fandogh.cloud/fa'
   },
@@ -58,5 +62,5 @@ module.exports = {
     extractCSS: true,
     vendor: ['axios']
   },
-  plugins: ['~/plugins/progress-hover', {src: '~/plugins/google-map', ssr: false}]
+  plugins: ['~/plugins/progress-hover', {src: '~/plugins/google-map', ssr: false},'~/plugins/mixins']
 }

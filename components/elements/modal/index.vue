@@ -1,7 +1,7 @@
 <template>
   <div>
     <div  class="modal" :class="{'no-modal': noModal}" >
-        <div class="close-modal">
+        <div v-if="!noModal" class="close-modal">
             <a href="#" @click="$emit('onOverlay')" class="close">
                 <img alt="close icon" :src="require('../../../assets/svg/ic_close.svg')" />
             </a>
@@ -89,8 +89,9 @@ body{
         width 20px
 
 .no-modal
-  margin-top 105px
+  transform: translateX(0)
   z-index 1
+  position initial
 
 @media only screen and (max-width: 576px)
     .modal-content

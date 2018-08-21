@@ -9,8 +9,8 @@
             </p>
         </div>
         <div class="registration">
-            <f-button @onClick="showModal('login')" styles="red small login" > ورود </f-button>
-            <f-button @onClick="showModal('register')" styles="blue small" > ثبت نام </f-button>
+            <f-button @onClick="$router.push('/user/login')" styles="red small login" > ورود </f-button>
+            <f-button @onClick="$router.push('/user/register')" styles="blue small" > ثبت نام </f-button>
         </div>
     
     </section>
