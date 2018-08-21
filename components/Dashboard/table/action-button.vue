@@ -30,5 +30,10 @@
             width 16px
             height 16px
             vertical-align middle
+    @media (max-width: 768px)
+        .action-button
+            span
+                width 100px
+
 
 </style>

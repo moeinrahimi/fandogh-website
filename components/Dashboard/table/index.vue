@@ -113,4 +113,18 @@
                 min-width 170px
                 max-width 170px
                 font-size 12px
+                &:last-child
+                    width 100%
+                    min-widht 100%
+                    max-width 100%
+    @media (max-width: 768px)
+        .table
+            td, th
+                min-width 120px
+                max-width 120px
+                font-size 11px
+                &:last-child
+                    width 100%
+                    min-widht 100%
+                    max-width 100%
 </style>
