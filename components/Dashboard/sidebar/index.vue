@@ -34,6 +34,7 @@
         top 110px
         left 0
         transition all ease .5s
+        z-index 9999
     @media only screen and (max-width: 1230px)
       .admin-sidebar
         top 60px
