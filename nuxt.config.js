@@ -39,13 +39,6 @@ module.exports = {
     dev: true,
     importScripts: [
       'custom-sw.js'
-    ],
-    runtimeCaching: [
-      {
-        urlPattern: 'https://fandogh.cloud/.*',
-        handler: 'cacheFirst',
-        method: 'GET'
-      }
     ]
   },
   modifyUrlPrefix: {
