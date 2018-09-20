@@ -23,7 +23,7 @@
                     <a @click="toggleMenu" href="#prices"> سرویس ها</a>
                 </li>
                 <li>
-                    <a rel="noopener" target="_blank" href="http://blog.fandogh.cloud/guide/">
+                    <a rel="noopener" target="_blank" href="https://docs.fandogh.cloud">
                         مستندات
                     </a>
                 </li>
