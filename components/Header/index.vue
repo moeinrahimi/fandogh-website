@@ -14,8 +14,8 @@
                     <ul>
                         <li><router-link :to="{path:'/'}"><progress-hover :hover="true">صفحه اصلی</progress-hover></router-link></li>
                         <li><a href="#prices"><progress-hover :hover="true"> سرویس ها </progress-hover></a> </li>
-                        <li><a rel="noopener" target="_blank" href="http://blog.fandogh.cloud/guide/"><progress-hover :hover="true"> مستندات </progress-hover></a></li>
-                        <li><a rel="noopener" target="_blank" href="http://blog.fandogh.cloud"><progress-hover :hover="true">بلاگ</progress-hover></a></li>
+                        <li><a rel="noopener" target="_blank" href="https://docs.fandogh.cloud"><progress-hover :hover="true"> مستندات </progress-hover></a></li>
+                        <li><a rel="noopener" target="_blank" href="https://blog.fandogh.cloud"><progress-hover :hover="true">بلاگ</progress-hover></a></li>
                         <li><router-link  :to="{path:'/about-us'}" ><progress-hover :hover="true"> درباره ما </progress-hover></router-link></li>
                     </ul>
                 </div>
