@@ -32,13 +32,16 @@
         width 350px
         position fixed
         top 110px
-        left 0
+        right 0
         transition all ease .5s
         z-index 9999
     @media only screen and (max-width: 1230px)
       .admin-sidebar
         top 60px
         transform translate(-100%)
+        left 0
+        right initial
+        position fixed
       &.show-sidebar
         transform translate(0)
 
