@@ -1,5 +1,6 @@
 import Request from '~/plugins/request'
 import {getToken} from "../utils/cookie";
+import {jsonManipulator} from "../utils/yaml";
 
 export const nuxtServerInit = async ({state, dispatch}, {req}) => {
   dispatch('checkAuthentication', req.cookies['USER_TOKEN'])
@@ -185,4 +186,10 @@ export const verificationDomain = async ({commit, state}, {name}) => {
   } catch (e) {
     return Promise.reject(e)
   }
+}
+
+export const manifestGenerator = ({commit, state}, {value, path}) => {
+  let json = jsonManipulator(state.manifest, {path, value})
+  commit('SET_JSON_MANIFEST', json)
+  return json
 }
