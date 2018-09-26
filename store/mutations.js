@@ -59,3 +59,8 @@ export const SET_DOMAINS = (state, domains) => {
 export const SET_NUMBER_SIDEBAR = (state, number) => {
   state.sidebar = state.sidebar === number ? 0 : number
 }
+
+export const SET_JSON_MANIFEST = (state, json) => {
+  console.log(json)
+  state.manifest = json
+}

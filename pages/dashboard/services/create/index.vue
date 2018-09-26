@@ -3,40 +3,15 @@
     <h2>ایجاد سرویس </h2>
     <div class="row">
       <div class="col-md-6 col-xs-12" >
-
-        <div class="fandogh-form-group">
-          <f-input v-model="image"  styles="input-white input-block input-dashboard input-disable" > </f-input>
-        </div>
         <div class="fandogh-form-group">
           <f-input v-model="service"  styles="input-white input-block input-dashboard" placeholder="نام سرویس را در این قسمت بنویسید"> </f-input>
         </div>
         <div class="fandogh-form-group">
-          <f-input v-model="port"  styles="input-white input-block input-dashboard" placeholder="پورت سرویس : به صورت پیش‌فرض 80" > </f-input>
-        </div>
-        <div class="fandogh-form-group">
-          <multi-select v-model="options" :selects="['hello']" :options="['hello', 'hello1', 'hello2']" />
-        </div>
-        <div class="flex margin-40">
-          <f-checkbox v-model="internal" id="checkbox2"  styles="input-light" title="Internal (داخلی)  "  /> <span class="field-description"> سرویس شما به صورت داخلی اجرا می‌شود و از بیرون قابل دسترس نمی‌باشد. </span>
-        </div>
-        <div class="row flex">
-          <div class="col-md-4">
-            <f-input v-model="image"  styles="input-white input-block input-dashboard" placeholder="نام متغیر"> </f-input>
-          </div>
-          <div class="col-md-4">
-              <f-input v-model="image"  styles="input-white input-block input-dashboard" placeholder="مقدار متغییر"> </f-input>
-          </div>
-
-          <div class="col-md-4">
-            <f-button styles="blue block" > افزودن به جدول</f-button>
-          </div>
+          <f-select v-model="option" title="انتخاب نوع سرویس" :options="[{value: 'InternalService', title: 'سرویس داخلی'}, {value:  'ExternalService', title: 'سرویس خارجی'} ,{value: 'ManagedService', title: 'سرویس مدیریت شده'}]" />
         </div>
         <div class="fandogh-form-group margin-top-100">
-          <f-button styles="red block"  > اجرا شود </f-button>
+          <f-button @onClick="nextStep" styles="red block"  > مرحله بعد </f-button>
         </div>
-      </div>
-      <div class="col-md-6 col-xs-12" >
-        <f-table :small="true" :header="header" :data="data"  title="env" :actions="[{title:`<img src='/icons/ic-time.svg' /> `, action:'versions'}, {title:`<img src='/icons/ic-time.svg' />  `, action:'versions'}]" />
       </div>
     </div>
   </div>
@@ -47,15 +22,17 @@
   import FButton from '~/components/elements/button'
   import FTable from '~/components/Dashboard/table'
   import FCheckbox from '~/components/elements/checkbox'
-  import MultiSelect from '~/components/Dashboard/multiselect'
+  import FSelect from '~/components/elements/select'
+
+  // yaml generator
+  import jsyaml from 'js-yaml'
 
   export default {
     data(){
       return {
         internal: false,
         image: this.$route.params.image,
-        header: ['نام متغییر', 'مقدار متغیر'],
-        options:['هلو'],
+        option:'',
         port:'',
         service: '',
         data: [
@@ -66,12 +43,25 @@
       }
     },
     layout: 'dashboard',
+    watch:{
+      service(value, oldValue){
+        this.$store.dispatch('manifestGenerator', {value, path: 'name'})
+      },
+      option(value, oldValue){
+        this.$store.dispatch('manifestGenerator', {value, path: 'kind'})
+      },
+    },
+    methods:{
+      nextStep(){
+        this.$router.push('/dashboard/services/create/step2')
+      }
+    },
     components:{
       FInput,
       FButton,
       FCheckbox,
       FTable,
-      MultiSelect
+      FSelect
     }
   }
 </script>
