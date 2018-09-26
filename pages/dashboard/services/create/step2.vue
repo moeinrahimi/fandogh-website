@@ -85,7 +85,6 @@
         if((!this.image.length || !this.version.length) || (!this.image_external.length || !this.version_external.length) ) return
         return (this.image+':'+this.version) || (this.image_external+':'+this.version_external)
       },
-
     },
     layout: 'dashboard',
     watch:{
