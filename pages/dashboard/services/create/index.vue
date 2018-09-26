@@ -3,12 +3,11 @@
     <h2>ایجاد سرویس </h2>
     <div class="row">
       <div class="col-md-6 col-xs-12" >
-
         <div class="fandogh-form-group">
           <f-input v-model="service"  styles="input-white input-block input-dashboard" placeholder="نام سرویس را در این قسمت بنویسید"> </f-input>
         </div>
         <div class="fandogh-form-group">
-          <f-select v-model="option" :single="true" title="انتخاب نوع سرویس" :options="[{value: 'internal service', title: 'سرویس داخلی'}, {value:  'external service', title: 'سرویس خارجی'} ,{value: 'managed service', title: 'سرویس مدیریت شده'}]" />
+          <f-select v-model="option" title="انتخاب نوع سرویس" :options="[{value: 'internal service', title: 'سرویس داخلی'}, {value:  'external service', title: 'سرویس خارجی'} ,{value: 'managed service', title: 'سرویس مدیریت شده'}]" />
         </div>
         <div class="fandogh-form-group margin-top-100">
           <f-button @onClick="nextStep" styles="red block"  > مرحله بعد </f-button>
