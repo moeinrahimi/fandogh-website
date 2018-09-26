@@ -13,6 +13,13 @@
                 <div class="fandogh-form-group" v-if="image.length && version_loaded" >
                     <f-select v-model="version" title="ورژن ایمیج را انتخاب کنید" :options="versions"  styles="input-white input-block input-dashboard" placeholder="ورژن ایمیج را انتخاب کنید"> </f-select>
                 </div>
+
+                <div v-if="!image.length" class="fandogh-form-group">
+                    <f-input v-model="image_external"  styles="input-white input-block input-dashboard"  placeholder="نام ایمیج خارجی بنویسید"> </f-input>
+                </div>
+                <div v-if="!image.length" class="fandogh-form-group">
+                    <f-input v-model="version_external"  styles="input-white input-block input-dashboard"   placeholder="ورژن خارجی را بنویسید"> </f-input>
+                </div>
                 <div class="fandogh-form-group">
                     <f-input v-model="replicas"  styles="input-white input-block input-dashboard" type="number" placeholder="تعداد رپلیکاها را در این قسمت بنویسید"> </f-input>
                 </div>
@@ -50,6 +57,8 @@
       return {
         replicas: '',
         image: '',
+        image_external: '',
+        version_external: 'latest',
         version_loaded: false,
         version: false
       }
@@ -73,8 +82,8 @@
         })
       },
       imageVersion(){
-        if(!this.image.length || !this.version.length) return
-        return this.image+':'+this.version
+        if((!this.image.length || !this.version.length) || (!this.image_external.length || !this.version_external.length) ) return
+        return (this.image+':'+this.version) || (this.image_external+':'+this.version_external)
       },
 
     },
