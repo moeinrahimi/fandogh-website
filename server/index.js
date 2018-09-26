@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser')
 const app = express()
 app.use(cookieParser())
 const host = process.env.HOST || '0.0.0.0'
-const port = process.env.PORT || 3600
+const port = process.env.PORT || 4000
 
 app.set('port', port)
 
