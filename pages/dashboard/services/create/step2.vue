@@ -82,7 +82,7 @@
         })
       },
       imageVersion(){
-        if((!this.image.length || !this.version.length) || (!this.image_external.length || !this.version_external.length) ) return
+        if((!this.image.length || !this.version.length) && (!this.image_external.length || !this.version_external.length) ) return
         return (this.image+':'+this.version) || (this.image_external+':'+this.version_external)
       },
     },
@@ -104,7 +104,7 @@
     },
     methods:{
       nextStep(){
-        this.$router.push('/dashboard/services/create/step2')
+        this.$router.push('/dashboard/services/create/step3')
       }
     },
     components:{

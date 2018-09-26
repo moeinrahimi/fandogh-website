@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="fandogh-form-group margin-top-100">
-                    <f-button styles="red block"  > مرحله بعد </f-button>
+                    <f-button styles="red block" @onClick="nextStep"  > مرحله بعد </f-button>
                 </div>
             </div>
             <div class="col-md-6 col-xs-12" >
@@ -72,6 +72,9 @@
         this.envs.push(
             {name, value, hidden}
         )
+      },
+      nextStep(){
+        this.$router.push('/dashboard/services/create/step4')
       }
     },
     watch:{

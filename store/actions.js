@@ -162,6 +162,14 @@ export const deleteService = async ({commit, state}, name) => {
   }
 }
 
+export const createServiceManifest = async ({commit, state}) => {
+  try {
+    return await Request().post('/api/services/manifests', state.manifest)
+  } catch (e) {
+    return Promise.reject(e)
+  }
+}
+
 export const getDomains = async ({commit, state}) => {
   try {
     let domains = await Request().get(`/api/domains`)

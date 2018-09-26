@@ -7,7 +7,7 @@
           <f-input v-model="service"  styles="input-white input-block input-dashboard" placeholder="نام سرویس را در این قسمت بنویسید"> </f-input>
         </div>
         <div class="fandogh-form-group">
-          <f-select v-model="option" title="انتخاب نوع سرویس" :options="[{value: 'internal service', title: 'سرویس داخلی'}, {value:  'external service', title: 'سرویس خارجی'} ,{value: 'managed service', title: 'سرویس مدیریت شده'}]" />
+          <f-select v-model="option" title="انتخاب نوع سرویس" :options="[{value: 'InternalService', title: 'سرویس داخلی'}, {value:  'ExternalService', title: 'سرویس خارجی'} ,{value: 'ManagedService', title: 'سرویس مدیریت شده'}]" />
         </div>
         <div class="fandogh-form-group margin-top-100">
           <f-button @onClick="nextStep" styles="red block"  > مرحله بعد </f-button>
@@ -45,7 +45,7 @@
     layout: 'dashboard',
     watch:{
       service(value, oldValue){
-        this.$store.dispatch('manifestGenerator', {value, path: 'service'})
+        this.$store.dispatch('manifestGenerator', {value, path: 'name'})
       },
       option(value, oldValue){
         this.$store.dispatch('manifestGenerator', {value, path: 'kind'})

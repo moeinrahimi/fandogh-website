@@ -17,7 +17,8 @@
                     </div>
                 </div>
                 <div class="fandogh-form-group margin-top-100">
-                    <f-button styles="red block"  > عملیات دیپلوی </f-button>
+                    <f-button styles="red block" @onClick="deploy" v-if="!loading"  > عملیات دیپلوی </f-button>
+                    <f-button styles="red block" disabled v-if="loading"  > در حال ساخت... </f-button>
                 </div>
             </div>
             <div class="col-md-6 col-xs-12" >
@@ -33,6 +34,8 @@
   import FTable from '~/components/Dashboard/table'
   import FCheckbox from '~/components/elements/checkbox'
   import MultiSelect from '~/components/Dashboard/multiselect'
+  import ErrorReporter from '~/utils/ErrorReporter'
+
   export default {
     layout: 'dashboard',
     data(){
@@ -41,6 +44,7 @@
         header: ['نام متغییر', 'مقدار متغیر', 'مخفی'],
         mount_path: '',
         sub_path: '',
+        loading: false,
         volume_mounts: [
         ]
       }
@@ -65,6 +69,22 @@
         this.volume_mounts.push(
           {mount_path: this.mount_path, sub_path: this.sub_path}
         )
+      },
+      deploy(){
+        this.loading = true
+        this.$store.dispatch('createServiceManifest').then(res => {
+          this.loading = false
+          this.$router.push('/dashboard/services')
+        }).catch(e => {
+          this.loading = false
+          ErrorReporter(e, this.$data, true).forEach(error => {
+            this.$notify({
+              title: error,
+              time: 4000,
+              type: 'error'
+            })
+          })
+        })
       }
     },
     watch:{
