@@ -122,15 +122,12 @@
 
 <style lang="stylus" scoped>
 .services {
-  display: inline-block;
-  width: 100%;
   background-color: #f0f4f8;
 }
 
 .active-plan-header 
-  padding: 45px 110px;
-  @media screen and (max-width:1150px)
-    padding: 45px 38px
+  padding: 45px 80px;
+
 
 
 .all-plans 
@@ -138,17 +135,15 @@
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
-  margin: 0 101px;
+  margin: 0 80px;
   margin-bottom: 50px;
   border-radius: 10px;
   border: solid 1px #e7e8ea;
   background-color: #fff;
-  @media screen and (max-width:1150px)
-    margin: 0 38px;
-    margin-bottom: 10px;
-  @media screen and (max-width:768px)
-    margin: 0 38px;
-    margin-bottom: 10px;
+  @media (max-width: 820px) {
+    margin auto
+  }
+
 
 
 .service-container 
@@ -160,9 +155,13 @@
   justify-content: center;
   align-items: center;
   flex-wrap  wrap
-  margin: 0 101px;
-  @media screen and (max-width:1150px)
-    width 550px
-    margin: 0 38px;
+  margin: 0 80px;
+  @media screen and (max-width:630px)
+    width 100%
+    margin: auto;
+  @media (max-width: 820px) {
+    margin auto
+  }
+
 
 </style>

@@ -6,7 +6,9 @@
             <div class="middle-line">
               <div class="line"></div>
             </div>
+            <div class="plan-config-container">
             <plan-config v-for="config in configs" :icon="config.icon" :title="config.title" :value="config.value" :key="config.title" />
+            </div>
             <div class="progress-bar" v-if="progressBar">
             <circleProgressBar :percent="progressBar"/>
             </div>
@@ -59,11 +61,25 @@ export default {
 
 <style lang="stylus" scoped>
 .active-service {
-  flex: 1 1;
+  flex: 1 1 ;
   border-radius: 10px;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
   margin: 15px;
+  height 200px
+  @media (min-width: 1200px) {
+    flex 1 40%
+  }
+  @media (max-width: 1779px) {
+  flex 1 50%
+  }
+  @media (max-width: 820px) {
+    
+  }
+  @media (max-width: 636px) {
+    height 90px
+    width 100px
+  }
 }
 
 .plan-container {
@@ -88,5 +104,15 @@ export default {
 }
 .progress-bar
   width 100%
+  display: flex;
+.plan-config-container
+  width 100%
   display flex
+  justify-content: space-around
+  @media (max-width: 636px) {
+    margin 5px 0
+  }
+  
+
+
 </style>

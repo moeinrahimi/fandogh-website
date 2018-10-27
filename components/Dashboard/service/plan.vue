@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="right-container">
     <div class="plan-details" v-bind:class="{'icon-first' : iconFirst }">
       <div class="plan-text">
       <div class="text-space">
@@ -11,7 +11,7 @@
       <p>{{price}}</p>
       </div>
       </div>
-      <div class="plan-icon">
+      <div class="plan-icon visible">
         <img :src="'/icons/plans/services-icon/' + icon" >
       </div>
     </div>
@@ -50,6 +50,15 @@
   display flex
   flex-direction column
   padding 42px 45px
+  @media (max-width: 636px) {
+    padding 0
+  }  
+.plan-details
+ p 
+  @media (max-width: 636px) {
+    margin 0
+  }  
+  
   p:last-child
     margin-top 20px
     font-weight bold
@@ -58,10 +67,19 @@
   justify-content center
   align-items center
   padding 10px
-.container
+  @media (max-width: 820px) {
+   visibility hidden
+   
+  }
+.plan-icon:nth-of-type(1) 
+  visibility visible
+.right-container
   display flex
   align-items center 
   width 254px
+  @media (max-width: 636px) {
+    width 54px
+  }  
 .icon-first 
   order 1 
 .info-button
@@ -77,4 +95,8 @@
   flex-direction column
   width: 89px;
   align-items: center;
+  p
+    @media (max-width: 636px) {
+      font-size 12px
+  }  
 </style>

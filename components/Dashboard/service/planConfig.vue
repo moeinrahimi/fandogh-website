@@ -34,9 +34,24 @@ export default {
   padding: 27px 6px;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 636px) {
+    padding: 0
+  }  
 }
+p
+  @media (max-width: 636px) {
+    font-size 12px
+    height 0
+  }  
+img
+  @media (max-width: 636px) {
+    width 16px
+  }  
 
 .plan-config-icon {
   padding: 10px;
+    @media (max-width: 636px) {
+      padding 0 
+  }  
 }
 </style>
