@@ -9,7 +9,8 @@
             </p>
         </div>
         <div class="registration">
-            <f-button @onClick="$router.push('/user/login')" styles="red small login" > ورود </f-button>
+            
+            <f-button @onClick="$router.push('user/login')" styles="red small login" > ورود </f-button>
             <f-button @onClick="$router.push('/user/register')" styles="blue small" > ثبت نام </f-button>
         </div>
     

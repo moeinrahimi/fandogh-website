@@ -40,7 +40,7 @@
     return {
       activePlan: {
         plan: {
-          icon: "bicycle.png",
+          icon: "blimp.png",
           title: "مفتی",
           price: "رایگان",
           iconFirst: true,
@@ -67,7 +67,7 @@
         },
         {
           plan: {
-            icon: "blimp.png",
+            icon: "blimp-active.png",
             title: "پلن 2",
             price: "190,000",
             isActive: true
@@ -127,7 +127,8 @@
 
 .active-plan-header 
   padding: 45px 80px;
-
+  @media screen and (max-width:630px)
+    padding 0 
 
 
 .all-plans 

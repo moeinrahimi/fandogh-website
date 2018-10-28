@@ -13,7 +13,15 @@
             <circleProgressBar :percent="progressBar"/>
             </div>
           </div>
-          
+          <div class="plan-description">
+            <div class="plan-description-content">
+            </div>
+               <div class="plan-description-toggle">
+              <p>توضیحات</p>
+            </div>
+            
+          </div>
+         
         </div>
 </template>
 
@@ -55,11 +63,59 @@ export default {
       type: String,
       default: false
     },
+  },
+  mounted(){
+    // let plans = document.querySelectorAll('.plan-description-toggle')
+    // let i
+    // for (i = 0; i < plans.length; i++) {
+    // plans[i].addEventListener("click", function() {        
+    //     var panel = this.nextElementSibling;
+    //     console.log(panel,'hah')
+    //     if (panel.style.display === "block") {
+    //         panel.style.display = "none";
+    //     } else {
+    //         panel.style.display = "block";
+    //     }
+    // });
+// }
   }
 };
+
 </script>
 
 <style lang="stylus" scoped>
+
+.plan-description-content
+  display flex
+  width 200px
+  border: solid 1px #e7e8ea;
+  background-color: #ffffff;
+  display none
+  z-index 1
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .25s ease-in-out;
+.plan-description
+  display flex
+  align-items: center;
+  flex-direction column
+.plan-description-toggle
+  z-index 1
+  box-shadow: 0 3px 6px 0 rgba(255, 133, 158, 0.92);
+  background-color: #ff859e;
+  height: 40px;
+  width: 40px * 2;
+  border-bottom-left-radius: 40px * 2;
+  border-bottom-right-radius: 40px * 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  p
+    font-size: 12px;
+    font-weight: bold;
+    color #fff
+
+
 .active-service {
   flex: 1 1 ;
   border-radius: 10px;
@@ -79,11 +135,11 @@ export default {
   @media (max-width: 636px) {
     height 90px
     width 100px
+    margin-top 40px
   }
 }
 
 .plan-container {
-  width: 100%;
   height: 100%;
   display: flex;
 }
