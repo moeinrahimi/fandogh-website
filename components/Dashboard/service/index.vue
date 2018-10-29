@@ -16,7 +16,7 @@
           <div class="plan-description">
             <div class="plan-description-content">
             </div>
-               <div class="plan-description-toggle">
+            <div class="plan-description-toggle">
               <p>توضیحات</p>
             </div>
             
@@ -62,45 +62,54 @@ export default {
     progressBar: {
       type: String,
       default: false
-    },
+    }
   },
-  mounted(){
-    // let plans = document.querySelectorAll('.plan-description-toggle')
-    // let i
-    // for (i = 0; i < plans.length; i++) {
-    // plans[i].addEventListener("click", function() {        
-    //     var panel = this.nextElementSibling;
-    //     console.log(panel,'hah')
-    //     if (panel.style.display === "block") {
-    //         panel.style.display = "none";
-    //     } else {
-    //         panel.style.display = "block";
-    //     }
-    // });
-// }
+  mounted() {
+    let plans = document.querySelectorAll(".plan-description-toggle");
+    let i;
+    for (i = 0; i < plans.length; i++) {
+      plans[i].addEventListener("click", function() {
+        var panel = this.previousElementSibling;
+        console.log(this.parentElement, "hah");
+        this.parentElement.classList.toggle("activator");
+        // if (panel.style.display === "block") {
+
+        //   panel.style.display = "none";
+        // } else {
+        //   panel.style.display = "block";
+        // }
+      });
+    }
   }
 };
-
 </script>
 
 <style lang="stylus" scoped>
+.activator {
+  visibility: visible;
+}
 
-.plan-description-content
-  display flex
-  width 200px
+.plan-description-content {
+  display: flex;
+  width: 200px;
   border: solid 1px #e7e8ea;
   background-color: #ffffff;
-  display none
-  z-index 1
-  max-height: 0px;
+  display: none;
+  z-index: 1;
+  min-height: 20px;
   overflow: hidden;
-  transition: max-height .25s ease-in-out;
-.plan-description
-  display flex
+  visibility: hidden;
+  transition: max-height 0.25s ease-in-out;
+}
+
+.plan-description {
+  display: flex;
   align-items: center;
-  flex-direction column
-.plan-description-toggle
-  z-index 1
+  flex-direction: column;
+}
+
+.plan-description-toggle {
+  z-index: 1;
   box-shadow: 0 3px 6px 0 rgba(255, 133, 158, 0.92);
   background-color: #ff859e;
   height: 40px;
@@ -110,32 +119,37 @@ export default {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  p
+
+  p {
     font-size: 12px;
     font-weight: bold;
-    color #fff
-
+    color: #fff;
+  }
+}
 
 .active-service {
-  flex: 1 1 ;
+  flex: 1 1;
   border-radius: 10px;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
   margin: 15px;
-  height 200px
+  height: 200px;
+
   @media (min-width: 1200px) {
-    flex 1 40%
+    flex: 1 40%;
   }
+
   @media (max-width: 1779px) {
-  flex 1 50%
+    flex: 1 50%;
   }
+
   @media (max-width: 820px) {
-    
   }
+
   @media (max-width: 636px) {
-    height 90px
-    width 100px
-    margin-top 40px
+    height: 90px;
+    width: 100px;
+    margin-top: 40px;
   }
 }
 
@@ -158,17 +172,19 @@ export default {
   background-color: #f8f8f8;
   color: #b0b0b0;
 }
-.progress-bar
-  width 100%
+
+.progress-bar {
+  width: 100%;
   display: flex;
-.plan-config-container
-  width 100%
-  display flex
-  justify-content: space-around
+}
+
+.plan-config-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
   @media (max-width: 636px) {
-    margin 5px 0
+    margin: 5px 0;
   }
-  
-
-
+}
 </style>
