@@ -2,7 +2,7 @@
 
         <div class="active-service" v-bind:class="{'active-plan':plan.isActive}">
           <div class="plan-container">
-            <plan :title="plan.title" :price="plan.price" :icon="plan.icon" :iconFirst="plan.iconFirst" :hasInfo="plan.hasInfo" />
+            <plan :title="plan.title" :price="plan.price" :icon="plan.icon" :iconFirst="plan.iconFirst" :hasInfo="plan.hasInfo" :isActive="plan.isActive" />
             <div class="middle-line">
               <div class="line"></div>
             </div>
@@ -13,8 +13,18 @@
             <circleProgressBar :percent="progressBar"/>
             </div>
           </div>
-          <div class="plan-description">
+          <div class="plan-description" v-bind:class="{'hidden':plan.isActive}">
             <div class="plan-description-content">
+              <p>aaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaa
+                aaaaa
+                a
+              </p>
+              <p>aaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaa
+                aaaaa
+                a
+              </p>
             </div>
             <div class="plan-description-toggle">
               <p>توضیحات</p>
@@ -71,7 +81,8 @@ export default {
       plans[i].addEventListener("click", function() {
         var panel = this.previousElementSibling;
         console.log(this.parentElement, "hah");
-        this.parentElement.classList.toggle("activator");
+        panel.classList.toggle("activator");
+        // this.parentElement.classList.toggle("activator");
         // if (panel.style.display === "block") {
 
         //   panel.style.display = "none";
@@ -86,26 +97,31 @@ export default {
 
 <style lang="stylus" scoped>
 .activator {
-  visibility: visible;
-}
+  visibility: visible !important;
+  max-height : 1100px !important;
 
+}
+.hidden
+  visibility: hidden
 .plan-description-content {
   display: flex;
   width: 200px;
   border: solid 1px #e7e8ea;
   background-color: #ffffff;
-  display: none;
   z-index: 1;
-  min-height: 20px;
+  max-height: 0px;
   overflow: hidden;
+  transition: max-height .25s ease-in-out;
   visibility: hidden;
-  transition: max-height 0.25s ease-in-out;
 }
 
 .plan-description {
-  display: flex;
+  display: none;
   align-items: center;
   flex-direction: column;
+  @media (max-width 636px){
+    display flex
+    }
 }
 
 .plan-description-toggle {
@@ -127,14 +143,17 @@ export default {
   }
 }
 
-.active-service {
+.active-service 
   flex: 1 1;
   border-radius: 10px;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
   margin: 15px;
-  height: 200px;
-
+  // height: 200px;
+  &:hover
+    border-color: #b5b5b5;
+    background-color: #f8f8f8;
+    color: #b0b0b0;
   @media (min-width: 1200px) {
     flex: 1 40%;
   }
@@ -147,11 +166,11 @@ export default {
   }
 
   @media (max-width: 636px) {
-    height: 90px;
+    // height: 90px;
     width: 100px;
-    margin-top: 40px;
+    margin-top: 40px; //NOTE in nabashe collapse kharab mishe 
   }
-}
+
 
 .plan-container {
   height: 100%;
@@ -168,9 +187,7 @@ export default {
 }
 
 .active-plan {
-  border-color: #b5b5b5;
-  background-color: #f8f8f8;
-  color: #b0b0b0;
+  box-shadow none
 }
 
 .progress-bar {

@@ -1,34 +1,43 @@
 <template>
-  <div class="service-plan">
-    <div class="row">
-    <h1 class="service-plan-heading">جز‌ئیات حساب شما</h1>
+  <div class="services">
+    <div class="active-plan-header">
+      <h2>جزئیات حساب شما</h2>
     </div>
-    <Panel />
-    <div class="row">
-    <h1 class="service-plan-heading">انتخاب پلن</h1>
+
+    <div class="service-container">
+      <service :plan="activePlan.plan" :configs="activePlan.configs" :progressBar="60" />
     </div>
-    <panel-box>
-      
-      <div class="row">
-        <div class="col-md-6 col-sm-12 col-xs-12" v-for="(item,index) in 6">
-          <Panel />
-      </div>
-      </div>
-    </panel-box>
+    <div class="active-plan-header">
+      <h2>انتخاب پلن</h2>
+    </div>
+    <div class="all-plans">
+      <service v-for="service in services" :plan="service.plan" :configs="service.configs" :key="service.plan.title" />
+
+    </div>
   </div>
 </template>
 
 <script>
+import FTable from "~/components/Dashboard/table";
+import FButton from "~/components/elements/button";
+import FDate from "~/utils/date";
+import Alert from "~/components/Dashboard/alert";
 import service from "~/components/Dashboard/service";
-import PanelBox from "~/components/ui/panel-box";
-import Panel from "~/components/ui/panel-box/panel";
 
 export default {
   layout: "dashboard",
   name: "plans",
+  async asyncData({ store, route, redirect }) {
+    try {
+      //  await store.dispatch('getImages')
+    } catch (e) {
+      if (e.status === 401) {
+        redirect("/user/login");
+      }
+    }
+  },
   data() {
     return {
-      isShow:-1,
       activePlan: {
         plan: {
           icon: "blimp.png",
@@ -98,20 +107,48 @@ export default {
     };
   },
   components: {
-    service,
-    PanelBox,
-    Panel
+    FTable,
+    FButton,
+    service
   },
   computed: {},
-
+  methods: {}
 };
 </script>
 
 
 <style lang="stylus" scoped>
-.service-plan-heading
-  font-size: 18px;
-  font-weight: bold;
-  color: #000000;
-  padding 45px 31px
+.services
+  background-color #f0f4f8
+.active-plan-header
+  padding 45px 80px
+  @media screen and (max-width: 630px)
+    padding 0
+.all-plans
+  display flex
+  flex-wrap wrap
+  justify-content space-around
+  align-items center
+  margin 0 80px
+  margin-bottom 50px
+  border solid 1px #e7e8ea
+  border-radius 10px
+  background-color #fff
+  @media (max-width: 820px)
+    margin auto
+.service-container
+  display flex
+  flex-wrap wrap
+  justify-content center
+  align-items center
+  margin 0 80px
+  width 624px
+  border solid 1px #e7e8ea
+  border-radius 10px
+  background-color #ffffff
+  @media screen and (max-width: 630px)
+    margin auto
+    width 100%
+  @media (max-width: 820px)
+    margin auto
 </style>
