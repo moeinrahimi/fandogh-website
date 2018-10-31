@@ -3,15 +3,21 @@
     <div class="row">
     <h1 class="service-plan-heading">جز‌ئیات حساب شما</h1>
     </div>
-    <Panel />
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-xs-12">
+    <active-plan-box>
+    <ActivePlan :plan="activePlan.plan" :configs="activePlan.configs" />
+    
+    </active-plan-box>
+      </div>
+    </div>
     <div class="row">
     <h1 class="service-plan-heading">انتخاب پلن</h1>
     </div>
     <panel-box>
-      
       <div class="row">
-        <div class="col-md-6 col-sm-12 col-xs-12" v-for="(item,index) in 6">
-          <Panel />
+        <div class="col-md-6 col-sm-12 col-xs-12" v-for="service,index in services">
+          <Panel :plan="service.plan" :configs="service.configs" :index="index" />
       </div>
       </div>
     </panel-box>
@@ -23,6 +29,10 @@ import service from "~/components/Dashboard/service";
 import PanelBox from "~/components/ui/panel-box";
 import Panel from "~/components/ui/panel-box/panel";
 
+
+import ActivePlan from "~/components/ui/active-plan/panel";
+import ActivePlanBox from "~/components/ui/active-plan";
+
 export default {
   layout: "dashboard",
   name: "plans",
@@ -32,13 +42,10 @@ export default {
       activePlan: {
         plan: {
           icon: "blimp.png",
-          title: "مفتی",
-          price: "رایگان",
-          iconFirst: true,
-          hasInfo: false,
-          isActive: true
+          title: "پلن فعلی",
+          price: "پلن 2 ",
         },
-        configs: [{ title: "RAM", value: "400MB", icon: "ram.png" }]
+        configs: [{ title: "RAM", value: "2GB", icon: "ram.png" }]
       },
       services: [
         {
@@ -59,7 +66,7 @@ export default {
         },
         {
           plan: {
-            icon: "blimp-active.png",
+            icon: "blimp.png",
             title: "پلن 2",
             price: "190,000",
             isActive: true
@@ -100,7 +107,9 @@ export default {
   components: {
     service,
     PanelBox,
-    Panel
+    Panel,
+    ActivePlan,
+    ActivePlanBox
   },
   computed: {},
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="box" :class="{'box-shadow' :hasShadow}" >
+    <div class="box box-shadow" >
         <slot></slot>
     </div>
 </template>
@@ -20,7 +20,6 @@ export default {
     padding 20px 30px
     border-radius 10px
     background-color #ffffff
-    margin-bottom 45px
     position relative
     cursor pointer
     &:before
@@ -45,7 +44,6 @@ export default {
     @media (max-width: 1500px) and (min-width:992px)
         padding 20px 5px   
     &.box-shadow
-        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
         border solid 1px #e7e8ea
     @media (max-width:992px)
         margin-bottom 62px
