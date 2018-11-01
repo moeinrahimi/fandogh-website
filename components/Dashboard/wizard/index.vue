@@ -27,29 +27,34 @@
 </template>
 
 <script>
-  import FButton from '~/components/elements/button'
-  export default {
-    props:{
-      btn_title:{
-        default: ''
-      },
-      steps:{
-        default: [],
-        type: Array
-      }
+import FButton from "~/components/elements/button";
+export default {
+  props: {
+    btn_title: {
+      default: ""
     },
-    components:{
-      FButton
+    steps: {
+      default: [],
+      type: Array
+    }
+  },
+  components: {
+    FButton
+  },
+  computed: {
+    _steps() {
+      return this.steps.map(
+        item =>
+          this.$route.fullPath === item.path
+            ? { ...item, current: true }
+            : { ...item, current: false }
+      );
     },
-    computed:{
-      _steps(){
-        return this.steps.map(item => this.$route.fullPath === item.path ? {...item, current: true} : {...item, current: false})
-      },
-      current_state(){
-        return this._steps.findIndex(item => item.current)
-      }
+    current_state() {
+      return this._steps.findIndex(item => item.current);
     }
   }
+};
 </script>
 
 <style lang="stylus" scoped>

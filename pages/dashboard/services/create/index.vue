@@ -20,54 +20,54 @@
 </template>
 
 <script>
-  import FInput from '~/components/elements/input'
-  import FButton from '~/components/elements/button'
-  import FTable from '~/components/Dashboard/table'
-  import FCheckbox from '~/components/elements/checkbox'
-  import FSelect from '~/components/elements/select'
+import FInput from "~/components/elements/input";
+import FButton from "~/components/elements/button";
+import FTable from "~/components/Dashboard/table";
+import FCheckbox from "~/components/elements/checkbox";
+import FSelect from "~/components/elements/select";
 
-  // yaml generator
-  import jsyaml from 'js-yaml'
-  import Wizard from '~/components/Dashboard/wizard'
+// yaml generator
+import jsyaml from "js-yaml";
+import Wizard from "~/components/Dashboard/wizard";
 
-  export default {
-    data(){
-      return {
-        internal: false,
-        image: this.$route.params.image,
-        option:'',
-        port:'',
-        service: '',
-        data: [
-          {
-            rows: ['NODE_ENV', 'Production']
-          }
-        ]
-      }
+export default {
+  data() {
+    return {
+      internal: false,
+      image: this.$route.params.image,
+      option: "",
+      port: "",
+      service: "",
+      data: [
+        {
+          rows: ["NODE_ENV", "Production"]
+        }
+      ]
+    };
+  },
+  layout: "dashboard",
+  watch: {
+    service(value, oldValue) {
+      this.$store.dispatch("manifestGenerator", { value, path: "name" });
     },
-    layout: 'dashboard',
-    watch:{
-      service(value, oldValue){
-        this.$store.dispatch('manifestGenerator', {value, path: 'name'})
-      },
-      option(value, oldValue){
-        this.$store.dispatch('manifestGenerator', {value, path: 'kind'})
-      },
-    },
-    methods:{
-      nextStep(){
-        this.$router.push('/dashboard/services/create/step2')
-      }
-    },
-    components:{
-      FInput,
-      FButton,
-      FCheckbox,
-      FTable,
-      FSelect,
-      Wizard
+    option(value, oldValue) {
+      this.$store.dispatch("manifestGenerator", { value, path: "kind" });
     }
+  },
+  methods: {
+    nextStep() {
+      this.$router.push("/dashboard/services/create/step2");
+    }
+  },
+  components: {
+    FInput,
+    FButton,
+    FCheckbox,
+    FTable,
+    FSelect,
+    Wizard
   }
+};
 </script>
 
 <style scoped lang="stylus">
