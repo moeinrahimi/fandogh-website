@@ -20,5 +20,7 @@ export default {
     background-color #ffffff
     @media (max-width: 1500px) and (min-width:992px)
         padding 45px 15px
+    @media (max-width: 566px)
+        padding 45px 20px
     
 </style>

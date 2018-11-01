@@ -25,13 +25,10 @@
 </template>
 
 <script>
-import service from "~/components/Dashboard/service";
-import PanelBox from "~/components/ui/panel-box";
-import Panel from "~/components/ui/panel-box/panel";
-
-
-import ActivePlan from "~/components/ui/active-plan/panel";
-import ActivePlanBox from "~/components/ui/active-plan";
+import PanelBox from "~/components/Dashboard/plans/panel-box";
+import Panel from "~/components/Dashboard/plans/panel-box/panel";
+import ActivePlan from "~/components/Dashboard/plans/active-plan/panel";
+import ActivePlanBox from "~/components/Dashboard/plans/active-plan";
 
 export default {
   layout: "dashboard",
@@ -105,7 +102,6 @@ export default {
     };
   },
   components: {
-    service,
     PanelBox,
     Panel,
     ActivePlan,
@@ -123,4 +119,12 @@ export default {
   font-weight: bold;
   color: #000000;
   padding 45px 31px
+@font-face
+  font-family roboto-bold
+  font-style normal
+  src url('~/assets/fonts/Roboto-Bold.ttf')
+@font-face
+  font-family roboto
+  font-style normal
+  src url('~/assets/fonts/Roboto-Regular.ttf')
 </style>

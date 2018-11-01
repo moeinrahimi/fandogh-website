@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import Box from "~/components/ui/panel-box/box.vue";
+import Box from "~/components/Dashboard/plans/panel-box/box.vue";
 
 export default {
   components: {
@@ -141,6 +141,8 @@ export default {
         @media (max-width: 992px)
             flex inherit
             min-width 130px
+        @media (max-width: 566px)
+            min-width: 51px;                        
     &----line
         width 2px
         background-color #e7e8ea
@@ -156,14 +158,20 @@ export default {
         color #4f4f4f
         font-size 18px
         line-height 1.72
+        @media (max-width 566px)
+            font-size 12px
         img
             @media (max-width: 992px)
                 display none
+            @media (max-width 566px)
+                width 16px
     &------price
         color #4f4f4f
         font-weight bold
         font-size 18px
         line-height 1.72
+        @media (max-width 566px)
+            font-size 12px
     &-----information
         display flex
         flex-direction column
@@ -173,15 +181,18 @@ export default {
     &------name
         margin 10px 0 10px 0
         color #4f4f4f
-        font-weight bold
         font-size 16px
-        font-family Roboto
+        font-family Roboto-Bold
         line-height 1.19
+        @media (max-width 566px)
+            font-size 12px
     &------info
         color #4f4f4f
         font-size 16px
         font-family Roboto
         line-height 1.19
+        @media (max-width 566px)
+            font-size 12px
 .service-description
     display flex
     flex-direction column

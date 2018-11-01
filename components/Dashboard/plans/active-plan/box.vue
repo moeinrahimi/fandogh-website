@@ -49,5 +49,7 @@ export default {
         margin-bottom 62px
         padding  20px 30px 20px 15px
         margin-bottom 0
+    @media (max-width:566px)
+        padding: 10px 12px 6px 3px;
 
 </style>

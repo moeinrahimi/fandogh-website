@@ -38,15 +38,8 @@
 </script>
 
 <style lang="stylus" scoped>
-.flex-wrapper {
-  display: flex;
-  width 100%
-  justify-content: center;
-  align-items: center;
-}
-
 .single-chart {
-  width: 50%;
+  width: 100%;
 }
 
 .circular-chart {
