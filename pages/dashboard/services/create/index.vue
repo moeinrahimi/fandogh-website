@@ -1,19 +1,21 @@
 <template>
   <div>
     <h2>ایجاد سرویس </h2>
-    <div class="row">
-      <div class="col-md-6 col-xs-12" >
-        <div class="fandogh-form-group">
-          <f-input v-model="service"  styles="input-white input-block input-dashboard" placeholder="نام سرویس را در این قسمت بنویسید"> </f-input>
-        </div>
-        <div class="fandogh-form-group">
-          <f-select v-model="option" title="انتخاب نوع سرویس" :options="[{value: 'InternalService', title: 'سرویس داخلی'}, {value:  'ExternalService', title: 'سرویس خارجی'} ,{value: 'ManagedService', title: 'سرویس مدیریت شده'}]" />
-        </div>
-        <div class="fandogh-form-group margin-top-100">
-          <f-button @onClick="nextStep" styles="red block"  > مرحله بعد </f-button>
+
+      <div class="row">
+        <div class="col-md-6 col-xs-12" >
+          <wizard btn_title="مرحله بعد" :steps="[{title:'test', path:'/dashboard/services/test2'},{title:'test', path:'/dashboard/services/tests'}, {title:'test', path:'/dashboard/services/create'}]">
+          <div class="fandogh-form-group">
+            <f-input v-model="service"  styles="input-white input-block input-dashboard" placeholder="نام سرویس را در این قسمت بنویسید"> </f-input>
+          </div>
+          <div class="fandogh-form-group">
+            <f-select v-model="option" title="انتخاب نوع سرویس" :options="[{value: 'InternalService', title: 'سرویس داخلی'}, {value:  'ExternalService', title: 'سرویس خارجی'} ,{value: 'ManagedService', title: 'سرویس مدیریت شده'}]" />
+          </div>
+
+          </wizard>
         </div>
       </div>
-    </div>
+
   </div>
 </template>
 
@@ -26,6 +28,7 @@
 
   // yaml generator
   import jsyaml from 'js-yaml'
+  import Wizard from '~/components/Dashboard/wizard'
 
   export default {
     data(){
@@ -61,7 +64,8 @@
       FButton,
       FCheckbox,
       FTable,
-      FSelect
+      FSelect,
+      Wizard
     }
   }
 </script>
