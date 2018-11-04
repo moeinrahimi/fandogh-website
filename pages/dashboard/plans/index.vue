@@ -1,5 +1,6 @@
 <template>
   <div class="service-plan">
+    <nuxt-child/>  
     <div class="row">
     <h1 class="service-plan-heading">جز‌ئیات حساب شما</h1>
     </div>
@@ -7,7 +8,6 @@
       <div class="col-md-6 col-sm-12 col-xs-12">
     <active-plan-box>
     <ActivePlan :plan="activePlan.plan" :configs="activePlan.configs" />
-    
     </active-plan-box>
       </div>
     </div>
@@ -17,7 +17,7 @@
     <panel-box>
       <div class="row">
         <div class="col-md-6 col-sm-12 col-xs-12" v-for="service,index in services">
-          <Panel :plan="service.plan" :configs="service.configs" :index="index" />
+          <Panel :plan="service.plan" :configs="service.configs" :index="index"  />
       </div>
       </div>
     </panel-box>
@@ -106,9 +106,7 @@ export default {
     Panel,
     ActivePlan,
     ActivePlanBox
-  },
-  computed: {},
-
+  }
 };
 </script>
 

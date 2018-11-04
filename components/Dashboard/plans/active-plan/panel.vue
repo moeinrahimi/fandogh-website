@@ -106,7 +106,7 @@ export default {
         align-items center
         &-second
             width 100%
-            justify-content: center;
+            justify-content: space-around
         @media (max-width: 992px)
             flex inherit
             min-width: 160px;
@@ -156,5 +156,5 @@ export default {
         @media (max-width 566px)
             font-size 12px
 .circle-container
-    width 50%
+    width 40%
 </style>

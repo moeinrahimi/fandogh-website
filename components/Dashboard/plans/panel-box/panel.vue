@@ -1,5 +1,5 @@
 <template>
-    <div class="service" >
+    <div class="service" @click="redirectToPlan(plan,configs)" >
         <box :hasShadow="plan.isActive ? false : true ">
             <div class="service---box" >
                 <div class="service----item">
@@ -64,9 +64,6 @@ export default {
       isShow:-1,
     }
    },
-  mounted(){
-      console.log(this)
-  },
     props: {
         index :{
             type:Number , 
@@ -106,7 +103,13 @@ export default {
         },
     
   methods: {
-
+    redirectToPlan(plan,configs){
+        this.$store.dispatch('setPlan', {plan,configs}).then(res => {
+          this.$router.push('/dashboard/plans/1')
+        }).catch(e => {
+          console.log(e,'eee')
+        })
+    },
     toggle(index) {
       if (index === this.isShow) {
         this.isShow = -1;
