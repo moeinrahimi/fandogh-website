@@ -14,19 +14,20 @@
                     <ul>
                         <li><router-link :to="{path:'/'}"><progress-hover :hover="true">صفحه اصلی</progress-hover></router-link></li>
                         <li><a href="#prices"><progress-hover :hover="true"> سرویس ها </progress-hover></a> </li>
-                        <li><a rel="noopener" target="_blank" href="http://blog.fandogh.cloud/guide/"><progress-hover :hover="true"> مستندات </progress-hover></a></li>
-                        <li><a rel="noopener" target="_blank" href="http://blog.fandogh.cloud"><progress-hover :hover="true">بلاگ</progress-hover></a></li>
+                        <li><a rel="noopener" target="_blank" href="https://docs.fandogh.cloud"><progress-hover :hover="true"> مستندات </progress-hover></a></li>
+                        <li><a rel="noopener" target="_blank" href="https://blog.fandogh.cloud"><progress-hover :hover="true">بلاگ</progress-hover></a></li>
                         <li><router-link  :to="{path:'/about-us'}" ><progress-hover :hover="true"> درباره ما </progress-hover></router-link></li>
                     </ul>
                 </div>
             </div>
             <div class="user" v-if="!loggedIn">
-                <f-button style="width: 100px" @onClick="$router.push('/user/login')"  styles="transparent" > ورود </f-button>
-                <f-button @onClick="$router.push('/user/register')" styles="transparent border" > ثبت نام </f-button>
+                <f-button style="width: 100px" path="/user/login"  styles="transparent" > ورود </f-button>
+                <f-button path="/user/register" styles="transparent border" > ثبت نام </f-button>
             </div>
             <div class="user" v-else>
                 <f-button style="width: 100px" @onClick="logout"  styles="transparent" > خروج </f-button>
-                <f-button style="width: 100px" @onClick="$router.push('/dashboard/images')"  styles="transparent border" > داشبورد </f-button>
+                <!--<f-button style="width: 100px" @onClick="$router.push('/dashboard/images')"  styles="transparent border" > داشبورد </f-button>-->
+                <f-button style="width: 100px" path="/dashboard/images"  styles="transparent border" > داشبورد </f-button>
             </div>
 
             <div v-if="loggedIn" class="profile">
