@@ -35,15 +35,6 @@ module.exports = {
     name: 'فندق',
     description: 'سرویس های ابری فندق'
   },
-  workbox: {
-    dev: true,
-    importScripts: [
-      'custom-sw.js'
-    ]
-  },
-  modifyUrlPrefix: {
-    '/': '/_nuxt/'
-  },
   /*
   ** Global CSS
   */
