@@ -35,22 +35,6 @@ module.exports = {
     name: 'فندق',
     description: 'سرویس های ابری فندق'
   },
-  workbox: {
-    dev: true,
-    importScripts: [
-      'custom-sw.js'
-    ],
-    runtimeCaching: [
-      {
-        urlPattern: 'https://fandogh.cloud/.*',
-        handler: 'cacheFirst',
-        method: 'GET'
-      }
-    ]
-  },
-  modifyUrlPrefix: {
-    '/': '/_nuxt/'
-  },
   /*
   ** Global CSS
   */
