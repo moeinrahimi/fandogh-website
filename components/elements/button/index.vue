@@ -1,0 +1,64 @@
+<template>
+  <div>
+  </div>
+</template>
+
+<script>
+  export default {
+  }
+</script>
+
+<style lang="stylus" scoped>
+    .btn
+        border-radius: 23px;
+        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+        border none
+        cursor pointer
+        padding: 14px 0;
+        min-width: 160px;
+        transition: .6s ease transform, .6s ease box-shadow
+        font-family yekan, sans-serif
+
+    .btn-border
+        border: solid 2px #ffffff;
+    .btn-transparent
+        background-color transparent
+
+        &:hover
+            color #160070
+            background-color white
+            transform scale(1.1)
+    .btn-blue
+        background-image linear-gradient(to left, #00e3dc, #4fa8fd)
+        box-shadow: 0 3px 26px 0 rgba(33, 203, 235, 0.4);
+        &:hover
+            box-shadow: 0 3px 26px 0 rgba(33, 203, 235, 1);
+    .btn-red
+        background-image linear-gradient(to left, #ffa7ad, #ff628f)
+        box-shadow: 0 3px 26px 0 rgba(254, 93, 144, 0.4);
+        &:hover
+            box-shadow: 0 3px 26px 0 rgba(254, 93, 144, 1);
+
+    .btn-alert
+        background-color #ff2d55
+        &:hover
+            box-shadow: 0 3px 26px 0 #ff2d55;
+    .btn-block
+        display block
+        width 100%
+    .btn-light
+        color #2d2d2d
+        background #fff
+    .upload-btn-wrapper input[type=file]
+        &:hover
+            +.btn-blue
+                box-shadow: 0 3px 26px 0 rgba(33, 203, 235, 1);
+
+
+
+    @media only screen and (max-width: 576px)
+        .btn
+            padding: 12px 0;
+            min-width: 140px;
+</style>
