@@ -19,7 +19,7 @@
                             <p>نام فضا : Ide Negaran Bina</p>
                             <p>طرح انتخابی : {{plan.title}}</p>
                             <p>هزینه پلن : {{plan.price}} تومان</p>
-                            <p>مالیات بر ارزش افزوده : ۱۳۵٬۰۰۰ تومان</p>
+                            <p>مالیات بر ارزش افزوده : {{tax}} تومان</p>
                         </div>
                     </div>
                     <div class="col-md-6  col-xs-12 col-sm-12">
@@ -89,7 +89,7 @@ export default {
   data() {
     return {
       plan: {},
-      configs: []
+      configs: [],
     };
   },
   mounted() {
@@ -98,14 +98,17 @@ export default {
   },
   computed: {
     addTaxToPrice: function() {
+        let price = this.$store.state.plan.plan.price;
+      let priceRaw = parseFloat(price.replace(/,/g, ""));
+      let tax = Math.ceil((9 * priceRaw)) / 100;
+      let taxedPrice = tax+priceRaw
+      return taxedPrice.toLocaleString('fa-EG');
+    },
+    tax: function() {
       let price = this.$store.state.plan.plan.price;
-      console.log(price, "a");
-
-      let price1 = parseFloat(price.replace(/,/g, ""));
-      let tax = 135000;
-      let finalPrice = price1 + tax;
-
-      return finalPrice;
+      let priceInt = parseFloat(price.replace(/,/g, ""));
+      let finalPrice = Math.ceil((9 * priceInt)) / 100;
+      return finalPrice.toLocaleString('fa-EG');
     }
   }
 };
