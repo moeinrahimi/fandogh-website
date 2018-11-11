@@ -73,7 +73,7 @@
       selectOption(option){
         this.toggle()
         this.selected = option.title
-        this.$emit('input', option.value)
+        this.$emit('input', option.value || option.title)
       }
     }
   }

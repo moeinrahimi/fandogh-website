@@ -9,11 +9,11 @@
                      {{index+1}}
                  </span>
                      </router-link>
-                     <p>
+                     <p v-if="index === current_state">
                          {{step.title}}
                      </p>
                  </div>
-                 <div v-if="index+1 < steps.length" class="line"></div>
+                 <div v-if="index+1 < _steps.length" class="line"></div>
              </div>
          </div>
       </div>
@@ -34,7 +34,7 @@ export default {
       default: ""
     },
     steps: {
-      default: [],
+      default: null,
       type: Array
     }
   },
@@ -42,8 +42,12 @@ export default {
     FButton
   },
   computed: {
+    wizard(){
+      return this.$store.state.wizard
+    },
     _steps() {
-      return this.steps.map(
+      let steps = this.steps || this.wizard.steps;
+      return steps.map(
         item =>
           this.$route.fullPath === item.path
             ? { ...item, current: true }
@@ -71,6 +75,7 @@ export default {
             position relative
             .step-container
                 display flex
+                margin-bottom 100px
                 .line
                     width 90px
                     margin 18px -2px
@@ -98,6 +103,9 @@ export default {
                     p
                         text-align center
                         font-size 16px
+                        position absolute
+                        width 100px
+                        right -25px
                 &.before
                     .line
                         border: solid 1px #2cac46
