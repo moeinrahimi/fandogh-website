@@ -43,6 +43,7 @@
                 display flex
                 align-items center
                 justify-content center
+                margin-left 10px
                 .radio-selected
                     border 1px solid #00e3dc
                     border-radius 50%

@@ -33,6 +33,9 @@
 <style lang="stylus" scoped>
 
 .radio
+    font-family yekan
     display: flex
     justify-content right
+    div
+        margin-left 30px
 </style>

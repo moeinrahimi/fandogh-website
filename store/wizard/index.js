@@ -12,7 +12,7 @@ const wizardModule = () => {
           },
           {
             title: 'Image Setup',
-            path: 'service/image'
+            path: '/dashboard/services/image'
           },
           {
             title: 'Environment variables',
