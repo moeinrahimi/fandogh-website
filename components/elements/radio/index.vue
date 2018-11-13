@@ -21,6 +21,9 @@
     components:{
       FRadio
     },
+    mounted(){
+      this.selectOption(this.selected)
+    },
     methods:{
       selectOption(title){
         this.selected = title
