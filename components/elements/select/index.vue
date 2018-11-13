@@ -40,7 +40,7 @@
         <div v-show="show" class="dropdown-selector">
             <ul>
                 <li v-for="option in options">
-                    <a @click="selectOption(option)" href="#">{{option.title}}</a>
+                    <a @click.prevent="selectOption(option)" href="#">{{option.title}}</a>
                 </li>
             </ul>
         </div>
@@ -82,6 +82,7 @@
 <style scoped lang="stylus">
 
     .dropdown
+        overflow hidden
         ul, li
             padding 0
             margin 0
