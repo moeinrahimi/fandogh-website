@@ -69,7 +69,7 @@
       addEnv(){
         let name = this.name
         let value = this.value
-        let hidden = this.hidden
+        let hidden = this.hidden ? `<img src="/icons/success.svg" />` : `<img src="/icons/fail.svg" />`
         this.envs.push(
           {name, value, hidden}
         )
