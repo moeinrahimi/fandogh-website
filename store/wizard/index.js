@@ -16,7 +16,7 @@ const wizardModule = () => {
           },
           {
             title: 'Environment variables',
-            path:'services/environment_variables'
+            path:'/dashboard/services/environment_variables'
           },
           {
             title: 'Volume',
