@@ -23,14 +23,21 @@
       <div class="wizard-footer">
           <f-button v-if="back" :path="back.path" styles="red" > مرحله قبل </f-button>
           <f-button v-if="next" :path="next.path" styles="blue"  > مرحله بعد </f-button>
-          <f-button v-if="!next" @onClick="e => $emit('onFinish', e)"  styles="blue"  > اتمام ساخت </f-button>
+          <f-button  v-if="back && !loading" @onClick="finish"  :styles="built"  > اتمام ساخت </f-button>
+          <f-button  v-if="back && loading"   :styles="built"  > در حال ساخت... </f-button>
       </div>
   </div>
 </template>
 
 <script>
 import FButton from "~/components/elements/button";
+import ErrorReporter from '~/utils/ErrorReporter'
 export default {
+  data(){
+    return {
+      loading: false
+    }
+  },
   props: {
     btn_title: {
       default: ""
@@ -46,6 +53,26 @@ export default {
   computed: {
     wizard(){
       return this.$store.state.wizard
+    },
+    built(){
+      return this.next ? 'border black transparent' : 'blue'
+    },
+    finish(e){
+      this.$emit('onFinish', e)
+      this.loading = true
+      this.$store.dispatch('createServiceManifest').then(res => {
+        this.loading = false
+        this.$router.push('/dashboard/services')
+      }).catch(e => {
+        this.loading = false
+        ErrorReporter(e, [], true).forEach(error => {
+          this.$notify({
+            title: error,
+            time: 4000,
+            type: 'error'
+          })
+        })
+      })
     },
     _steps() {
       let steps = this.steps || this.wizard.steps;
@@ -77,6 +104,7 @@ export default {
         margin-top 100px
         a
           margin-left 20px
+          margin-bottom 30px
     &-progress
         &-steps
             display flex
