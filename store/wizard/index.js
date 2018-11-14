@@ -27,7 +27,7 @@ const wizardModule = () => {
             path:'/dashboard/services/port_mapping'
           },
           {
-            title: 'Health check',
+            title: 'Health Check',
             path:'/dashboard/services/health_check'
           }
         ]
