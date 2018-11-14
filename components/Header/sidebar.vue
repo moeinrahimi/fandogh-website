@@ -23,7 +23,7 @@
                     <a @click="toggleMenu" href="#prices"> سرویس ها</a>
                 </li>
                 <li>
-                    <a rel="noopener" target="_blank" href="http://blog.fandogh.cloud/guide/">
+                    <a rel="noopener" target="_blank" href="https://docs.fandogh.cloud">
                         مستندات
                     </a>
                 </li>
@@ -40,8 +40,8 @@
             </ul>
         </div>
         <div v-if="!loggedIn" class="auth">
-            <f-button @onClick="$router.push('/user/login')" styles="transparent border" > ورود </f-button>
-            <f-button @onClick="$router.push('/user/register')" styles="transparent border" > ثبت نام </f-button>
+            <f-button path="/user/login" styles="transparent border" > ورود </f-button>
+            <f-button path="/user/register" styles="transparent border" > ثبت نام </f-button>
         </div>
         <div v-else class="auth">
             <f-button @onClick="goToDashboard" styles="transparent border" > داشبورد </f-button>

@@ -14,7 +14,7 @@
                     </p>
                     <p>
                         در حال حاضر برای استفاده از امکانات فندق شما نیاز دارید که از <a href="https://github.com/fandoghpaas/fandogh-cli">CLI</a> فندق استفاده کنید.
-                        مستندات نحوه استفاده در  <a href="http://blog.fandogh.cloud/guide">اینجا</a> در دسترس شما هستند.
+                        مستندات نحوه استفاده در  <a href="https://docs.fandogh.cloud">اینجا</a> در دسترس شما هستند.
                         مستندات استفاده از CLI:
                     </p>
 

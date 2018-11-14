@@ -21,7 +21,9 @@
           <slot />
       </div>
       <div class="wizard-footer">
-          <f-button styles="blue" > {{btn_title}} </f-button>
+          <f-button v-if="back" :path="back.path" styles="red" > مرحله قبل </f-button>
+          <f-button v-if="next" :path="next.path" styles="blue"  > مرحله بعد </f-button>
+          <f-button v-if="!next" @onClick="e => $emit('onFinish', e)"  styles="blue"  > اتمام ساخت </f-button>
       </div>
   </div>
 </template>
@@ -56,6 +58,12 @@ export default {
     },
     current_state() {
       return this._steps.findIndex(item => item.current);
+    },
+    back(){
+      return this._steps[this.current_state-1]
+    },
+    next(){
+      return this._steps[this.current_state+1]
     }
   }
 };
@@ -67,6 +75,8 @@ export default {
 .wizard
     &-footer
         margin-top 100px
+        a
+          margin-left 20px
     &-progress
         &-steps
             display flex

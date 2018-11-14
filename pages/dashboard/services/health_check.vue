@@ -3,7 +3,7 @@
         <h2> راه اندازی سرویس </h2>
         <div class="row">
             <div class="col-md-6 col-xs-12" >
-                <wizard btn_title="مرحله بعد">
+                <wizard @onFinish="finish">
                     <h2>
                         Liveness
                     </h2>
@@ -76,6 +76,9 @@
       Wizard
     },
     methods:{
+      finish(e){
+        console.log(e)
+      },
       updateManifest(value, prop){
         if(value[0]) {
           this.$store.dispatch('manifestGenerator', {value: value[0], path: 'liveness_prop.'+prop})
