@@ -4,19 +4,20 @@
         <div class="row">
             <div class="col-md-6 col-xs-12" >
                 <wizard btn_title="مرحله بعد">
-                    <div class="flex margin-40">
-                        <f-checkbox v-model="hidden" id="checkbox3"  styles="input-light" title="متغییر مخفی"  /> <span class="field-description"> </span>
+
+                    <div class="fandogh-form-group">
+                        <f-input v-model="name"  styles="input-white input-block input-dashboard" placeholder="نام متغیر"> </f-input>
                     </div>
-                    <div class="row flex">
-                        <div class="col-md-4">
-                            <f-input v-model="name"  styles="input-white input-block input-dashboard" placeholder="نام متغیر"> </f-input>
-                        </div>
-                        <div class="col-md-4">
-                            <f-input v-model="value"  styles="input-white input-block input-dashboard" placeholder="مقدار متغییر"> </f-input>
+                    <div class="fandogh-form-group">
+                        <f-input v-model="value"  styles="input-white input-block input-dashboard" placeholder="مقدار متغییر"> </f-input>
+                    </div>
+                    <div class="flex-space">
+                        <div class="flex margin-40">
+                            <f-checkbox v-model="hidden" id="checkbox3"  styles="input-light" title="متغییر مخفی"  /> <span class="field-description"> </span>
                         </div>
 
-                        <div class="col-md-4">
-                            <f-button @onClick="addEnv" styles="blue block" > افزودن به جدول</f-button>
+                        <div class="fandogh-form-group">
+                            <f-button @onClick="addEnv" styles="transparent black border" > افزودن به جدول</f-button>
                         </div>
                     </div>
                     <div class="fandogh-form-group margin-top-100">

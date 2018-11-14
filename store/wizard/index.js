@@ -20,15 +20,15 @@ const wizardModule = () => {
           },
           {
             title: 'Volume',
-            path:'services/volume'
+            path:'/dashboard/services/volume'
           },
           {
             title: 'Port Mapping',
-            path:'services/port_mapping'
+            path:'/dashboard/services/port_mapping'
           },
           {
             title: 'Health check',
-            path:'services/health_check'
+            path:'/dashboard/services/health_check'
           }
         ]
       }
