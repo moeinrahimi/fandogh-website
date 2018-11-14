@@ -126,4 +126,13 @@ export default {
                 .step-container
                     .line
                         width 30px
+
+@media laptop
+    .wizard
+        &-progress
+            &-steps
+                .step-container
+                    .line
+                        width 15px
+
 </style>
