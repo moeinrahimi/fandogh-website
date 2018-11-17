@@ -3,12 +3,12 @@
         <h2>ایجاد سرویس </h2>
         <div class="row">
             <div class="col-md-6 col-xs-12" >
-                <wizard btn_title="مرحله بعد">
+                <wizard :prevent="prevent" btn_title="مرحله بعد">
                     <div class="fandogh-form-group">
-                        <f-input v-model="service"  styles="input-white input-block input-dashboard" placeholder="نام سرویس را در این قسمت بنویسید"> </f-input>
+                        <f-input v-required v-model="name"  styles="input-white input-block input-dashboard" placeholder="نام سرویس را در این قسمت بنویسید"> </f-input>
                     </div>
-                    <div class="fandogh-form-group">
-                        <f-select v-model="option" :options="service_types" title="انتخاب نوع سرویس"  />
+                    <div  class="fandogh-form-group">
+                        <f-select v-required  v-model="kind" :options="service_types" title="انتخاب نوع سرویس"  />
                     </div>
 
                     <div class="fandogh-form-group">
@@ -22,23 +22,23 @@
                                <span>MB</span>
                            </div>
                            <div style="flex: 3;" >
-                               <f-input v-model="ram"  styles="input-white input-block input-dashboard" placeholder="Min:128, Max:2048"> </f-input>
+                               <f-input v-required v-model="memory"  styles="input-white input-block input-dashboard" placeholder="Min:128, Max:2048"> </f-input>
                            </div>
                        </div>
                     </div>
 
-                    <div v-if="option === 'External'" class="margin-top-50">
+                    <div v-if="kind === 'External'" class="margin-top-50">
                         <h2>
                             External Option
                         </h2>
                         <div class="fandogh-form-group">
-                            <f-checkbox title="HTTP" id="http" styles="light" v-model="http" />
+                            <f-checkbox title="HTTP" id="http" styles="light" v-model="allow_http" />
                         </div>
                         <div class="fandogh-form-group">
                             <f-input v-model="path"  styles="input-white input-block input-dashboard" placeholder="Path"> </f-input>
                         </div>
                         <div class="fandogh-form-group">
-                            <f-input v-model="domain"  styles="input-white input-block input-dashboard" placeholder="دامنه خود را وارد نمایید  "> </f-input>
+                            <f-input v-model="domains"  styles="input-white input-block input-dashboard" placeholder="دامنه خود را وارد نمایید  "> </f-input>
                         </div>
                     </div>
 
@@ -56,20 +56,21 @@
   import FSelect from "~/components/elements/select";
 
   // yaml generator
-  import jsyaml from "js-yaml";
   import Wizard from "~/components/Dashboard/wizard";
+  import {Validation} from "~/plugins/validation";
 
   export default {
     data() {
       return {
         internal: false,
-        image: this.$route.params.image,
-        option: "",
+        name: this.$route.params.image,
+        kind: "",
+        prevent: true,
         port: "",
         path: "",
-        ram: "",
-        http: false,
-        domain: "",
+        memory: "",
+        allow_http: false,
+        domains: "",
         service: "",
         service_types: [
           {
@@ -88,24 +89,30 @@
     },
     layout: "dashboard",
     watch: {
-      service(value, oldValue) {
-        this.$store.dispatch("manifestGenerator", { value, path: "name" });
+      name(value, oldValue) {
+        this.$store.dispatch("manifestGenerator", { value, path: "name", key: 'service' });
       },
-      option(value, oldValue) {
-        this.$store.dispatch("manifestGenerator", { value, path: "kind" });
+      kind(value, oldValue) {
+        this.$store.dispatch("manifestGenerator", { value, path: "kind", key: 'option' });
       },
-      http(value, oldValue) {
-        this.$store.dispatch("manifestGenerator", { value, path: "allow_http" });
+      allow_http(value, oldValue) {
+        this.$store.dispatch("manifestGenerator", { value, path: "allow_http", key: 'http' });
       },
       path(value, oldValue) {
-        this.$store.dispatch("manifestGenerator", { value, path: "path" });
+        this.$store.dispatch("manifestGenerator", { value, path: "path", key: 'path' });
       },
       domains(value, oldValue) {
-        this.$store.dispatch("manifestGenerator", { value, path: "domains" });
+        this.$store.dispatch("manifestGenerator", { value, path: "domains", key: 'domains' });
       },
-      ram(value, oldValue) {
-        this.$store.dispatch("manifestGenerator", { value: value+'Mi', path: "resources.memory" });
+      memory(value, oldValue) {
+        let memory = value.toLowerCase().includes('mi') ? value : value+'Mi';
+        this.$store.dispatch("manifestGenerator", { value: memory, path: "resources.memory", key: 'ram' });
       }
+    },
+    mounted(){
+      Validation.$on('validation', ({isValid, keys}) => {
+        this.prevent = !isValid
+      })
     },
     methods: {
       nextStep() {

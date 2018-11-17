@@ -17,15 +17,17 @@
              </div>
          </div>
       </div>
-      <div class="wizard-content">
-          <slot />
-      </div>
-      <div class="wizard-footer">
-          <f-button v-if="back" :path="back.path" styles="red" > مرحله قبل </f-button>
-          <f-button v-if="next" :path="next.path" styles="blue"  > مرحله بعد </f-button>
-          <f-button  v-if="back && !loading" @onClick="finish"  :styles="built"  > اتمام ساخت </f-button>
-          <f-button  v-if="back && loading"   :styles="built"  > در حال ساخت... </f-button>
-      </div>
+      <form v-form >
+          <div class="wizard-content">
+             <slot />
+          </div>
+          <div class="wizard-footer">
+              <f-button v-if="back" :path="back.path" styles="red" > مرحله قبل </f-button>
+              <f-button  v-if="next && !prevent" :path="next.path" styles="blue"  > مرحله بعد </f-button>
+              <f-button   v-if="back && !loading && !prevent" @onClick="finish"  :styles="built"  > اتمام ساخت </f-button>
+              <f-button  v-if="back && loading"   :styles="built"  > در حال ساخت... </f-button>
+          </div>
+      </form>
   </div>
 </template>
 
@@ -42,6 +44,9 @@ export default {
     btn_title: {
       default: ""
     },
+    prevent:{
+      default: false
+    },
     steps: {
       default: null,
       type: Array
@@ -49,6 +54,10 @@ export default {
   },
   components: {
     FButton
+  },
+  mounted(){
+    //console.log(pathis.$rent)
+    this.persistData(this.$store.state.manifest)
   },
   computed: {
     wizard(){
@@ -91,6 +100,23 @@ export default {
     },
     next(){
       return this._steps[this.current_state+1]
+    }
+  },
+  methods:{
+    persistData(manifest){
+      console.log(manifest)
+      for(let key in manifest){
+        if(manifest.hasOwnProperty(key)) {
+          if(typeof manifest[key] === 'object'){
+            this.persistData(manifest[key])
+          }
+          else {
+            if (this.$parent.hasOwnProperty(key)) {
+              this.$parent[key] = manifest[key]
+            }
+          }
+        }
+      }
     }
   }
 };

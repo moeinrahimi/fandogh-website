@@ -50,6 +50,9 @@
 <script>
   export default {
     props:{
+      value:{
+        default: ''
+      },
       options:{
         default: []
       },
@@ -64,6 +67,11 @@
       return {
         selected: this.select,
         show: false
+      }
+    },
+    watch:{
+      value(value){
+        this.selectOption({title: value, value})
       }
     },
     methods:{
