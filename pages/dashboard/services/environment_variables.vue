@@ -46,7 +46,7 @@
         name: '',
         value: '',
         hidden: false,
-        envs: [
+        env: [
         ]
       }
     },
@@ -60,18 +60,18 @@
     },
     computed:{
       envsData(){
-        return this.$dataTable({rows: this.envs, length: 3, props: ['name', 'value','hidden' ], id: 'name'})
+        return this.$dataTable({rows: this.env, length: 3, props: ['name', 'value','hidden' ], id: 'name'})
       }
     },
     methods:{
       deleteRow(name){
-        this.envs = this.envs.filter(item => item.name !== name)
+        this.env = this.env.filter(item => item.name !== name)
       },
       addEnv(){
         let name = this.name
         let value = this.value
         let hidden = this.hidden ? `<img src="/icons/success.svg" />` : `<img src="/icons/fail.svg" />`
-        this.envs.push(
+        this.env.push(
           {name, value, hidden}
         )
       },
@@ -80,7 +80,7 @@
       }
     },
     watch:{
-      envs(value, oldValue){
+      env(value, oldValue){
         this.$store.dispatch('manifestGenerator', {value, path: 'spec.env'})
       },
     }

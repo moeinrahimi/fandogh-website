@@ -57,7 +57,9 @@ export default {
   },
   mounted(){
     //console.log(pathis.$rent)
-    this.persistData(this.$store.state.manifest)
+    let manifest = this.$store.state.manifest
+    if(!Object.keys(manifest).length) this.$router.push({path: this._steps[0].path})
+    this.persistData(manifest)
   },
   computed: {
     wizard(){
@@ -65,23 +67,6 @@ export default {
     },
     built(){
       return this.next ? 'border black transparent' : 'blue'
-    },
-    finish(e){
-      this.$emit('onFinish', e)
-      this.loading = true
-      this.$store.dispatch('createServiceManifest').then(res => {
-        this.loading = false
-        this.$router.push('/dashboard/services')
-      }).catch(e => {
-        this.loading = false
-        ErrorReporter(e, [], true).forEach(error => {
-          this.$notify({
-            title: error,
-            time: 4000,
-            type: 'error'
-          })
-        })
-      })
     },
     _steps() {
       let steps = this.steps || this.wizard.steps;
@@ -107,7 +92,7 @@ export default {
       console.log(manifest)
       for(let key in manifest){
         if(manifest.hasOwnProperty(key)) {
-          if(typeof manifest[key] === 'object'){
+          if(typeof manifest[key] === 'object' && !Array.isArray(manifest[key])){
             this.persistData(manifest[key])
           }
           else {
@@ -117,6 +102,23 @@ export default {
           }
         }
       }
+    },
+    finish(e){
+      this.$emit('onFinish', e)
+      this.loading = true
+      this.$store.dispatch('createServiceManifest').then(res => {
+        this.loading = false
+        this.$router.push('/dashboard/services')
+      }).catch(e => {
+        this.loading = false
+        ErrorReporter(e, [], true).forEach(error => {
+          this.$notify({
+            title: error,
+            time: 4000,
+            type: 'error'
+          })
+        })
+      })
     }
   }
 };
