@@ -4,7 +4,7 @@
          <div class="wizard-progress-steps">
              <div class="step-container" v-for="(step, index) in _steps" :class="{'current': index === current_state, 'before': index < current_state}">
                  <div class="step"  >
-                     <router-link  :to="step.path">
+                     <router-link  :to="prevent ? $route.fullPath : step.path">
                  <span>
                      {{index+1}}
                  </span>

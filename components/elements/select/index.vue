@@ -71,15 +71,15 @@
     },
     watch:{
       value(value){
-        this.selectOption({title: value, value})
+        this.selectOption({title: value, value}, true)
       }
     },
     methods:{
       toggle(){
         this.show = !this.show
       },
-      selectOption(option){
-        this.toggle()
+      selectOption(option, noToggle){
+        if(noToggle) this.toggle()
         this.selected = option.title
         this.$emit('input', option.value || option.title)
       }

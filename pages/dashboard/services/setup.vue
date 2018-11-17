@@ -90,23 +90,23 @@
     layout: "dashboard",
     watch: {
       name(value, oldValue) {
-        this.$store.dispatch("manifestGenerator", { value, path: "name", key: 'service' });
+        this.$store.dispatch("manifestGenerator", { value, path: "name"});
       },
       kind(value, oldValue) {
-        this.$store.dispatch("manifestGenerator", { value, path: "kind", key: 'option' });
+        this.$store.dispatch("manifestGenerator", { value, path: "kind"});
       },
       allow_http(value, oldValue) {
-        this.$store.dispatch("manifestGenerator", { value, path: "allow_http", key: 'http' });
+        this.$store.dispatch("manifestGenerator", { value, path: "allow_http"});
       },
       path(value, oldValue) {
-        this.$store.dispatch("manifestGenerator", { value, path: "path", key: 'path' });
+        this.$store.dispatch("manifestGenerator", { value, path: "path" });
       },
       domains(value, oldValue) {
-        this.$store.dispatch("manifestGenerator", { value, path: "domains", key: 'domains' });
+        this.$store.dispatch("manifestGenerator", { value, path: "domains"});
       },
       memory(value, oldValue) {
         let memory = value.toLowerCase().includes('mi') ? value : value+'Mi';
-        this.$store.dispatch("manifestGenerator", { value: memory, path: "resources.memory", key: 'ram' });
+        this.$store.dispatch("manifestGenerator", { value: memory, path: "resources.memory"});
       }
     },
     mounted(){
