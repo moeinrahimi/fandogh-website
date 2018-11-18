@@ -89,7 +89,6 @@ export default {
   },
   methods:{
     persistData(manifest){
-      console.log(manifest)
       for(let key in manifest){
         if(manifest.hasOwnProperty(key)) {
           if(typeof manifest[key] === 'object' && !Array.isArray(manifest[key])){

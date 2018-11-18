@@ -125,10 +125,20 @@
     watch:{
       image(value, oldValue){
         this.version_loaded = false
-        this.version = ''
-        this.$store.dispatch('getImageVersions', value).then(res => {
-          this.version_loaded = true
-        })
+        //this.version = ''
+        let imageAndVersion = value.split(':');
+        if(imageAndVersion.length > 1){
+          this.image = imageAndVersion[0];
+          this.$store.dispatch('getImageVersions', this.image).then(res => {
+            this.version_loaded = true
+            this.version = imageAndVersion[1];
+          })
+        } else {
+          this.$store.dispatch('getImageVersions', value).then(res => {
+            this.version_loaded = true
+          })
+        }
+
       },
       imageVersion(value) {
         this.$store.dispatch('manifestGenerator', {value, path: 'spec.image'})

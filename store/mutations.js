@@ -61,6 +61,5 @@ export const SET_NUMBER_SIDEBAR = (state, number) => {
 }
 
 export const SET_JSON_MANIFEST = (state, json) => {
-  console.log(json)
   state.manifest = json
 }

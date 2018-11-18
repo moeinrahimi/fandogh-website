@@ -79,7 +79,7 @@
         this.show = !this.show
       },
       selectOption(option, noToggle){
-        if(noToggle) this.toggle()
+        if(!noToggle) this.toggle()
         this.selected = option.title
         this.$emit('input', option.value || option.title)
       }
