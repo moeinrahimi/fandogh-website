@@ -60,7 +60,8 @@ import ForgotPassword from './ForgotPassword'
       showModal(modal){
         this.$store.dispatch('showModal', modal)
       },
-      login(){
+      login(e){
+        console.log(e)
         if(this.loading) return
         this.loading = true
         this.error = null

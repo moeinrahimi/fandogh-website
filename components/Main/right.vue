@@ -9,73 +9,58 @@
             </p>
         </div>
         <div class="registration">
-            <nuxt-link to='/user/login' class="btn btn-red btn-small login btn-nuxt" > ورود </nuxt-link>
-            <!-- <f-button @onClick="$router.push('/user/login')" styles="red small login" > ورود </f-button> -->
-            <f-button @onClick="$router.push('/user/register')" styles="blue small" > ثبت نام </f-button>
+            <f-button path="/user/login" styles="red small login" > ورود </f-button>
+            <f-button path="/user/register" styles="blue small" > ثبت نام </f-button>
         </div>
     
     </section>
 </template>
 
 <script>
-import FButton from "~/components/elements/button";
-export default {
-  components: {
+import FButton from '~/components/elements/button'
+export default{
+  components:{
     FButton
   },
-  methods: {
-    showModal(modal) {
-      this.$store.dispatch("showModal", modal);
+  methods:{
+    showModal(modal){
+       this.$store.dispatch('showModal', modal)
     }
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>
-.registration {
-    margin-top: 50px;
 
-    button {
-        margin-left: 10px;
-    }
-}
+    .registration
+        margin-top 50px
+        button
+            margin-left 10px
+    .right-main
+        position relative
+        margin-top 60px
+        .message
+            color greenyellow
+        .error
+            color red
 
-.right-main {
-    position: relative;
-    margin-top: 60px;
 
-    .message {
-        color: greenyellow;
-    }
+    input
+        padding 20px
+        width 100%
+        box-sizing: border-box
+        border-radius 10px
+        border none
 
-    .error {
-        color: red;
-    }
-}
+    @media only screen and (max-width: 576px)
+        .right-main
+            .text
+                padding 0 15px
+        .registration
+            text-align center
+        .registration
+            button
+                margin 5px
 
-input {
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 10px;
-    border: none;
-}
 
-@media only screen and (max-width: 576px) {
-    .right-main {
-        .text {
-            padding: 0 15px;
-        }
-    }
-
-    .registration {
-        text-align: center;
-    }
-
-    .registration {
-        button {
-            margin: 5px;
-        }
-    }
-}
 </style>

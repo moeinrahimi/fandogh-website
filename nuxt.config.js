@@ -35,22 +35,6 @@ module.exports = {
     name: 'فندق',
     description: 'سرویس های ابری فندق'
   },
-  workbox: {
-    dev: true,
-    importScripts: [
-      'custom-sw.js'
-    ],
-    runtimeCaching: [
-      {
-        urlPattern: 'https://fandogh.cloud/.*',
-        handler: 'cacheFirst',
-        method: 'GET'
-      }
-    ]
-  },
-  modifyUrlPrefix: {
-    '/': '/_nuxt/'
-  },
   /*
   ** Global CSS
   */
@@ -62,5 +46,5 @@ module.exports = {
     extractCSS: true,
     vendor: ['axios']
   },
-  plugins: ['~/plugins/progress-hover', {src: '~/plugins/google-map', ssr: false},'~/plugins/mixins']
+  plugins: ['~/plugins/progress-hover', {src: '~/plugins/google-map', ssr: false},'~/plugins/mixins', '~/plugins/validation']
 }
