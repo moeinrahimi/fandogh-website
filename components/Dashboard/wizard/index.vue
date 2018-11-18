@@ -110,12 +110,13 @@ export default {
         this.$router.push('/dashboard/services')
       }).catch(e => {
         this.loading = false
-        ErrorReporter(e, [], true).forEach(error => {
-          this.$notify({
-            title: error,
-            time: 4000,
-            type: 'error'
-          })
+        // ErrorReporter(e, [], true).forEach(error => {
+        //
+        // })
+        this.$notify({
+          title: e,
+          time: 4000,
+          type: 'error'
         })
       })
     }
