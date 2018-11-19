@@ -12,10 +12,7 @@
             </li>
             <li>
                 <router-link event="disabled" @click.native="closeMenu('/dashboard/domains')" :to="{path:'/dashboard/domains'}" ><img src="./icons/domain.svg" /> دامنه  </router-link>
-            </li>
-            <li>
-                <router-link event="disabled" @click.native="closeMenu('/dashboard/plans')" :to="{path:'/dashboard/plans'}" ><img src="./icons/domain.svg" /> پلن‌های فندق   </router-link>
-            </li>
+            </li>            
             <li>
                 <a href="#"><img src="./icons/settings.svg" /> تنظیمات  </a>
             </li>
